@@ -136,15 +136,11 @@ export default function Mountains(props) {
   }, [actions])
 
   useEffect(() => {
-    document.addEventListener('click', handleClick)
     resetPlayedAnimations()
     if (actions) {
       handleAnimations()
     }
-    return () => {
-      document.removeEventListener('click', handleClick)
-    }
-  }, [])
+  }, [animationTriggersRef.current])
 
   useEffect(() => {
     incrementMasterTrigger()
@@ -210,11 +206,6 @@ export default function Mountains(props) {
     }
   }
 
-  const handleClick = () => {
-    setRenderTrigger((prev) => prev + 1)
-    incrementMasterTrigger()
-    handleAnimations()
-  }
 
   return (
     <group ref={group} dispose={null} {...props}>
@@ -272,9 +263,9 @@ export default function Mountains(props) {
           <Rig finalPosition={finalPosition} finalRotation={finalRotation} camera={CameraActionRef.current} />
         ) : null}
 
-        {CameraActionRef.current && !localIsAnimationPlayingRef.current && animationTriggersRef.current !== 3 ? (
+        {/* {CameraActionRef.current && !localIsAnimationPlayingRef.current && animationTriggersRef.current !== 3 ? (
           <OrbitControls makeDefault />
-        ) : null}
+        ) : null} */}
 
         <mesh
           name='EverestDistant1HD'

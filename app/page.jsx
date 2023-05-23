@@ -7,14 +7,9 @@ export default function Page() {
   const router = useRouter()
 
 
-  const handleClick = () => {
-    router.push('/portfolio')
-  }
-
-
   return (
     <>
-      <div onClick={handleClick} className='flex w-screen h-screen overflow-hidden text-icewhite bg-transparent z-40'>
+      <div className='flex w-screen h-screen overflow-hidden text-icewhite bg-transparent z-40'>
         <div className='grid grid-cols-3 grid-rows-2 gap-2'>
           <div className='col-span-3'>TEST</div>
           <div className='row-start-2'>

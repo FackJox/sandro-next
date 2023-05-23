@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/navigation'
+
 const Contact = dynamic(
   () => import('@/components/dom/Contact').then((mod) => mod.Contact),
   {
@@ -10,14 +10,10 @@ const Contact = dynamic(
 )
 
 export default function Page() {
-  const router = useRouter()
 
-  const handleClick = () => {
-    router.push('/')
-  }
 
   return (
-    <div onClick={handleClick}>
+    <div className='flex w-screen h-screen overflow-hidden text-icewhite bg-transparent z-40'>
       <Contact />
     </div>
   )

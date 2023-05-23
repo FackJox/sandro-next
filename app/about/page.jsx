@@ -11,29 +11,23 @@ const AboutSecond = dynamic(() => import('@/components/dom/About/AboutSecond').t
   ssr: true,
 })
 
-import { useRouter } from 'next/navigation'
 
 export default function Page() {
-  const router = useRouter()
 
 
   const [isClicked, setIsClicked] = useState(false)
 
-   const handleClick = () => {
-     if (isClicked) {
-       router.push('/contact')
-     } else {
-       setIsClicked(!isClicked)
-     }
-   }
+  const handleClick = () => {
+      setIsClicked(!isClicked)
 
+  }
 
   return (
-    <>
+    <div  onClick={handleClick} className='flex w-screen h-screen overflow-hidden text-icewhite bg-transparent z-40'>
       <AnimatePresence mode='wait'>
         {!isClicked && <AboutFirst key='aboutfirst' isClicked={isClicked} handleClick={handleClick} />}
         {isClicked && <AboutSecond key='aboutsecond' isClicked={isClicked} handleClick={handleClick} />}
       </AnimatePresence>
-    </>
+    </div>
   )
 }
