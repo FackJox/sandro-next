@@ -7,6 +7,95 @@
     box-sizing: border-box;
   }
 
+  @font-face {
+    font-family: "Brandon-reg";
+    src: url("/fonts/Brandon_reg.woff");
+  }
+
+  @font-face {
+    font-family: "Brandon-black";
+    src: url("/fonts/Brandon_blk.woff");
+  }
+
+  @font-face {
+    font-family: "Brandon-medium";
+    src: url("/fonts/Brandon_med.woff");
+  }
+
+  @font-face {
+    font-family: "Nexa";
+    src: url("/fonts/Nexa-Bold.woff");
+  }
+
+  @font-face {
+    font-family: "Interface";
+    src: url("/fonts/Nexa-Bold.woff");
+  }
+
+  @font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins.woff");
+  }
+
+  .hover-class-right {
+    scale: 120%;
+    background-color: #c83f49;
+    color: #ffffff;
+
+    background-image: linear-gradient(rgba(243, 152, 42, 0.4), rgba(252, 198, 0, 0.4)), url('/img/gallery/sandro-stills.jpg');
+    background-size: cover;
+
+    /* Clip-path for smaller screens */
+    clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  @media screen and (min-width: 768px) {
+    .hover-class-right {
+      /* Clip-path for larger screens */
+      clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0 100%);
+    }
+  }
+
+  .hover-class-left {
+    /* Common styles */
+    scale: 120%;
+    background-color: #c83f49;
+    color: #fafafa;
+    background-image: linear-gradient(rgba(243, 152, 42, 0.4), rgba(252, 198, 0, 0.4)), url('/img/gallery/sandro-motion.jpg');
+    background-size: cover;
+
+    /* Clip-path for smaller screens */
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+  }
+
+  @media screen and (min-width: 768px) {
+    .hover-class-left {
+      /* Clip-path for larger screens */
+      clip-path: polygon(0 0, 100% 0%, 80% 100%, 0 100%);
+    }
+  }
+
+  .box {
+    --b: 3px;
+    /* thickness of the border */
+    --c: white;
+    /* color of the border */
+    --w: 20px;
+    /* width of border */
+
+
+    border: var(--b) solid #0000;
+    /* space for the border */
+    --_g: #0000 90deg, var(--c) 0;
+    --_p: var(--w) var(--w) border-box no-repeat;
+    background:
+      conic-gradient(from 90deg at top var(--b) left var(--b), var(--_g)) 0 0 / var(--_p),
+      conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) 100% 0 / var(--_p),
+      conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--_g)) 0 100% / var(--_p),
+      conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g)) 100% 100% / var(--_p);
+  }
+
+
   html,
   body,
   #root {
@@ -15,5 +104,13 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    /* background-color: #1517a5; */
   }
+}
+
+.LevaControls {
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  z-index: 200;
 }

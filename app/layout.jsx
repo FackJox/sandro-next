@@ -1,9 +1,15 @@
+import dynamic from 'next/dynamic'
+
 import { Layout } from '@/components/dom/Layout'
 import '@/global.css'
 
+const Navbar = dynamic(() => import('@/components/dom/Navbar').then((mod) => mod.Navbar), {
+  ssr: false,
+})
+
 export const metadata = {
-  title: 'Next.js + Three.js',
-  description: 'A minimal starter for Nextjs + React-three-fiber and Threejs.',
+  title: 'sandro gh | Filmmaker',
+  description: 'High Altitudes & Hostile Environments',
 }
 
 export default function RootLayout({ children }) {
@@ -16,7 +22,10 @@ export default function RootLayout({ children }) {
       <head />
       <body>
         {/* To avoid FOUT with styled-components wrap Layout with StyledComponentsRegistry https://beta.nextjs.org/docs/styling/css-in-js#styled-components */}
-        <Layout>{children}</Layout>
+        <Navbar />
+        <Layout>
+          {children}
+          </Layout>
       </body>
     </html>
   )
