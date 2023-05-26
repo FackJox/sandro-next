@@ -18,6 +18,22 @@ const Layout = ({ children }) => {
 
   const incrementMasterTrigger = useStore((state) => state.incrementMasterTrigger)
   const routeTriggersRef = useRef(useStore.getState().domTriggers.routeTriggers)
+    const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
+
+    useEffect(() => {
+
+      const unsubscribe = useStore.subscribe(
+        (newState) => {
+          isAnimationPlayingRef.current = newState.isAnimationPlaying
+        },
+        (state) => {
+          state.isAnimationPlaying !== isAnimationPlayingRef.current
+        },
+      )
+      return () => {
+        unsubscribe()
+      }
+    }, [])
 
   useEffect(() => {
     const unsubscribe = useStore.subscribe(
@@ -34,22 +50,24 @@ const handleWheel = useCallback(
       () => {
         console.log("WHEELYY")
         incrementMasterTrigger();
-        if (routeTriggersRef.current !== undefined) {
-                  console.log("🚀 ~ file: Layout.jsx:38 ~ Layout ~ routeTriggerRef.current:", routeTriggersRef.current)
-
-          router.push(pathnames[routeTriggersRef.current % pathnames.length]);
+        if (!isAnimationPlayingRef.current && routeTriggersRef.current !== undefined) {
+          router.push(pathnames[routeTriggersRef.current % pathnames.length])
         }
       },
       1000,
       { leading: true, trailing: false },
     ),
-    [router, incrementMasterTrigger, routeTriggersRef],
+    [routeTriggersRef.current],
   );
 
     useEffect(() => {
+      let refvar = ref.current
       ref.current.addEventListener('wheel', handleWheel)
-      return () => ref.current.removeEventListener('wheel', handleWheel)
+      return () => refvar.removeEventListener('wheel', handleWheel)
     }, [handleWheel])
+
+
+    
 
 
   return (

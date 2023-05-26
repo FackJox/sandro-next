@@ -22,8 +22,8 @@ export const useStore = create(
       // wireMesh: false,
       // setWireMesh: (value) => set(() => ({ wireMesh: value })),
 
-      sunCycle: 0.0,
-      setSunCycle: (value) => set(() => ({ sunCycle: value })),
+      // sunCycle: 0.0,
+      // setSunCycle: (value) => set(() => ({ sunCycle: value })),
 
       masterTrigger: 1,
       resetIndexTriggersStores: () =>

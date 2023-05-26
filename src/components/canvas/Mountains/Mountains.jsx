@@ -65,13 +65,6 @@ export default function Mountains(props) {
   const animationTriggersRef = useRef(useStore.getState().canvasTriggers.animationTriggers)
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
 
-  // useEffect(() => {
-  //   if (localIsAnimationPlayingRef.current) {
-  //     setMouseRotationSpeed(0.1);
-  //   } else {
-  //     setMouseRotationSpeed(1.0);
-  //   }
-  // }, [localIsAnimationPlayingRef.current]);
 
   useEffect(() => {
     if (mixer) {
@@ -192,7 +185,6 @@ export default function Mountains(props) {
       })
 
       if (currentAnimation && animationTriggersRef.current >= 2 && !playedAnimations.has(currentAnimationName)) {
-        // Add the current animation to the set of played animations
         mixer.stopAllAction()
         currentAnimation.reset()
         currentAnimation.timeScale = 1

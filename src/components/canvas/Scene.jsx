@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 
 import { r3f } from '@/helpers/global'
 import { useStore } from '@/helpers/store'
-import DaySky from '@/components/canvas/DaySky/DaySky'
+import Sky from '@/components/canvas/Sky/Sky'
 import NightSky from '@/components/canvas/NightSky/NightSky'
 import Mountains from '@/components/canvas/Mountains/Mountains'
 import { InstancedMountains, InstancesMountains } from '@/components/canvas/Mountains/InstancedMountains'
@@ -17,75 +17,10 @@ const Loader = dynamic(() => import('@/components/dom/Loader').then((mod) => mod
   ssr: true,
 })
 
-const lerpColor = (color1, color2, t) => {
-  const r = color1.r + t * (color2.r - color1.r)
-  const g = color1.g + t * (color2.g - color1.g)
-  const b = color1.b + t * (color2.b - color1.b)
-  return { r, g, b }
-}
 
-const hexToRgb = (hex) => ({
-  r: (hex >> 16) & 255,
-  g: (hex >> 8) & 255,
-  b: hex & 255,
-})
-
-const rgbToHex = (rgb) => (rgb.r << 16) | (rgb.g << 8) | rgb.b
 
 export default function Scene({ ...props }) {
-  const [showNightSky, setShowNightSky] = useState(true)
-  const [fogColour, setFogColor] = useState(0x4a3f40)
-  const prevSunCycleRef = useRef(null)
-
-  const sunCycleRef = useRef(useStore.getState().sunCycle)
-
-  useEffect(() => {
-    const unsubscribe = useStore.subscribe(
-      (newState) => {
-        sunCycleRef.current = newState.sunCycle
-      },
-      (state) => state.sunCycle !== sunCycleRef.current,
-    )
-    return () => unsubscribe()
-  }, [])
-
-  const animateFogColor = (startColor, endColor, duration, setFogColor) => {
-    const startTime = performance.now()
-    const animate = (currentTime) => {
-      const elapsed = currentTime - startTime
-      const t = Math.min(elapsed / duration, 1)
-      const lerpedColor = lerpColor(startColor, endColor, t)
-      setFogColor(rgbToHex(lerpedColor))
-
-      if (t < 1) {
-        requestAnimationFrame(animate)
-      }
-    }
-
-    requestAnimationFrame(animate)
-  }
-
-  useEffect(() => {
-    const currentCondition = sunCycleRef.current < 1
-    if (prevSunCycleRef.current === currentCondition) {
-      return
-    }
-
-    const startColor = currentCondition ? 0x808080 : 0x4a3f40
-    const endColor = currentCondition ? 0x4a3f40 : 0x808080
-
-    animateFogColor(hexToRgb(startColor), hexToRgb(endColor), 5500, setFogColor)
-
-    prevSunCycleRef.current = currentCondition
-  }, [sunCycleRef.current])
-
-  useEffect(() => {
-    if (sunCycleRef.current < -100) {
-      setShowNightSky(true)
-    } else {
-      setShowNightSky(false)
-    }
-  }, [sunCycleRef.current])
+ 
 
   const scalingParams = {
     scaleY: 1,
@@ -113,10 +48,10 @@ export default function Scene({ ...props }) {
       <r3f.Out />
       {/* <Perf position={'bottom-left'} /> */}
       <AdaptiveDpr pixelated />
-      <fogExp2 attach='fog' color={fogColour} density={0.0035} />
+  
 
-      <DaySky />
-      {showNightSky && <NightSky />}
+      <Sky />
+
 
       <group position={[0, -100, 0]}>
         <Mountains />
