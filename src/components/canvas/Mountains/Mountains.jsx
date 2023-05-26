@@ -100,6 +100,10 @@ export default function Mountains(props) {
     localIsAnimationPlayingRef.current = localIsAnimationPlaying
   }, [localIsAnimationPlaying])
 
+    useEffect(() => {
+      setIsAnimationPlaying(localIsAnimationPlaying)
+    }, [localIsAnimationPlaying])
+
   useEffect(() => {
     if (actions && animationTriggersRef.current == 1) {
       setIsLoading(false)
@@ -153,9 +157,7 @@ export default function Mountains(props) {
     }
   }, [animationTriggersRef.current])
 
-  useEffect(() => {
-    setIsAnimationPlaying(localIsAnimationPlaying)
-  }, [localIsAnimationPlaying])
+
 
   const prevPlayedAnimationsRef = useRef(new Set())
   const [playedAnimations, setPlayedAnimations] = useState(new Set())
