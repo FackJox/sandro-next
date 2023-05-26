@@ -36,6 +36,7 @@ export const useStore = create(
           },
           domTriggers: {
             routeTriggers: 1,
+            animationTriggers: 1,
           },
         }),
       incrementTextTrigger: () => {
@@ -81,10 +82,10 @@ export const useStore = create(
                   trigger === 5 || trigger === 7 || trigger === 9 || trigger === 11 || trigger === 13
                     ? (state.domTriggers.routeTriggers || 0) + 1
                     : state.domTriggers.routeTriggers,
-                domTrigger2:
-                  trigger === 5 || trigger === 6 || trigger === 7 || trigger === 8 || trigger === 9
-                    ? (state.domTriggers.domTrigger2 || 0) + 1
-                    : state.domTriggers.domTrigger2,
+                animationTriggers:
+                  trigger === 6 || trigger === 8 || trigger === 10 || trigger === 12 || trigger === 14
+                    ? (state.domTriggers.animationTriggers || 0) + 1
+                    : state.domTriggers.animationTriggers,
               },
             }
           })
@@ -99,6 +100,7 @@ export const useStore = create(
       },
       domTriggers: {
         routeTriggers: 1,
+        animationTriggers: 1,
       },
     }),
   ),
