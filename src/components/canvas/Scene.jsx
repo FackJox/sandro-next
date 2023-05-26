@@ -38,7 +38,6 @@ export default function Scene({ ...props }) {
   const prevSunCycleRef = useRef(null)
 
   const sunCycleRef = useRef(useStore.getState().sunCycle)
-  // console.log("🚀 ~ file: Scene.jsx:27 ~ Scene ~ sunCycleRef:", sunCycleRef)
 
   useEffect(() => {
     const unsubscribe = useStore.subscribe(

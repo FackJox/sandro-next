@@ -9,42 +9,48 @@ import { handleAnimations } from '@/components/canvas/Mountains/Mountains'
 
 const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
 
+const pathnames = ['/', 'portfolio', '/about', '/contact']
+
+
 const Layout = ({ children }) => {
-  const { incrementMasterTrigger } = useStore()
-  const ref = useRef()
   const router = useRouter()
-  const [scrollCount, setScrollCount] = useState(0)
+  const ref = useRef(null)
 
-  const pathnames = ['/', '/portfolio', '/about', '/contact']
+  const incrementMasterTrigger = useStore((state) => state.incrementMasterTrigger)
+  const routeTriggersRef = useRef(useStore.getState().domTriggers.routeTriggers)
 
-  const handleWheel = useCallback(
+  useEffect(() => {
+    const unsubscribe = useStore.subscribe(
+      (newState) => {
+        routeTriggersRef.current = newState.domTriggers.routeTriggers
+      },
+      (state) => state.domTriggers.routeTriggers !== routeTriggersRef.current,
+    )
+    return () => unsubscribe()
+  }, [])
+
+const handleWheel = useCallback(
     debounce(
       () => {
-        incrementMasterTrigger()
-        if (router.pathname === '/contact') {
-          setScrollCount(0)
-        } else {
-          setScrollCount((prevCount) => (prevCount + 1) % pathnames.length)
+        console.log("WHEELYY")
+        incrementMasterTrigger();
+        if (routeTriggersRef.current !== undefined) {
+                  console.log("🚀 ~ file: Layout.jsx:38 ~ Layout ~ routeTriggerRef.current:", routeTriggersRef.current)
+
+          router.push(pathnames[routeTriggersRef.current % pathnames.length]);
         }
       },
       1000,
       { leading: true, trailing: false },
     ),
-    [router],
-  )
+    [router, incrementMasterTrigger, routeTriggersRef],
+  );
 
-  useEffect(() => {
-    router.push(pathnames[scrollCount])
-  }, [scrollCount])
+    useEffect(() => {
+      ref.current.addEventListener('wheel', handleWheel)
+      return () => ref.current.removeEventListener('wheel', handleWheel)
+    }, [handleWheel])
 
-  useEffect(() => {
-    ref.current.addEventListener('wheel', handleWheel)
-    return () => {
-      if (ref.current) {
-        ref.current.removeEventListener('wheel', handleWheel)
-      }
-    }
-  }, [handleWheel])
 
   return (
     <div
