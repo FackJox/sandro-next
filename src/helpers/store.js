@@ -28,7 +28,7 @@ export const useStore = create(
       masterTrigger: 1,
       resetIndexTriggersStores: () =>
         set({
-          masterTrigger: 3,
+          masterTrigger: 2,
           canvasTriggers: {
             animationTriggers: 1,
             textTriggers: 2,
@@ -66,7 +66,7 @@ export const useStore = create(
               canvasTriggers: {
                 ...state.canvasTriggers,
                 animationTriggers:
-                  trigger === 4 || trigger === 6 || trigger === 8 || trigger === 10 || trigger === 11
+                  trigger === 3 || trigger === 5 || trigger === 7 || trigger === 9 || trigger === 10
                     ? (state.canvasTriggers?.animationTriggers || 0) + 1
                     : state.canvasTriggers?.animationTriggers,
                 textTriggers:
@@ -79,7 +79,7 @@ export const useStore = create(
               domTriggers: {
                 ...state.domTriggers,
                 routeTriggers:
-                  trigger === 5 || trigger === 7 || trigger === 9 || trigger === 11 || trigger === 13
+                  trigger === 4 || trigger === 6 || trigger === 8
                     ? (state.domTriggers.routeTriggers || 0) + 1
                     : state.domTriggers.routeTriggers,
                 animationTriggers:

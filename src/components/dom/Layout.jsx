@@ -9,7 +9,7 @@ import { handleAnimations } from '@/components/canvas/Mountains/Mountains'
 
 const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
 
-const pathnames = ['/', 'portfolio', '/about', '/contact']
+const pathnames = ['/', '/portfolio', '/about', '/contact']
 
 
 const Layout = ({ children }) => {
@@ -31,24 +31,26 @@ const Layout = ({ children }) => {
        return () => unsubscribe()
      }, [])
 
-  useEffect(() => {
-    const unsubscribe = useStore.subscribe(
-      (newState) => {
-        routeTriggersRef.current = newState.domTriggers.routeTriggers
+ useEffect(() => {
+   const unsubscribe = useStore.subscribe(
+     (newState) => {
+       routeTriggersRef.current = newState.domTriggers.routeTriggers
 
-              if (!isAnimationPlayingRef.current && routeTriggersRef.current !== undefined) {
-                router.push(pathnames[(routeTriggersRef.current - 1) % pathnames.length])
-              }
-      },
-      (state) => state.domTriggers.routeTriggers !== routeTriggersRef.current,
-    )
-    return () => unsubscribe()
-  }, [])
+       if (!isAnimationPlayingRef.current && routeTriggersRef.current !== undefined) {
+         router.push(pathnames[(routeTriggersRef.current - 1) % pathnames.length])
+         console.log('pathanems', pathnames[(routeTriggersRef.current - 1) % pathnames.length])
+         console.log('🚀 ~ file: Layout.jsx:42 ~ useEffect ~ routeTriggersRef.current:', routeTriggersRef.current)
+       }
+     },
+     (state) => state.domTriggers.routeTriggers !== routeTriggersRef.current,
+   )
+   return () => unsubscribe()
+ }, [])
 
 const handleWheel = useCallback(
   debounce(
     () => {
-      console.log('WHEELYY')
+      console.log('WHEELYY', routeTriggersRef.current)
       incrementMasterTrigger()
 
     },
