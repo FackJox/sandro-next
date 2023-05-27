@@ -116,19 +116,19 @@ export default function Mountains(props) {
       setLocalIsAnimationPlaying(actions.CameraAction1.isRunning())
       mixer.addEventListener('finished', onAnimationFinished)
 
-      let ticker = setInterval(() => {
-        const progress = actions.CameraAction1.time / actions.CameraAction1._clip.duration
+      // let ticker = setInterval(() => {
+      //   const progress = actions.CameraAction1.time / actions.CameraAction1._clip.duration
 
-        if (progress.toFixed(1) == 0.6) {
-          incrementTextTrigger()
-        }
-      }, 100)
+      //   if (progress.toFixed(1) == 0.6) {
+      //     incrementTextTrigger()
+      //   }
+      // }, 100)
 
-      actions.CameraAction1._clip.tracks.forEach((track) => {
-        const times = track.times
-        const endTime = times[times.length - 1]
-        setTimeout(() => clearInterval(ticker), endTime * 1000 + 500)
-      })
+      // actions.CameraAction1._clip.tracks.forEach((track) => {
+      //   const times = track.times
+      //   const endTime = times[times.length - 1]
+      //   setTimeout(() => clearInterval(ticker), endTime * 1000 + 500)
+      // })
     }
   }, [actions])
 
@@ -175,7 +175,7 @@ export default function Mountains(props) {
   }, [playedAnimations])
 
   const handleAnimations = () => {
-    setRenderTrigger((prev) => prev + 1)
+    // setRenderTrigger((prev) => prev + 1)
     const playedAnimations = prevPlayedAnimationsRef.current
     const currentAnimationName = `CameraAction${animationTriggersRef.current}`
     if (actions && !localIsAnimationPlayingRef.current && !playedAnimations.has(currentAnimationName)) {
