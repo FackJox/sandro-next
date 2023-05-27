@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 
 export function PortfolioMenu() {
@@ -12,7 +13,7 @@ export function PortfolioMenu() {
   }
 
   return (
-    <div className='flex h-screen flex-col font-BrandonReg '>
+    <div className='flex flex-col h-screen font-BrandonReg '>
       <div className='grid h-full grid-cols-1 align-middle md:grid-cols-2'>
         <div
           className={` flex items-center justify-center align-middle ${
