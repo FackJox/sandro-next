@@ -8,23 +8,19 @@ const ScrollTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
+export default function MotionGallery({ motionData, folders }) {
+  console.log('🚀 ~ file: MotionGallery.jsx:11 ~ motionData:', motionData)
 
-export default function MotionGallery({
-  motionData, folders
-}) {
-    console.log('🚀 ~ file: MotionGallery.jsx:11 ~ motionData:', motionData)
- 
-    const [currentVideo, setCurrentVideo] = useState(motionData.items[0])
-    const [playing, setPlaying] = useState(false)
+  const [currentVideo, setCurrentVideo] = useState(motionData.videos.items[0])
+  const [playing, setPlaying] = useState(false)
 
-  const results = motionData
-  console.log("🚀 ~ file: MotionGallery.jsx:17 ~ results:", results)
-
+  const results = motionData.videos
+  // console.log('🚀 ~ file: MotionGallery.jsx:17 ~ results:', results)
 
   return (
     <>
       <div className='z-10 flex-col flex-auto w-screen h-screen bg-syellow'>
-        <div className='relative flex-col justify-center flex-auto h-screen align-center'>
+        <div className='relative flex-col justify-center flex-auto h-screen '>
           <ul className='flex pt-[7.5%] align-center justify-center'>
             {folders &&
               folders.map((folder) => {
@@ -65,7 +61,7 @@ export default function MotionGallery({
               </div>
             </div>
           </div> */}
-          <div className='justify-center w-screen h-3/4 left-11'>
+          <div className='justify-center w-screen h-3/4 left-11 grid grid-cols-4 gap-4'>
             {/* <Gallery
               layout='masonry'
               photos={images}
@@ -78,18 +74,18 @@ export default function MotionGallery({
             {results.items &&
               Array.isArray(results.items) &&
               results.items.map((video) => {
-                console.log("🚀 ~ file: MotionGallery.jsx:79 ~ results:", results)
+                console.log('🚀 ~ file: MotionGallery.jsx:79 ~ results:', results)
                 return (
-                  <div key={video.id} className='flex mx-8'>
-                    <img
+                  <div key={video.id} className='flex flex-col items-center'>
+                    <Image
                       src={video.snippet.thumbnails.maxres.url}
                       alt={video.snippet.title}
                       width={1280}
                       height={720}
                     />
-                    <h5 className='flex mb-2 text-sm font-normal text-left no-wrap'>{video.snippet.title}</h5>
+                    <h5 className='text-sm font-normal text-left'>{video.snippet.title}</h5>
                     <button
-                      className='flex font-normal text-left text-white bg-red-500'
+                      className='flex font-normal text-left text-icewhite bg-red-500'
                       onClick={() => {
                         setCurrentVideo(video)
                         setPlaying(true)
@@ -109,7 +105,7 @@ export default function MotionGallery({
           </div>
         </div>
         <div>
-          <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-lwhite'>
+          <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
             <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
               SCROLL
             </p>
