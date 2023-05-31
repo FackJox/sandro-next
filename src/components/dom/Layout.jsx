@@ -13,6 +13,8 @@ const pathnames = ['/', '/portfolio', '/about', '/contact']
 
 
 const Layout = ({ children }) => {
+
+
   const router = useRouter()
   const ref = useRef(null)
 
@@ -38,8 +40,8 @@ const Layout = ({ children }) => {
 
        if (!isAnimationPlayingRef.current && routeTriggersRef.current !== undefined) {
          router.push(pathnames[(routeTriggersRef.current - 1) % pathnames.length])
-         console.log('pathanems', pathnames[(routeTriggersRef.current - 1) % pathnames.length])
-         console.log('🚀 ~ file: Layout.jsx:42 ~ useEffect ~ routeTriggersRef.current:', routeTriggersRef.current)
+        //  console.log('pathanems', pathnames[(routeTriggersRef.current - 1) % pathnames.length])
+        //  console.log('🚀 ~ file: Layout.jsx:42 ~ useEffect ~ routeTriggersRef.current:', routeTriggersRef.current)
        }
      },
      (state) => state.domTriggers.routeTriggers !== routeTriggersRef.current,
@@ -66,9 +68,9 @@ const handleWheel = useCallback(
       return () => refVar.removeEventListener('wheel', handleWheel)
     }, [handleWheel])
 
-useEffect(() => {
-  console.log('🚀 ~ file: Layout.jsx:54 ~ Layout ~ isAnimationPlayingRef.current:', isAnimationPlayingRef.current)
-}, [isAnimationPlayingRef.current])
+// useEffect(() => {
+//   console.log('🚀 ~ file: Layout.jsx:54 ~ Layout ~ isAnimationPlayingRef.current:', isAnimationPlayingRef.current)
+// }, [isAnimationPlayingRef.current])
     
 
 

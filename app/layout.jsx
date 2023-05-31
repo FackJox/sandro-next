@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import React from 'react'
 
 import { Layout } from '@/components/dom/Layout'
 import '@/global.css'
@@ -8,12 +9,14 @@ const Navbar = dynamic(() => import('@/components/dom/Navbar').then((mod) => mod
 })
 
 export const metadata = {
-  title: 'sandro gh | Filmmaker',
+  title: 'sandro gh | High Altitudes & Hostile Environments',
   description: 'High Altitudes & Hostile Environments',
 }
 
 export default function RootLayout({ children }) {
+ 
   
+
   return (
     <html lang='en' className='antialiased'>
       {/*
@@ -26,7 +29,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <Layout>
           {children}
-          </Layout>
+        </Layout>
       </body>
     </html>
   )

@@ -1,8 +1,8 @@
 {
-  "name": "react-three-next",
+  "name": "sandro-next",
   "version": "2.0.0",
   "authors": [
-    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
+    "Jack Foxcroft"
   ],
   "license": "MIT",
   "private": true,
@@ -27,6 +27,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-photo-album": "^2.2.2",
+    "react-player": "^2.12.0",
     "three": "^0.151.3",
     "three-stdlib": "^2.21.8",
     "tunnel-rat": "^0.1.2",

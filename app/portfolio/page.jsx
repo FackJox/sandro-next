@@ -1,57 +1,48 @@
-'use client'
-
-import dynamic from 'next/dynamic'
-import { motion, AnimatePresence } from 'framer-motion'
-import StillsGallery from '@/components/dom/Portfolio/Gallery/StillsGallery'
 import { search, mapImageResources, getFolders } from '@/helpers/cloudinary'
 
-const PortfolioMenu = dynamic(
-  () => import('@/components/dom/portfolio/PortfolioMenu').then((mod) => mod.PortfolioMenu),
-  {
-    ssr: true,
-  },
-)
+import { PortfolioWrapper } from '@/components/dom/Portfolio/PortfolioWrapper'
+import { useStore } from '@/helpers/store'
 
-export default function Page() {
-
-
-  return (
-<AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 2.5 }}
-        >
-      {/* <PortfolioMenu /> */}
-      <StillsGallery />
-      </motion.div>
-  </AnimatePresence>
-  )
-}
-
-export async function getStaticProps() {
+async function getStillsData() {
   const results = await search({
     expression: 'folder=""',
   })
 
   const { resources, next_cursor: nextCursor, total_count: totalCount } = results
-
   const images = mapImageResources(resources)
 
   const { folders } = await getFolders()
-
-  return {
-    props: {
-      title: 'Portfolio',
-      images,
-      nextCursor: nextCursor || false,
-      totalCount,
-      folders,
-      colourScheme: {
-        logo: true,
-        connect: true,
-      },
-    },
-  }
+  return { images, folders }
 }
+
+async function getYoutubeData() {
+  const YT_PLAYLIST_ID = process.env.YT_PLAYLIST_ID
+  const YT_API_KEY = process.env.YT_API_KEY
+  const REQUEST_URL = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${YT_PLAYLIST_ID}&key=${YT_API_KEY}&maxResults=15`
+  const response = await fetch(REQUEST_URL)
+  return response.json()
+}
+
+export default async function Page() {
+
+   const stills = getStillsData()
+  
+
+    const yt = getYoutubeData();
+
+    const [stillsData, motionData] = await Promise.all([stills, yt]);
+    console.log("🚀 ~ file: layout.jsx:25 ~ RootLayout ~ motionData:", motionData)
+    console.log("🚀 ~ file: layout.jsx:25 ~ RootLayout ~ stillsData:", stillsData)
+    // const { setStillsData, setMotionData } = useStore()
+
+      // setStillsData(stillsData)
+      // setMotionData(motionData)
+
+  return (
+    <>
+    <PortfolioWrapper motionData={motionData} stillsData={stillsData} />
+    </>
+  )
+}
+
+

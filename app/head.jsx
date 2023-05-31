@@ -1,4 +1,4 @@
-const title = 'sandro gh | Filmmaker'
+const title = 'sandro gh | High Altitudes and Hostile Environments'
 const url = ''
 const description = 'High Altitudes and Hostile Environments'
 const author = 'Jack Foxcroft'

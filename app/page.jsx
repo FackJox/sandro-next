@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Page() {
   const router = useRouter()
@@ -18,18 +19,25 @@ export default function Page() {
       >
         <div className='grid grid-cols-3 grid-rows-2 gap-2'>
           <div className='col-span-3'>TEST</div>
+          <Link href='/portfolio/stills' className=''>
+            <div className='row-start-2'>
+            
+              <p className='w-[200px] h-16 text-4xl text-center text-icewhite'>STILLS</p>
+            </div>
+          </Link>
+          <Link href='/about' className=''>
+            <div className='row-start-2'>
+             
+              <p className='w-[200px] h-16  text-5xl text-center text-gold'>ABOUT</p>
+            </div>
+          </Link>
+          <Link href='/portfolio/motion' className=''>
+
           <div className='row-start-2'>
-            {' '}
-            <p className='w-[200px] h-16 text-4xl text-center text-icewhite'>STILLS</p>
-          </div>
-          <div className='row-start-2'>
-            {' '}
-            <p className='w-[200px] h-16  text-5xl text-center text-gold'>ABOUT</p>
-          </div>
-          <div className='row-start-2'>
-            {' '}
+           
             <p className='w-[200px] h-12 text-4xl text-center text-icewhite'>MOTION</p>
           </div>
+          </Link>
         </div>
       </motion.div>
     </AnimatePresence>

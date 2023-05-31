@@ -1,7 +1,11 @@
+import Link from "next/link"
+
 export function Navbar() {
   return (
-    <nav className='flex justify-between items-center bg-transparent fixed z-50 w-full no-underline select-none'>
-      <p className='h-12 w-[200px] text-center text-3xl font-bold text-gold'>sandro gh</p>
+    <nav className='fixed z-50 flex items-center justify-between w-full no-underline bg-transparent select-none'>
+      <Link href='/' className=''>
+        <p className='h-12 w-[200px] text-center text-3xl font-bold text-gold'>sandro gh</p>
+      </Link>
       <svg
         width={46}
         height={37}

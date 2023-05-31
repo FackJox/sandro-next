@@ -6,7 +6,9 @@ const Contact = dynamic(() => import('@/components/dom/Contact').then((mod) => m
   ssr: true,
 })
 
-export default function Page() {
+export default function Page({props}) {
+  console.log("🚀 ~ file: page.jsx:10 ~ Page ~ props:", props)
+ 
   return (
     <AnimatePresence>
       <motion.div
@@ -14,7 +16,7 @@ export default function Page() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2.5 }}
-        className='flex w-screen h-screen overflow-hidden text-icewhite bg-transparent z-40'
+        className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'
       >
         <Contact />
       </motion.div>

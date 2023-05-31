@@ -25,6 +25,11 @@ export const useStore = create(
       // sunCycle: 0.0,
       // setSunCycle: (value) => set(() => ({ sunCycle: value })),
 
+      // stillsData: [],
+      // motionData: [],
+      // setStillsData: (data) => set({ stillsData: data }),
+      // setMotionData: (data) => set({ motionData: data }),
+
       masterTrigger: 1,
       resetIndexTriggersStores: () =>
         set({
