@@ -16,22 +16,23 @@ export default function StillsGallery({
 	images: defaultImages,
 	nextCursor: defaultNextCursor,
 	totalCount: defaultTotalCount,
-	folders,
+	folders: defaultFolders,
 }) {
 const [images, setImages] = useState(defaultImages || [])
+const [folders, setFolders] = useState([])
 	const [nextCursor, setNextCursor] = useState(defaultNextCursor);
 	const [totalCount, setTotalCount] = useState(defaultTotalCount);
 	const [activeFolder, setActiveFolder] = useState();
   
 
-	// console.log("images in ImageGallery", images);
-	// console.log("activeFolder in ImageGallery", activeFolder);
-	// console.log("folders in ImageGallery", folders);
+	console.log("images in ImageGallery", images);
+	console.log("activeFolder in ImageGallery", activeFolder);
+	console.log("folders in ImageGallery", folders);
 
 	async function handleOnLoadMore(e) {
 		e.preventDefault();
 
-		const results = await fetch('app/api/route.js', {
+		const results = await fetch(' /api', {
       method: 'POST',
       body: JSON.stringify({
         expression: `folder=""`,
@@ -43,6 +44,7 @@ const [images, setImages] = useState(defaultImages || [])
 			resources,
 			next_cursor: nextPageCursor,
 			total_count: updatedTotalCount,
+      folders
 		} = results;
 
 		const images = mapImageResources(resources);
@@ -64,7 +66,7 @@ const [images, setImages] = useState(defaultImages || [])
 
 	useEffect(() => {
 		(async function run() {
-			const results = await fetch('app/api/route.js'  , {
+			const results = await fetch('/api'  , {
         method: 'POST',
         body: JSON.stringify({
           expression: `folder="${activeFolder || ''}"`,
@@ -75,10 +77,12 @@ const [images, setImages] = useState(defaultImages || [])
 				resources,
 				next_cursor: nextPageCursor,
 				total_count: updatedTotalCount,
+        folders
 			} = results;
+			console.log("🚀 ~ file: StillsGallery.jsx:89 ~ run ~ folders:", folders)
 
 			const images = mapImageResources(resources);
-
+      setFolders(folders)
 			setImages(images);
 			setNextCursor(nextPageCursor);
 			setTotalCount(updatedTotalCount);
@@ -86,7 +90,7 @@ const [images, setImages] = useState(defaultImages || [])
 	}, [activeFolder]);
   console.log("imagesin ImageGallery", images)
 
-
+  console.log("folders", folders)
   const NextJsImage = ({
     imageProps: { src, alt, title, sizes, className, onClick },
     wrapperStyle,
@@ -102,17 +106,18 @@ const [images, setImages] = useState(defaultImages || [])
   
 	return (
     <>
-      <div className='z-10 flex-col flex-auto w-screen h-screen bg-black'>
-        <div className='relative flex-col justify-center flex-auto align-center'>
+      <div className='z-10 flex-col flex-auto w-screen h-screen bg-syellow'>
+        <div className='relative flex-col justify-center flex-auto align-center h-screen'>
           <ul onClick={handleOnFolderClick} className='flex pt-[7.5%] align-center justify-center'>
             {folders &&
               folders.map((folder) => {
                 const isActive = folder.path === activeFolder
+                console.log('FOLDERSZ', folders)
                 return (
                   <li key={folder.path} data-active-folder={isActive}>
                     <button
                       data-folder-path={folder.path}
-                      className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-lwhite'
+                      className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
                     >
                       #{folder.name}
                     </button>
@@ -120,8 +125,8 @@ const [images, setImages] = useState(defaultImages || [])
                 )
               })}
           </ul>
-          <div className='grid w-screen h-screen grid-cols-3 grid-rows-4 overflow-hidden bg-black'>
-            <div className='fixed top-0 left-0 w-screen bg-black h-1/3'>
+          {/*<div className='grid w-screen h-screen grid-cols-3 grid-rows-4 '>
+             <div className='fixed top-0 left-0 w-screen'>
               <div className='fixed left-[70px] top-28 text-base text-left text-white h-4 w-44'>FILTERS</div>
               <div className='h-4 fixed left-[70px] top-36 text-sm text-left uppercase text-white row-start-2 w-44'>
                 #mountains
@@ -142,16 +147,16 @@ const [images, setImages] = useState(defaultImages || [])
                 #DRONE
               </div>
             </div>
-          </div>
-          <div>
+          </div> */}
+          <div className='  w-screen h-3/4 left-11 justify-center'>
             <Gallery
               layout='masonry'
               photos={images}
-              columns='3'
-              padding='18'
-              spacing='0'
-              width='100%'
-              renderPhoto={NextJsImage}
+              // columns='3'
+              // padding='18'
+              // spacing='0'
+              // width='100%'
+              // renderPhoto={NextJsImage}
             />
           </div>
           <div>
@@ -176,4 +181,5 @@ const [images, setImages] = useState(defaultImages || [])
     </>
   )
 }
+ 
 

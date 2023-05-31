@@ -21,7 +21,16 @@ const nextConfig = {
     reactRoot: 'concurrent',
     appDir: true,
   },
-  images: {},
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   webpack(config, { isServer }) {
     // audio support
     config.module.rules.push({

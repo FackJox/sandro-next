@@ -17,6 +17,7 @@ export async function search(options = {}) {
       }
     }).then(r => r.json());
     // console.log(results)
+    // console.log("🚀 ~ file: cloudinary.js:20 ~ search ~ results:", results)
     return results;
   }
   
@@ -34,13 +35,14 @@ export async function search(options = {}) {
   }
   
   export async function getFolders(options = {}) {
+    // console.log("WE MADE OT HERE BABY")
     const response = await fetch(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/folders`, {
       headers: {
         Authorization: `Basic ${Buffer.from(process.env.CLOUDINARY_API_KEY + ':' + process.env.CLOUDINARY_API_SECRET).toString('base64')}`
       }
     }).then(r => r.json());
   
-    // console.log(response)
+    // console.log("🚀 ~ file: cloudinary.js:46 ~ getFolders ~ response:", response)
 
     return response;
   }
