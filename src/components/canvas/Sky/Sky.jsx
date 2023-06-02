@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Sky as DaySky } from '@react-three/drei'
+import { Sky as DaySky, Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useStore } from '@/helpers/store'
-import NightSky from '../NightSky/NightSky'
+import NightSky from './NightSky'
 
 import { lerpColor, hexToRgb, rgbToHex, animateFogColor } from '@/helpers/colours'
 
@@ -14,16 +14,61 @@ export default function Sky() {
   const [sunPosition, setSunPosition] = useState([])
   const [sunRotations, setSunRotations] = useState(0)
   const [sunRotating, setSunRotating] = useState(false)
+ const [rayleigh, setRayleigh] = useState(-8.0)
+ const rayleighRef = useRef(rayleigh)
+ const [showNightSky, setShowNightSky] = useState(true)
+ const [fogColour, setFogColor] = useState(0x4a3f40)
+ const { sunCycle, setSunCycle } = useStore((state) => ({
+   sunCycle: state.sunCycle,
+   setSunCycle: state.setSunCycle,
+ }))
+ const [localSunCycle, setLocalSunCycle] = useState(sunCycle)
+ const prevSunCycleRef = useRef(null)
+ const [dayNightCycle, setDayNightCycle] = useState(true)
 
-  const distanceFromCenter = 450000
+ const toggleDayNightCycle = () => {
+   setDayNightCycle((prevDayNightCycle) => !prevDayNightCycle)
+   setSunRotating((sunRotating) => !sunRotating)
+   console.log("day night status", dayNightCycle)
+ }
+
+ const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
+
+
+ const sunCycleRef = useRef(useStore.getState().sunCycle)
+ useEffect(() => {
+   const unsubscribeSunTriggers = useStore.subscribe(
+     (newState) => {
+       sunTriggersRef.current = newState.canvasTriggers.sunTriggers
+     },
+     (state) => {
+       state.canvasTriggers.sunTriggers !== sunTriggersRef.current
+     },
+   )
+
+   return () => {
+     unsubscribeSunTriggers()
+   }
+ }, [])
+
+ useEffect(() => {
+   const unsubscribe = useStore.subscribe(
+     (newState) => {
+       sunCycleRef.current = newState.sunCycle
+     },
+     (state) => state.sunCycle !== sunCycleRef.current,
+   )
+   return () => unsubscribe()
+ }, [])
 
   useEffect(() => {
     const initialSunRadiusPosition = [1, 1, 1]
-    const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
+    // const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
     setSunPosition(initialSunPos.toArray())
   }, [])
 
   const wireMeshRef = useRef(useStore.getState().wireMesh)
+
   useEffect(() => {
     const unsubscribe = useStore.subscribe(
       (newState) => {
@@ -40,44 +85,71 @@ export default function Sky() {
     }
   }, [sunTriggersRef.current])
 
-//   useEffect(() => {
-//     // Synchronize localSunCycle with the global state
-//     setSunCycle(localSunCycle)
-//   }, [localSunCycle, setSunCycle])
+  //   useEffect(() => {
+  //     // Synchronize localSunCycle with the global state
+  //     setSunCycle(localSunCycle)
+  //   }, [localSunCycle, setSunCycle])
 
   // > 0.231
-
+  const distanceFromCenter = 450000
   const sunCentre = new THREE.Vector3(-353.93, 88.44, 56.42)
   const orbitAxis = new THREE.Vector3(-(180 * Math.PI) / 180, (90 * Math.PI) / 180, (180 * Math.PI) / 180)
   const speed = 0.06
 
-  useFrame(() => {
-    if (wireMeshRef.current) {
-      const initialSunRadiusPosition = [1, 1, 1]
-      const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
-      setLocalSunCycle(initialSunPos.y)
-      setSunPosition((prevSunPosition) => {
-        return initialSunPos.toArray()
-      })
-    }
+  // useFrame(() => {
+  //   if (wireMeshRef.current) {
+  //     const initialSunRadiusPosition = [1, 1, 1]
+  //     const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
+  //     setLocalSunCycle(initialSunPos.y)
+  //     setSunPosition((prevSunPosition) => {
+  //       return initialSunPos.toArray()
+  //     })
+  //   }
 
-    if (sunPosition.length > 0 && sunRotating) {
-      const prevSunPos = new THREE.Vector3().fromArray(sunPosition)
-      const nextSunPos = prevSunPos
-        .clone()
-        .sub(sunCentre)
-        .applyAxisAngle(orbitAxis, (speed * Math.PI) / 180)
-        .add(sunCentre)
+  //   if (sunPosition.length > 0 && sunRotating) {
+  //     const prevSunPos = new THREE.Vector3().fromArray(sunPosition)
+  //     const nextSunPos = prevSunPos
+  //       .clone()
+  //       .sub(sunCentre)
+  //       .applyAxisAngle(orbitAxis, (speed * Math.PI) / 180)
+  //       .add(sunCentre)
 
-      setLocalSunCycle(nextSunPos.y)
+  //     setLocalSunCycle(nextSunPos.y)
+  //     setSunPosition((prevSunPosition) => {
+  //       return nextSunPos.toArray()
+  //     })
+  //   }
+  // })
+
+useFrame(() => {
+  if (wireMeshRef.current) {
+    const initialSunRadiusPosition = [1, 1, 1]
+    const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
+    setLocalSunCycle(initialSunPos.y)
+    setSunPosition((prevSunPosition) => {
+      return initialSunPos.toArray()
+    })
+  }
+
+  if (sunPosition.length > 0 && sunRotating) {
+    const prevSunPos = new THREE.Vector3().fromArray(sunPosition)
+    const nextSunPos = prevSunPos
+      .clone()
+      .sub(sunCentre)
+      .applyAxisAngle(orbitAxis, (speed * Math.PI) / 180)
+      .add(sunCentre)
+
+    // Check if dayNightCycle is true or if the distance between initialSunPos and nextSunPos is greater than a small threshold
+    if (dayNightCycle || initialSunPos.distanceTo(nextSunPos) > 1) {
+      setLocalSunCycle(nextSunPos)
       setSunPosition((prevSunPosition) => {
+        console.log(nextSunPos)
         return nextSunPos.toArray()
       })
     }
-  })
+  }
+})
 
-  const [rayleigh, setRayleigh] = useState(-8.0)
-  const rayleighRef = useRef(rayleigh)
 
   useEffect(() => {
     rayleighRef.current = rayleigh
@@ -108,43 +180,7 @@ export default function Sky() {
   // useEffect(() => {
   // 	console.log("🚀 ~ file: DaySky.jsx:117 ~ useEffect ~ rayleighRef.current:", rayleighRef.current)
   // }, [rayleighRef.current])
-
-  const [showNightSky, setShowNightSky] = useState(true)
-  const [fogColour, setFogColor] = useState(0x4a3f40)
-  const { sunCycle, setSunCycle } = useStore((state) => ({
-    sunCycle: state.sunCycle,
-    setSunCycle: state.setSunCycle,
-  }))
-  const [localSunCycle, setLocalSunCycle] = useState(sunCycle)
-  const prevSunCycleRef = useRef(null)
-
-  const sunCycleRef = useRef(useStore.getState().sunCycle)
-  useEffect(() => {
-    const unsubscribeSunTriggers = useStore.subscribe(
-      (newState) => {
-        sunTriggersRef.current = newState.canvasTriggers.sunTriggers
-      },
-      (state) => {
-        state.canvasTriggers.sunTriggers !== sunTriggersRef.current
-      },
-    )
-
-    return () => {
-      unsubscribeSunTriggers()
-    }
-  }, [])
-
-  useEffect(() => {
-    const unsubscribe = useStore.subscribe(
-      (newState) => {
-        sunCycleRef.current = newState.sunCycle
-      },
-      (state) => state.sunCycle !== sunCycleRef.current,
-    )
-    return () => unsubscribe()
-  }, [])
-
-
+ 
 
   useEffect(() => {
     const currentCondition = localSunCycle < 1
@@ -170,6 +206,10 @@ export default function Sky() {
 
   return (
     <>
+    <Html>
+
+      <button onClick={toggleDayNightCycle}>Toggle Day/Night Cycle</button>
+    </Html>
       <directionalLight intensity={0.2} position={sunPosition} />
       <fogExp2 attach='fog' color={fogColour} density={0.0035} />
       {showNightSky && <NightSky />}

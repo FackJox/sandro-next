@@ -13,26 +13,34 @@ export default function MotionGallery({ motionData, folders }) {
 
   const [currentVideo, setCurrentVideo] = useState(motionData.videos.items[0])
   const [playing, setPlaying] = useState(false)
+  const [activePlaylist, setActivePlaylist] = useState()
 
-  const results = motionData.videos
-  // console.log('🚀 ~ file: MotionGallery.jsx:17 ~ results:', results)
+  function handleOnPlaylistClick(e) {
+    const playlistPath = e.target.dataset.playlistPath
+    setActiveFolder(playlistPath)
+    setNextCursor(undefined)
+  }
+
+  const playlists = motionData.playlists.items
+  const videos = motionData.videos.items
+
 
   return (
     <>
       <div className='z-10 flex-col flex-auto w-screen h-screen bg-syellow'>
         <div className='relative flex-col justify-center flex-auto h-screen '>
           <ul className='flex pt-[7.5%] align-center justify-center'>
-            {folders &&
-              folders.map((folder) => {
-                const isActive = folder.path === activeFolder
-                console.log('FOLDERSZ', folders)
+            {playlists &&
+              playlists.map((playlist) => {
+                const isActive = playlist.path === activePlaylist
+                console.log('FOLDERSZ', playlists)
                 return (
-                  <li key={folder.path} data-active-folder={isActive}>
+                  <li key={playlist.path} data-active-folder={isActive}>
                     <button
-                      data-folder-path={folder.path}
+                      data-playlist-path={playlist.path}
                       className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
                     >
-                      #{folder.name}
+                      #{playlist.snippet.localized.title}
                     </button>
                   </li>
                 )
@@ -71,14 +79,14 @@ export default function MotionGallery({ motionData, folders }) {
               // width='100%'
               // renderPhoto={NextJsImage}
             /> */}
-            {results.items &&
-              Array.isArray(results.items) &&
-              results.items.map((video) => {
-                console.log('🚀 ~ file: MotionGallery.jsx:79 ~ results:', results)
+            {videos &&
+              Array.isArray(videos) &&
+              videos.map((video) => {
+                console.log('🚀 ~ file: MotionGallery.jsx:79 ~ results:', videos)
                 return (
                   <div key={video.id} className='flex flex-col items-center'>
                     <Image
-                      src={video.snippet.thumbnails.maxres.url}
+                      src={video.snippet.thumbnails.medium.url}
                       alt={video.snippet.title}
                       width={1280}
                       height={720}

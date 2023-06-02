@@ -15,7 +15,7 @@ export function PortfolioMenu() {
   return (
     <div className='flex flex-col h-screen font-BrandonReg '>
       <div className='grid h-full grid-cols-1 align-middle md:grid-cols-2'>
-        <Link href='/portfolio/motion' className='flex items-center justify-center align-middle'>
+        <Link href='/portfolio' className='flex items-center justify-center align-middle'>
           <div
             className={` flex items-center justify-center align-middle ${
               isHovering.motion ? 'hover-class-left' : ' text-icewhite'
@@ -32,7 +32,7 @@ export function PortfolioMenu() {
             </p>
           </div>
         </Link>
-        <Link href='/portfolio/stills' className='flex items-center justify-center align-middle'>
+        <Link href='/portfolio' className='flex items-center justify-center align-middle'>
           <div
             className={` flex items-center justify-center align-middle ${
               isHovering.stills ? 'hover-class-right' : ' text-icewhite'

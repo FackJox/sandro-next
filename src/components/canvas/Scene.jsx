@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic'
 import { r3f } from '@/helpers/global'
 import { useStore } from '@/helpers/store'
 import Sky from '@/components/canvas/Sky/Sky'
-import NightSky from '@/components/canvas/NightSky/NightSky'
+import NightSky from '@/components/canvas/Sky/NightSky'
 import Mountains from '@/components/canvas/Mountains/Mountains'
 import { InstancedMountains, InstancesMountains } from '@/components/canvas/Mountains/InstancedMountains'
 
@@ -17,11 +17,7 @@ const Loader = dynamic(() => import('@/components/dom/Loader').then((mod) => mod
   ssr: true,
 })
 
-
-
 export default function Scene({ ...props }) {
- 
-
   const scalingParams = {
     scaleY: 1,
     scaleXZ: 4.3,
@@ -43,15 +39,13 @@ export default function Scene({ ...props }) {
 
   const canvasRef = useRef()
   return (
-    <Canvas ref={canvasRef} {...props} frameloop='demand' mode='concurrent' >
+    <Canvas ref={canvasRef} {...props} frameloop='demand' mode='concurrent'>
       {/* @ts-ignore */}
       <r3f.Out />
       {/* <Perf position={'bottom-left'} /> */}
       <AdaptiveDpr pixelated />
-  
 
       <Sky />
-
 
       <group position={[0, -100, 0]}>
         <Mountains />

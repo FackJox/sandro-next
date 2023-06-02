@@ -18,11 +18,11 @@ async function getStillsData() {
 async function getYoutubeData() {
   const YT_PLAYLIST_ID = process.env.YT_PLAYLIST_ID
   const YT_API_KEY = process.env.YT_API_KEY
-  const CHANNEL_ID = 'UCodlmjqjVtYVJqftFT_17FA' // Replace with the desired channel ID
-  const MAX_RESULTS = `12`
+  const YT_CHANNEL_ID = process.env.YT_CHANNEL_ID
+  const MAX_RESULTS = `15`
   const REQUEST_URL_PLVIDEOS = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${YT_PLAYLIST_ID}&key=${YT_API_KEY}&maxResults=15`
-  const REQUEST_URL_PLAYLISTS = `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${CHANNEL_ID}&key=${YT_API_KEY}`
-  const REQUEST_URL_ALLVIDEOS = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&maxResults=${MAX_RESULTS}&order=date&key=${YT_API_KEY}`
+  const REQUEST_URL_PLAYLISTS = `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${YT_CHANNEL_ID}&key=${YT_API_KEY}`
+  const REQUEST_URL_ALLVIDEOS = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${YT_CHANNEL_ID}&maxResults=${MAX_RESULTS}&order=date&key=${YT_API_KEY}`
 
   
   const [responseVideos, responsePlaylists, responsePLVideos] = await Promise.all([
