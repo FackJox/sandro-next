@@ -43,10 +43,7 @@ async function getYoutubeData() {
 export default async function Page() {
 
    const stills = getStillsData()
-  
-
     const yt = getYoutubeData();
-
     const [stillsData, motionData] = await Promise.all([stills, yt]);
 
     console.log('🚀 ~ file: page.jsx:58 ~ Page ~ motionData:', motionData)

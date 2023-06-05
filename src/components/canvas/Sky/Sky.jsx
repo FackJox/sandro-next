@@ -53,10 +53,6 @@ export default function Sky() {
    console.log('day night status', dayNightCycle)
  }
 
-useEffect(() => {
-    console.log('showNightSky', showNightSky)
-
-}, [showNightSky])
 
  const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
 
@@ -235,7 +231,7 @@ useFrame(() => {
     <>
       <Html>
         <button onClick={toggleDayNightCycle}>
-          Toggle Day/Night Cycle {localSunCycleRef.current && localSunCycleRef.current.y}
+          Toggle Day/Night Cycle 
         </button>
       </Html>
       <directionalLight intensity={0.2} position={sunPosition} />

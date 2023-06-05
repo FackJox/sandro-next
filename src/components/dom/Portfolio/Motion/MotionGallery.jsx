@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { YouTubeVideoPlayer } from '@/components/dom/Portfolio/Motion/MotionPlayer'
+import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
 import Image from 'next/image'
 import { useState, useEffect, Suspense } from 'react'
 
@@ -15,62 +15,79 @@ export default function MotionGallery({ motionData, folders }) {
   const [playing, setPlaying] = useState(false)
   const [activePlaylist, setActivePlaylist] = useState()
 
+  const [motionPlayerVisible, setMotionPlayerVisible] = useState(false)
+
   function handleOnPlaylistClick(e) {
     const playlistPath = e.target.dataset.playlistPath
     setActivePlaylist(playlistPath)
-    setNextCursor(undefined)
   }
 
+  const toggleMotionPlayer = () => {
+    setMotionPlayerVisible(!motionPlayerVisible)
+  }
+
+
+   
   const playlists = motionData.playlists.items
   const videos = motionData.videos.items
 
   return (
     <>
-      <div className='z-10 flex-col flex-auto w-screen h-screen bg-syellow'>
-        <div className='relative flex-col justify-center flex-auto h-screen '>
-          <ul className='flex pt-[7.5%] align-center justify-center'>
-            {playlists &&
-              playlists.map((playlist) => {
-                const isActive = playlist.path === activePlaylist
-                console.log('FOLDERSZ', playlists)
-                return (
-                  <li key={playlist.path} data-active-folder={isActive}>
-                    <button
-                      data-playlist-path={playlist.path}
-                      className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
-                      onClick={handleOnPlaylistClick}
-                    >
-                      #{playlist.snippet.localized.title}
-                    </button>
-                  </li>
-                )
-              })}
-          </ul>
-          {/*<div className='grid w-screen h-screen grid-cols-3 grid-rows-4 '>
+      {motionPlayerVisible ? (
+        <div className='fixed z-50 flex items-center justify-center w-screen h-screen bg-black bg-opacity/50'>
+          <div className='relative bg-white'>
+            <button className='absolute top-0 right-0 p-2' onClick={!motionPlayerVisible}>
+              Close
+            </button>
+            <MotionPlayer currentVideo={currentVideo} playing={playing} />
+          </div>
+        </div>
+      ) : (
+        <div className='z-10 flex-col flex-auto w-screen h-screen bg-syellow'>
+          <div className='relative flex-col justify-center flex-auto h-screen '>
+            <ul className='flex pt-[7.5%] align-center justify-center'>
+              {playlists &&
+                playlists.map((playlist) => {
+                  const isActive = playlist.etag === activePlaylist
+                  // console.log('FOLDERSZ', playlists)
+                  return (
+                    <li key={playlist.etag} data-active-folder={isActive}>
+                      <button
+                        data-playlist-path={playlist.etag}
+                        className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
+                        onClick={handleOnPlaylistClick}
+                      >
+                        #{playlist.snippet.localized.title}
+                      </button>
+                    </li>
+                  )
+                })}
+            </ul>
+            {/*<div className='grid w-screen h-screen grid-cols-3 grid-rows-4 '>
              <div className='fixed top-0 left-0 w-screen'>
-              <div className='fixed left-[70px] top-28 text-base text-left text-white h-4 w-44'>FILTERS</div>
-              <div className='h-4 fixed left-[70px] top-36 text-sm text-left uppercase text-white row-start-2 w-44'>
-                #mountains
-              </div>
-              <div className='fixed left-[70px] top-44 text-sm text-left uppercase text-white h-4 row-start-2 w-44'>
+             <div className='fixed left-[70px] top-28 text-base text-left text-white h-4 w-44'>FILTERS</div>
+             <div className='h-4 fixed left-[70px] top-36 text-sm text-left uppercase text-white row-start-2 w-44'>
+             #mountains
+             </div>
+             <div className='fixed left-[70px] top-44 text-sm text-left uppercase text-white h-4 row-start-2 w-44'>
                 #portraits
-              </div>
-              <div className='fixed left-[304px] top-36 text-sm text-left uppercase text-white h-4 row-start-2 w-44'>
+                </div>
+                <div className='fixed left-[304px] top-36 text-sm text-left uppercase text-white h-4 row-start-2 w-44'>
                 #partnerships
               </div>
               <div className='fixed left-[538px] top-36 text-sm text-left uppercase text-white h-4 row-start-3 w-44'>
                 #Sherpas
-              </div>
-              <div className='fixed left-[538px] top-[177px] text-sm text-left uppercase text-white h-4 row-start-3 w-44'>
+                </div>
+                <div className='fixed left-[538px] top-[177px] text-sm text-left uppercase text-white h-4 row-start-3 w-44'>
                 #Military
-              </div>
-              <div className='fixed left-[304px] top-44 text-sm text-left uppercase text-white h-4 row-start-3 w-44'>
+                </div>
+                <div className='fixed left-[304px] top-44 text-sm text-left uppercase text-white h-4 row-start-3 w-44'>
                 #DRONE
-              </div>
-            </div>
+                </div>
+                </div>
           </div> */}
-          <div className='grid justify-center w-screen grid-cols-4 gap-4 h-3/4 left-11'>
-            {/* <Gallery
+            <div className='grid justify-center w-screen grid-cols-4 gap-4 h-3/4 left-11'>
+              {/* <Gallery
               layout='masonry'
               photos={images}
               // columns='3'
@@ -79,50 +96,51 @@ export default function MotionGallery({ motionData, folders }) {
               // width='100%'
               // renderPhoto={NextJsImage}
             /> */}
-            {videos &&
-              Array.isArray(videos) &&
-              videos.map((video) => {
-                console.log('🚀 ~ file: MotionGallery.jsx:79 ~ results:', videos)
-                return (
-                  <div key={video.id} className='flex flex-col items-center'>
-                    <Image
-                      src={video.snippet.thumbnails.medium.url}
-                      alt={video.snippet.title}
-                      width={1280}
-                      height={720}
-                    />
-                    <h5 className='text-sm font-normal text-left'>{video.snippet.title}</h5>
-                    <button
-                      className='flex font-normal text-left bg-red-500 text-icewhite'
-                      onClick={() => {
-                        setCurrentVideo(video)
-                        setPlaying(true)
-                        ScrollTop()
-                      }}
-                    >
-                      Play Now!
-                    </button>
-                  </div>
-                )
-              })}
+              {videos &&
+                Array.isArray(videos) &&
+                videos.map((video) => {
+                  // console.log('🚀 ~ file: MotionGallery.jsx:79 ~ results:', videos)
+                  return (
+                    <div key={video.etag} className='flex flex-col items-center'>
+                      <Image
+                        src={video.snippet.thumbnails.medium.url}
+                        alt={video.snippet.title}
+                        width={1280}
+                        height={720}
+                      />
+                      <h5 className='text-sm font-normal text-left'>{video.snippet.title}</h5>
+                      <button
+                        className='flex font-normal text-left bg-red-500 text-icewhite'
+                        onClick={() => {
+                          setCurrentVideo(video)
+                          setPlaying(true)
+                          toggleMotionPlayer()
+                        }}
+                      >
+                        Play Now!
+                      </button>
+                    </div>
+                  )
+                })}
+            </div>
+            <div>
+              <p>
+                <button>Load More Results</button>
+              </p>
+            </div>
           </div>
           <div>
-            <p>
-              <button>Load More Results</button>
-            </p>
+            <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
+              <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
+                SCROLL
+              </p>
+            </div>
+            <div className='inline-flex'>
+              <div className='absolute right-0 bottom-9 lg:bottom-12 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
+            </div>
           </div>
         </div>
-        <div>
-          <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-            <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
-              SCROLL
-            </p>
-          </div>
-          <div className='inline-flex'>
-            <div className='absolute right-0 bottom-9 lg:bottom-12 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
-          </div>
-        </div>
-      </div>
+      )}
     </>
   )
 }
