@@ -6,9 +6,11 @@ import { useState } from 'react'
 
 const AboutFirst = dynamic(() => import('@/components/dom/About/AboutFirst').then((mod) => mod.AboutFirst), {
   ssr: true,
+  loading: () => <p>Loading...</p>,
 })
 const AboutSecond = dynamic(() => import('@/components/dom/About/AboutSecond').then((mod) => mod.AboutSecond), {
   ssr: true,
+  loading: () => <p>Loading...</p>,
 })
 
 
@@ -23,7 +25,7 @@ export default function Page() {
   }
 
   return (
-    <div  onClick={handleClick} className='flex w-screen h-screen overflow-hidden text-icewhite bg-transparent z-40'>
+    <div  onClick={handleClick} className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
       <AnimatePresence mode='wait'>
         {!isClicked && <AboutFirst key='aboutfirst' isClicked={isClicked} handleClick={handleClick} />}
         {isClicked && <AboutSecond key='aboutsecond' isClicked={isClicked} handleClick={handleClick} />}

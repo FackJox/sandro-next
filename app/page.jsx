@@ -18,7 +18,7 @@ export default function Page() {
         className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'
       >
         <div className='grid grid-cols-3 grid-rows-2 gap-2'>
-          <div className='col-span-3'>TEST</div>
+          <div className='col-span-3'></div>
           <Link href='/portfolio/stills' className=''>
             <div className='row-start-2'>
             

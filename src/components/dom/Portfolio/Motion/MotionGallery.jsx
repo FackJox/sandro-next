@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { YouTubeVideoPlayer } from '@/components/dom/Portfolio/Gallery/Motion/MotionPlayer'
+import { YouTubeVideoPlayer } from '@/components/dom/Portfolio/Motion/MotionPlayer'
 import Image from 'next/image'
 import { useState, useEffect, Suspense } from 'react'
 
@@ -17,13 +17,12 @@ export default function MotionGallery({ motionData, folders }) {
 
   function handleOnPlaylistClick(e) {
     const playlistPath = e.target.dataset.playlistPath
-    setActiveFolder(playlistPath)
+    setActivePlaylist(playlistPath)
     setNextCursor(undefined)
   }
 
   const playlists = motionData.playlists.items
   const videos = motionData.videos.items
-
 
   return (
     <>
@@ -39,6 +38,7 @@ export default function MotionGallery({ motionData, folders }) {
                     <button
                       data-playlist-path={playlist.path}
                       className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
+                      onClick={handleOnPlaylistClick}
                     >
                       #{playlist.snippet.localized.title}
                     </button>
@@ -69,7 +69,7 @@ export default function MotionGallery({ motionData, folders }) {
               </div>
             </div>
           </div> */}
-          <div className='justify-center w-screen h-3/4 left-11 grid grid-cols-4 gap-4'>
+          <div className='grid justify-center w-screen grid-cols-4 gap-4 h-3/4 left-11'>
             {/* <Gallery
               layout='masonry'
               photos={images}
@@ -93,7 +93,7 @@ export default function MotionGallery({ motionData, folders }) {
                     />
                     <h5 className='text-sm font-normal text-left'>{video.snippet.title}</h5>
                     <button
-                      className='flex font-normal text-left text-icewhite bg-red-500'
+                      className='flex font-normal text-left bg-red-500 text-icewhite'
                       onClick={() => {
                         setCurrentVideo(video)
                         setPlaying(true)

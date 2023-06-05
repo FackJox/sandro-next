@@ -7,6 +7,9 @@ import NightSky from './NightSky'
 
 import { lerpColor, hexToRgb, rgbToHex, animateFogColor } from '@/helpers/colours'
 
+
+
+
 export default function Sky() {
   const [angleTraversed, setAngleTraversed] = useState(0)
   const sunTriggersRef = useRef(useStore.getState().canvasTriggers.sunTriggers)
@@ -25,12 +28,35 @@ export default function Sky() {
  const [localSunCycle, setLocalSunCycle] = useState(sunCycle)
  const prevSunCycleRef = useRef(null)
  const [dayNightCycle, setDayNightCycle] = useState(true)
+ const localSunCycleRef = useRef(localSunCycle)
 
- const toggleDayNightCycle = () => {
+ // Update the ref's current value whenever localSunCycle changes
+ useEffect(() => {
+   localSunCycleRef.current = localSunCycle
+ }, [localSunCycle])
+
+
+ const toggleDayNightCycle = async () => {
    setDayNightCycle((prevDayNightCycle) => !prevDayNightCycle)
-   setSunRotating((sunRotating) => !sunRotating)
-   console.log("day night status", dayNightCycle)
+
+   // Wait until localSunCycle reaches <-100
+   while (localSunCycleRef.current.y >= -100) {
+     await new Promise((resolve) => {
+       setTimeout(resolve, 750)
+     })
+   }
+
+   setSunRotating((sunRotating) => {
+     console.log("🚀 ~ file: Sky.jsx:45 ~ toggleDayNightCycle ~ sunRotating:", sunRotating)
+     return !sunRotating
+   })
+   console.log('day night status', dayNightCycle)
  }
+
+useEffect(() => {
+    console.log('showNightSky', showNightSky)
+
+}, [showNightSky])
 
  const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
 
@@ -143,7 +169,6 @@ useFrame(() => {
     if (dayNightCycle || initialSunPos.distanceTo(nextSunPos) > 1) {
       setLocalSunCycle(nextSunPos)
       setSunPosition((prevSunPosition) => {
-        console.log(nextSunPos)
         return nextSunPos.toArray()
       })
     }
@@ -197,19 +222,22 @@ useFrame(() => {
   }, [localSunCycle])
 
   useEffect(() => {
-    if (localSunCycle < -100) {
-      setShowNightSky(true)
-    } else {
-      setShowNightSky(false)
+    if (localSunCycleRef.current) {
+      if (localSunCycleRef.current.y < -100) {
+        setShowNightSky(true)
+      } else {
+        setShowNightSky(false)
+      }
     }
-  }, [localSunCycle])
+    }, [localSunCycleRef.current])
 
   return (
     <>
-    <Html>
-
-      <button onClick={toggleDayNightCycle}>Toggle Day/Night Cycle</button>
-    </Html>
+      <Html>
+        <button onClick={toggleDayNightCycle}>
+          Toggle Day/Night Cycle {localSunCycleRef.current && localSunCycleRef.current.y}
+        </button>
+      </Html>
       <directionalLight intensity={0.2} position={sunPosition} />
       <fogExp2 attach='fog' color={fogColour} density={0.0035} />
       {showNightSky && <NightSky />}

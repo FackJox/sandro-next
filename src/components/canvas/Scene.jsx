@@ -39,7 +39,7 @@ export default function Scene({ ...props }) {
 
   const canvasRef = useRef()
   return (
-    <Canvas ref={canvasRef} {...props} frameloop='demand' mode='concurrent'>
+    <Canvas ref={canvasRef} {...props} mode='concurrent'>
       {/* @ts-ignore */}
       <r3f.Out />
       {/* <Perf position={'bottom-left'} /> */}

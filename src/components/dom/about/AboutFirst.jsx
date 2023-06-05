@@ -25,7 +25,7 @@ export const AboutFirst = ({ isClicked, handleClick }) => {
       onClick={handleClick}
       className='flex-col items-center justify-center h-full text-2xl text-left align-middle font-Poppins text-icewhite'
     >
-      <div className='flex h-1/6'>test</div>
+      <div className='flex h-1/6'></div>
       <motion.div
         className='grid h-full grid-cols-3 pb-32 align-middle grid-rows-8'
         initial='initial'
