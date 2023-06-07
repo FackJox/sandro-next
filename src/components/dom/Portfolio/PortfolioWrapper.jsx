@@ -14,7 +14,7 @@ import StillsGallery from '@/components/dom/Portfolio/Stills/StillsGallery'
 
 export function PortfolioWrapper({ motionData, stillsData }) {
   console.log('🚀 ~ file: PortfolioWrapper.jsx:14 ~ PortfolioWrapper ~ stillsData:', stillsData)
-  // console.log("🚀 ~ file: PortfolioWrapper.jsx:14 ~ PortfolioWrapper ~ motionData:", motionData)
+  console.log("🚀 ~ file: PortfolioWrapper.jsx:14 ~ PortfolioWrapper ~ motionData:", motionData)
 
   const url = 'https://www.youtube.com/watch?v=3pezSYoVje8'
 

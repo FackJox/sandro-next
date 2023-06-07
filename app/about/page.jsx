@@ -3,6 +3,8 @@
 import dynamic from 'next/dynamic'
 import { AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { useEffect } from 'react'
+
 
 const AboutFirst = dynamic(() => import('@/components/dom/About/AboutFirst').then((mod) => mod.AboutFirst), {
   ssr: true,
@@ -14,7 +16,12 @@ const AboutSecond = dynamic(() => import('@/components/dom/About/AboutSecond').t
 })
 
 
+
+
+
 export default function Page() {
+  
+  
 
 
   const [isClicked, setIsClicked] = useState(false)

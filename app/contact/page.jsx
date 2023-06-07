@@ -5,8 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 const Contact = dynamic(() => import('@/components/dom/Contact').then((mod) => mod.Contact), {
   ssr: true,
 })
+import { useEffect } from 'react'
 
 export default function Page({props}) {
+  
+  
   console.log("🚀 ~ file: page.jsx:10 ~ Page ~ props:", props)
  
   return (

@@ -1,12 +1,13 @@
 'use client'
-
+import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
 export default function Page() {
-  const router = useRouter()
+
+
 
 
   return (

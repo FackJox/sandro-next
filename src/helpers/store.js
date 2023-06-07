@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { create } from 'zustand'
+import { devtools, persist } from 'zustand/middleware'
 
 export const useStore = create(
   devtools(
@@ -31,6 +31,7 @@ export const useStore = create(
       // setMotionData: (data) => set({ motionData: data }),
 
       masterTrigger: 1,
+
       resetIndexTriggersStores: () =>
         set({
           masterTrigger: 2,
@@ -44,6 +45,12 @@ export const useStore = create(
             animationTriggers: 1,
           },
         }),
+
+      setRouteTrigger: (value) => {
+        set({ domTriggers: { routeTriggers: value } })
+        console.log('route trigger set triggered', get().domTriggers.routeTriggers)
+      },
+
       incrementTextTrigger: () => {
         const currentTime = Date.now()
         const lastIncrementTime = get().lastIncrementTime
@@ -63,6 +70,7 @@ export const useStore = create(
         const currentTime = Date.now()
         const lastIncrementTime = get().lastIncrementTime
         if (currentTime - lastIncrementTime >= 500 && !isAnimationPlaying) {
+          console.log('increment master trigger triggered')
           set((state) => {
             const trigger = state.masterTrigger + 1
             return {

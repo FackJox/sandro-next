@@ -5,16 +5,52 @@ import { useRouter } from 'next/navigation'
 import { debounce } from 'lodash'
 
 import { useStore } from '@/helpers/store'
-import { handleAnimations } from '@/components/canvas/Mountains/Mountains'  
+import { handleAnimations } from '@/components/canvas/Mountains/Mountains'
 
 const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
 
 const pathnames = ['/', '/portfolio', '/about', '/contact']
 
+import { usePathname } from 'next/navigation'
+
+export const useNavigationEvent = (setRouteTrigger, navigateTo, routeTriggersRef) => {
+  const pathname = usePathname() // Get current route
+  // Save pathname on component mount into a REF
+  const pathnameRef = useRef(pathname)
+
+  useEffect(() => {
+    console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ onPathnameChange:', pathname)
+    console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ pathanemcurrent:', pathnameRef.current)
+    console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ routetrigger:', routeTriggersRef)
+    switch (pathnameRef.current) {
+      case '/portfolio':
+        setRouteTrigger(2)
+        break
+      case '/about':
+        setRouteTrigger(3)
+        break
+      case '/contact':
+        setRouteTrigger(4)
+        break
+      default:
+        break
+    }
+  }, [pathnameRef.current])
+
+  useEffect(() => {
+    if (
+      routeTriggersRef !== undefined &&
+      pathnameRef.current !== pathnames[(routeTriggersRef - 1) % pathnames.length]
+      ) {
+      console.log("🚀 ~ file: Layout.jsx:36 ~ useEffect ~ routeTriggersRef.current:", routeTriggersRef)
+      navigateTo(pathnames[(routeTriggersRef - 1) % pathnames.length])
+    }
+  }, [routeTriggersRef])
+  
+ 
+}
 
 const Layout = ({ children }) => {
-
-
   const router = useRouter()
   const ref = useRef(null)
 
@@ -22,57 +58,62 @@ const Layout = ({ children }) => {
   const routeTriggersRef = useRef(useStore.getState().domTriggers.routeTriggers)
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
 
- 
-     useEffect(() => {
-       const unsubscribe = useStore.subscribe(
-         (newState) => {
-           isAnimationPlayingRef.current = newState.isAnimationPlaying
-         },
-         (state) => state.isAnimationPlaying !== isAnimationPlayingRef.current,
-       )
-       return () => unsubscribe()
-     }, [])
+  const { setRouteTrigger } = useStore()
 
- useEffect(() => {
-   const unsubscribe = useStore.subscribe(
-     (newState) => {
-       routeTriggersRef.current = newState.domTriggers.routeTriggers
+ const navigateTo = (pathname) => {
+   router.push(pathname)
+ }
 
-       if (!isAnimationPlayingRef.current && routeTriggersRef.current !== undefined) {
-         router.push(pathnames[(routeTriggersRef.current - 1) % pathnames.length])
-        //  console.log('pathanems', pathnames[(routeTriggersRef.current - 1) % pathnames.length])
-        //  console.log('🚀 ~ file: Layout.jsx:42 ~ useEffect ~ routeTriggersRef.current:', routeTriggersRef.current)
-       }
-     },
-     (state) => state.domTriggers.routeTriggers !== routeTriggersRef.current,
-   )
-   return () => unsubscribe()
- }, [])
 
-const handleWheel = useCallback(
-  debounce(
-    () => {
-      console.log('WHEELYY', routeTriggersRef.current)
-      incrementMasterTrigger()
+  useNavigationEvent(setRouteTrigger, navigateTo, routeTriggersRef.current)
 
-    },
-    500,
-    { leading: true, trailing: false },
-  ),
-  [routeTriggersRef.current, isAnimationPlayingRef.current],
-)
+  useEffect(() => {
+    const unsubscribe = useStore.subscribe(
+      (newState) => {
+        isAnimationPlayingRef.current = newState.isAnimationPlaying
+      },
+      (state) => state.isAnimationPlaying !== isAnimationPlayingRef.current,
+    )
+    return () => unsubscribe()
+  }, [])
 
-    useEffect(() => {
-      let refVar = ref.current
-      ref.current.addEventListener('wheel', handleWheel)
-      return () => refVar.removeEventListener('wheel', handleWheel)
-    }, [handleWheel])
+  useEffect(() => {
+    const unsubscribe = useStore.subscribe(
+      (newState) => {
+        routeTriggersRef.current = newState.domTriggers.routeTriggers
 
-// useEffect(() => {
-//   console.log('🚀 ~ file: Layout.jsx:54 ~ Layout ~ isAnimationPlayingRef.current:', isAnimationPlayingRef.current)
-// }, [isAnimationPlayingRef.current])
-    
+        // if (!isAnimationPlayingRef.current && routeTriggersRef.current !== undefined) {
+        //   router.push(pathnames[(routeTriggersRef.current - 1) % pathnames.length])
+        //   //  console.log('pathanems', pathnames[(routeTriggersRef.current - 1) % pathnames.length])
+        //    console.log('🚀 ~ file: Layout.jsx:42 ~ useEffect ~ routeTriggersRef.current:', routeTriggersRef.current)
+        // }
+      },
+      (state) => state.domTriggers.routeTriggers !== routeTriggersRef.current,
+    )
+    return () => unsubscribe()
+  }, [])
 
+  const handleWheel = useCallback(
+    debounce(
+      () => {
+        console.log('WHEELYY', routeTriggersRef.current)
+        incrementMasterTrigger()
+      },
+      500,
+      { leading: true, trailing: false },
+    ),
+    [routeTriggersRef.current, isAnimationPlayingRef.current],
+  )
+
+  useEffect(() => {
+    let refVar = ref.current
+    ref.current.addEventListener('wheel', handleWheel)
+    return () => refVar.removeEventListener('wheel', handleWheel)
+  }, [handleWheel])
+
+  // useEffect(() => {
+  //   console.log('🚀 ~ file: Layout.jsx:54 ~ Layout ~ isAnimationPlayingRef.current:', isAnimationPlayingRef.current)
+  // }, [isAnimationPlayingRef.current])
 
   return (
     <div

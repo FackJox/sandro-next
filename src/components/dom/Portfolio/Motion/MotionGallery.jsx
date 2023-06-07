@@ -63,39 +63,9 @@ export default function MotionGallery({ motionData, folders }) {
                   )
                 })}
             </ul>
-            {/*<div className='grid w-screen h-screen grid-cols-3 grid-rows-4 '>
-             <div className='fixed top-0 left-0 w-screen'>
-             <div className='fixed left-[70px] top-28 text-base text-left text-white h-4 w-44'>FILTERS</div>
-             <div className='h-4 fixed left-[70px] top-36 text-sm text-left uppercase text-white row-start-2 w-44'>
-             #mountains
-             </div>
-             <div className='fixed left-[70px] top-44 text-sm text-left uppercase text-white h-4 row-start-2 w-44'>
-                #portraits
-                </div>
-                <div className='fixed left-[304px] top-36 text-sm text-left uppercase text-white h-4 row-start-2 w-44'>
-                #partnerships
-              </div>
-              <div className='fixed left-[538px] top-36 text-sm text-left uppercase text-white h-4 row-start-3 w-44'>
-                #Sherpas
-                </div>
-                <div className='fixed left-[538px] top-[177px] text-sm text-left uppercase text-white h-4 row-start-3 w-44'>
-                #Military
-                </div>
-                <div className='fixed left-[304px] top-44 text-sm text-left uppercase text-white h-4 row-start-3 w-44'>
-                #DRONE
-                </div>
-                </div>
-          </div> */}
+           
             <div className='grid justify-center w-screen grid-cols-4 gap-4 h-3/4 left-11'>
-              {/* <Gallery
-              layout='masonry'
-              photos={images}
-              // columns='3'
-              // padding='18'
-              // spacing='0'
-              // width='100%'
-              // renderPhoto={NextJsImage}
-            /> */}
+           
               {videos &&
                 Array.isArray(videos) &&
                 videos.map((video) => {
