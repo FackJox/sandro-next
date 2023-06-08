@@ -40,17 +40,6 @@ async function getYoutubeData() {
   return { videos: dataAllVideos, playlists: dataPlaylists, plVideos: dataPLVideos }
 }
 
-export async function getServerSideProps(context) {
-  const { req } = context
-  const { url } = req
-
-  console.log('Navigated to:', url)
-  // Your function to be triggered when the route is requested
-
-  return {
-    props: {}, // Will be passed to the page component as props
-  }
-}
 
 export default async function Page() {
   
