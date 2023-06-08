@@ -30,15 +30,15 @@ export const useNavigationEvent = (setRouteTrigger, navigateTo) => {
 
 
   useEffect(() => {
-    console.log('🚀 ~ file: Layout.jsx:19 ~ useNavigationEvent ~ pathname:', pathname)
-    console.log('🚀 ~ file: Layout.jsx:19 ~ useNavigationEvent ~ pathanemcurrent:', pathnameRef.current)
+    // console.log('🚀 ~ file: Layout.jsx:19 ~ useNavigationEvent ~ pathname:', pathname)
+    // console.log('🚀 ~ file: Layout.jsx:19 ~ useNavigationEvent ~ pathanemcurrent:', pathnameRef.current)
   }, [pathnameRef.current])
 
 
   useEffect(() => {
-    console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ onPathnameChange:', pathname)
-    console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ pathanemcurrent:', pathnameRef.current)
-    console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ routetrigger:', routeTriggersRef)
+    // console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ onPathnameChange:', pathname)
+    // console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ pathanemcurrent:', pathnameRef.current)
+    // console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ routetrigger:', routeTriggersRef)
     switch (pathnameRef.current) {
       case '/portfolio':
         setRouteTrigger(2)
@@ -55,8 +55,8 @@ export const useNavigationEvent = (setRouteTrigger, navigateTo) => {
   }, [pathnameRef.current])
 
   const setRouteTriggerAndNavigate = async (routeTriggerValue, pathname) => {
-    console.log('🚀 ~ file: Layout.jsx:41 ~ setRouteTriggerAndNavigate ~ pathname:', pathname)
-    console.log('🚀 ~ file: Layout.jsx:41 ~ setRouteTriggerAndNavigate ~ routeTriggerValue:', routeTriggerValue)
+    // console.log('🚀 ~ file: Layout.jsx:41 ~ setRouteTriggerAndNavigate ~ pathname:', pathname)
+    // console.log('🚀 ~ file: Layout.jsx:41 ~ setRouteTriggerAndNavigate ~ routeTriggerValue:', routeTriggerValue)
     await setRouteTrigger(routeTriggerValue)
     navigateTo(pathname)
   }
@@ -67,7 +67,7 @@ export const useNavigationEvent = (setRouteTrigger, navigateTo) => {
       pathnameRef.current !== pathnames[(routeTriggersRef.current - 1) % pathnames.length]
     ) {
       const newPathname = pathnames[(routeTriggersRef.current - 1) % pathnames.length]
-      console.log('🚀 ~ file: Layout.jsx:54 ~ useEffect ~ routeTriggersRef:', routeTriggersRef.current)
+      // console.log('🚀 ~ file: Layout.jsx:54 ~ useEffect ~ routeTriggersRef:', routeTriggersRef.current)
       setRouteTriggerAndNavigate(routeTriggersRef.current, newPathname)
     }
   }, [routeTriggersRef.current])

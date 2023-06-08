@@ -52,7 +52,7 @@ export const useStore = create(
         if (currentTime - lastIncrementTime >= 500) 
         return new Promise((resolve) => {
           set({ domTriggers: { routeTriggers: value } })
-          console.log('route trigger set triggered', get().domTriggers.routeTriggers)
+          // console.log('route trigger set triggered', get().domTriggers.routeTriggers)
           resolve()
         })
       },

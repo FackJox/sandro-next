@@ -8,109 +8,104 @@ const ScrollTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-export default function MotionGallery({ motionData, folders }) {
-  console.log('🚀 ~ file: MotionGallery.jsx:11 ~ motionData:', motionData)
+export default function MotionGallery(props) {
+  const {
+    playlists,
+    videos,
+    currentVideo,
+    setCurrentVideo,
+    prevVideo,
+    setPrevVideo,
+    setPlaying,
+    nextVideo,
+    setNextVideo,
+    currentIndex,
+    setCurrentIndex,
+    toggleMotionPlayer,
+  } = props
 
-  const [currentVideo, setCurrentVideo] = useState(motionData.videos.items[0])
-  const [playing, setPlaying] = useState(false)
   const [activePlaylist, setActivePlaylist] = useState()
-
-  const [motionPlayerVisible, setMotionPlayerVisible] = useState(false)
 
   function handleOnPlaylistClick(e) {
     const playlistPath = e.target.dataset.playlistPath
     setActivePlaylist(playlistPath)
   }
 
-  const toggleMotionPlayer = () => {
-    setMotionPlayerVisible(!motionPlayerVisible)
-  }
-
-
-   
-  const playlists = motionData.playlists.items
-  const videos = motionData.videos.items
-
   return (
     <>
-      {motionPlayerVisible ? (
-        <div className='fixed z-50 flex items-center justify-center w-screen h-screen bg-black bg-opacity/50'>
-          <div className='relative bg-white'>
-            <button className='absolute top-0 right-0 p-2' onClick={!motionPlayerVisible}>
-              Close
-            </button>
-            <MotionPlayer currentVideo={currentVideo} playing={playing} />
-          </div>
-        </div>
-      ) : (
-        <div className='z-10 flex-col flex-auto w-screen h-screen bg-syellow'>
-          <div className='relative flex-col justify-center flex-auto h-screen '>
-            <ul className='flex pt-[7.5%] align-center justify-center'>
-              {playlists &&
-                playlists.map((playlist) => {
-                  const isActive = playlist.etag === activePlaylist
-                  // console.log('FOLDERSZ', playlists)
-                  return (
-                    <li key={playlist.etag} data-active-folder={isActive}>
-                      <button
-                        data-playlist-path={playlist.etag}
-                        className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
-                        onClick={handleOnPlaylistClick}
-                      >
-                        #{playlist.snippet.localized.title}
-                      </button>
-                    </li>
-                  )
-                })}
-            </ul>
-           
-            <div className='grid justify-center w-screen grid-cols-4 gap-4 h-3/4 left-11'>
-           
-              {videos &&
-                Array.isArray(videos) &&
-                videos.map((video) => {
-                  // console.log('🚀 ~ file: MotionGallery.jsx:79 ~ results:', videos)
-                  return (
-                    <div key={video.etag} className='flex flex-col items-center'>
-                      <Image
-                        src={video.snippet.thumbnails.medium.url}
-                        alt={video.snippet.title}
-                        width={1280}
-                        height={720}
-                      />
-                      <h5 className='text-sm font-normal text-left'>{video.snippet.title}</h5>
-                      <button
-                        className='flex font-normal text-left bg-red-500 text-icewhite'
-                        onClick={() => {
-                          setCurrentVideo(video)
-                          setPlaying(true)
-                          toggleMotionPlayer()
-                        }}
-                      >
-                        Play Now!
-                      </button>
-                    </div>
-                  )
-                })}
-            </div>
-            <div>
-              <p>
-                <button>Load More Results</button>
-              </p>
-            </div>
+      <div className='z-10 flex-col flex-auto w-screen h-screen bg-syellow'>
+        <div className='relative flex-col justify-center flex-auto h-screen '>
+          <ul className='flex pt-[7.5%] align-center justify-center'>
+            {playlists &&
+              playlists.map((playlist) => {
+                const isActive = playlist.etag === activePlaylist
+                // console.log('FOLDERSZ', playlists)
+                return (
+                  <li key={playlist.etag} data-active-folder={isActive}>
+                    <button
+                      data-playlist-path={playlist.etag}
+                      className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
+                      onClick={handleOnPlaylistClick}
+                    >
+                      #{playlist.snippet.localized.title}{' '}
+                    </button>
+                  </li>
+                )
+              })}
+          </ul>
+
+          <div className='grid justify-center w-screen grid-cols-4 gap-4 h-3/4 left-11'>
+            {videos &&
+              Array.isArray(videos) &&
+              videos.map((video, index) => {
+                // console.log('🚀 ~ file: MotionGallery.jsx:79 ~ results:', videos)
+                return (
+                  <div key={video.etag} className='flex flex-col items-center'>
+                    <Image
+                      src={video.snippet.thumbnails.medium.url}
+                      alt={video.snippet.title}
+                      width={1280}
+                      height={720}
+                    />
+                    <h5 className='text-sm font-normal text-left'>{video.snippet.title}</h5>
+                    <button
+                      className='flex font-normal text-left bg-red-500 text-icewhite'
+                      onClick={() => {
+                        setCurrentVideo(video)
+                        const prevIndex = index === 0 ? videos.length - 1 : index - 1
+                        const nextIndex = index === videos.length - 1 ? 0 : index + 1
+
+                        setPrevVideo(videos[prevIndex])
+                        setNextVideo(videos[nextIndex])
+
+                        setCurrentIndex(index)
+                        setPlaying(true)
+                        toggleMotionPlayer()
+                      }}
+                    >
+                      Play Now!
+                    </button>
+                  </div>
+                )
+              })}
           </div>
           <div>
-            <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-              <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
-                SCROLL
-              </p>
-            </div>
-            <div className='inline-flex'>
-              <div className='absolute right-0 bottom-9 lg:bottom-12 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
-            </div>
+            <p>
+              <button>Load More Results</button>
+            </p>
           </div>
         </div>
-      )}
+        <div>
+          <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
+            <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
+              SCROLL
+            </p>
+          </div>
+          <div className='inline-flex'>
+            <div className='absolute right-0 bottom-9 lg:bottom-12 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
+          </div>
+        </div>
+      </div>
     </>
   )
 }
