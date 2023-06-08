@@ -13,10 +13,27 @@ const pathnames = ['/', '/portfolio', '/about', '/contact']
 
 import { usePathname } from 'next/navigation'
 
-export const useNavigationEvent = (setRouteTrigger, navigateTo, routeTriggersRef) => {
+export const useNavigationEvent = (setRouteTrigger, navigateTo) => {
   const pathname = usePathname() // Get current route
-  // Save pathname on component mount into a REF
   const pathnameRef = useRef(pathname)
+  const routeTriggersRef = useRef(useStore.getState().domTriggers.routeTriggers)
+
+  useEffect(() => {
+    const unsubscribe = useStore.subscribe(
+      (newState) => {
+        routeTriggersRef.current = newState.domTriggers.routeTriggers
+      },
+      (state) => state.domTriggers.routeTriggers !== routeTriggersRef.current,
+    )
+    return () => unsubscribe()
+  }, [])
+
+
+  useEffect(() => {
+    console.log('🚀 ~ file: Layout.jsx:19 ~ useNavigationEvent ~ pathname:', pathname)
+    console.log('🚀 ~ file: Layout.jsx:19 ~ useNavigationEvent ~ pathanemcurrent:', pathnameRef.current)
+  }, [pathnameRef.current])
+
 
   useEffect(() => {
     console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ onPathnameChange:', pathname)
@@ -37,17 +54,23 @@ export const useNavigationEvent = (setRouteTrigger, navigateTo, routeTriggersRef
     }
   }, [pathnameRef.current])
 
+  const setRouteTriggerAndNavigate = async (routeTriggerValue, pathname) => {
+    console.log('🚀 ~ file: Layout.jsx:41 ~ setRouteTriggerAndNavigate ~ pathname:', pathname)
+    console.log('🚀 ~ file: Layout.jsx:41 ~ setRouteTriggerAndNavigate ~ routeTriggerValue:', routeTriggerValue)
+    await setRouteTrigger(routeTriggerValue)
+    navigateTo(pathname)
+  }
+
   useEffect(() => {
     if (
-      routeTriggersRef !== undefined &&
-      pathnameRef.current !== pathnames[(routeTriggersRef - 1) % pathnames.length]
-      ) {
-      console.log("🚀 ~ file: Layout.jsx:36 ~ useEffect ~ routeTriggersRef.current:", routeTriggersRef)
-      navigateTo(pathnames[(routeTriggersRef - 1) % pathnames.length])
+      routeTriggersRef.current !== undefined &&
+      pathnameRef.current !== pathnames[(routeTriggersRef.current - 1) % pathnames.length]
+    ) {
+      const newPathname = pathnames[(routeTriggersRef.current - 1) % pathnames.length]
+      console.log('🚀 ~ file: Layout.jsx:54 ~ useEffect ~ routeTriggersRef:', routeTriggersRef.current)
+      setRouteTriggerAndNavigate(routeTriggersRef.current, newPathname)
     }
-  }, [routeTriggersRef])
-  
- 
+  }, [routeTriggersRef.current])
 }
 
 const Layout = ({ children }) => {
@@ -55,17 +78,16 @@ const Layout = ({ children }) => {
   const ref = useRef(null)
 
   const incrementMasterTrigger = useStore((state) => state.incrementMasterTrigger)
-  const routeTriggersRef = useRef(useStore.getState().domTriggers.routeTriggers)
+
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
 
   const { setRouteTrigger } = useStore()
 
- const navigateTo = (pathname) => {
-   router.push(pathname)
- }
+  const navigateTo = (pathname) => {
+    router.push(pathname)
+  }
 
-
-  useNavigationEvent(setRouteTrigger, navigateTo, routeTriggersRef.current)
+  useNavigationEvent(setRouteTrigger, navigateTo)
 
   useEffect(() => {
     const unsubscribe = useStore.subscribe(
@@ -77,32 +99,15 @@ const Layout = ({ children }) => {
     return () => unsubscribe()
   }, [])
 
-  useEffect(() => {
-    const unsubscribe = useStore.subscribe(
-      (newState) => {
-        routeTriggersRef.current = newState.domTriggers.routeTriggers
-
-        // if (!isAnimationPlayingRef.current && routeTriggersRef.current !== undefined) {
-        //   router.push(pathnames[(routeTriggersRef.current - 1) % pathnames.length])
-        //   //  console.log('pathanems', pathnames[(routeTriggersRef.current - 1) % pathnames.length])
-        //    console.log('🚀 ~ file: Layout.jsx:42 ~ useEffect ~ routeTriggersRef.current:', routeTriggersRef.current)
-        // }
-      },
-      (state) => state.domTriggers.routeTriggers !== routeTriggersRef.current,
-    )
-    return () => unsubscribe()
-  }, [])
-
   const handleWheel = useCallback(
     debounce(
       () => {
-        console.log('WHEELYY', routeTriggersRef.current)
         incrementMasterTrigger()
       },
       500,
       { leading: true, trailing: false },
     ),
-    [routeTriggersRef.current, isAnimationPlayingRef.current],
+    [isAnimationPlayingRef.current],
   )
 
   useEffect(() => {

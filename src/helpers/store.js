@@ -47,8 +47,14 @@ export const useStore = create(
         }),
 
       setRouteTrigger: (value) => {
-        set({ domTriggers: { routeTriggers: value } })
-        console.log('route trigger set triggered', get().domTriggers.routeTriggers)
+        const currentTime = Date.now()
+        const lastIncrementTime = get().lastIncrementTime
+        if (currentTime - lastIncrementTime >= 500) 
+        return new Promise((resolve) => {
+          set({ domTriggers: { routeTriggers: value } })
+          console.log('route trigger set triggered', get().domTriggers.routeTriggers)
+          resolve()
+        })
       },
 
       incrementTextTrigger: () => {
