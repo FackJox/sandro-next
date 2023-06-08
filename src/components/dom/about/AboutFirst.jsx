@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 
 
-export default function AboutFirst({ isClicked, handleClick }) {
+export function AboutFirst({ isClicked, handleClick }) {
   const gridVariants = {
     initial: { opacity: 0, y: 100 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },

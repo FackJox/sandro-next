@@ -10,7 +10,7 @@ import { useEffect } from 'react'
 export default function Page({props}) {
   
   
-  console.log("🚀 ~ file: page.jsx:10 ~ Page ~ props:", props)
+  // console.log("🚀 ~ file: page.jsx:10 ~ Page ~ props:", props)
  
   return (
     <AnimatePresence>

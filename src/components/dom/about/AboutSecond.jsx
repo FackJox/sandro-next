@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { useEffect } from 'react'
 import Image from 'next/image'
 
-export default function AboutSecond ({ isClicked, handleClick }) {
+export function AboutSecond ({ isClicked, handleClick }) {
   const gridVariants = {
     initial: { opacity: 0, y: 100 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },

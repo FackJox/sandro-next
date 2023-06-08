@@ -16,8 +16,8 @@ import { useEffect } from 'react'
 // })
 
 
-import AboutFirst from '@/components/dom/About/AboutFirst'
-import AboutSecond from '@/components/dom/About/AboutSecond'
+import { AboutFirst } from '@/components/dom/About/AboutFirst'
+import { AboutSecond } from '@/components/dom/About/AboutSecond'
 
 export default function Page() {
   
