@@ -15,8 +15,7 @@ import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
 import StillsGallery from '@/components/dom/Portfolio/Stills/StillsGallery'
 
 export function PortfolioWrapper({ motionData, stillsData }) {
-  // console.log('🚀 ~ file: PortfolioWrapper.jsx:14 ~ PortfolioWrapper ~ stillsData:', stillsData)
-  // console.log('🚀 ~ file: PortfolioWrapper.jsx:14 ~ PortfolioWrapper ~ motionData:', motionData)
+
   const [currentVideo, setCurrentVideo] = useState(motionData.videos.items[0])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [prevVideo, setPrevVideo] = useState(motionData.videos.items[0])

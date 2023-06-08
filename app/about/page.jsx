@@ -6,11 +6,11 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 
 
-const AboutFirst = dynamic(() => import('@/components/dom/About/AboutFirst').then((mod) => mod.AboutFirst), {
+const AboutFirst = dynamic(() => import('@/components/dom/About/AboutFirst'), {
   ssr: true,
   loading: () => <p>Loading...</p>,
 })
-const AboutSecond = dynamic(() => import('@/components/dom/About/AboutSecond').then((mod) => mod.AboutSecond), {
+const AboutSecond = dynamic(() => import('@/components/dom/About/AboutSecond'), {
   ssr: true,
   loading: () => <p>Loading...</p>,
 })

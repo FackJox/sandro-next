@@ -33,7 +33,7 @@ export default function MotionPlayer(props) {
 
   return (
     <div className='grid w-screen h-screen grid-cols-4 grid-rows-6 gap-4'>
-      <div className='col-start-1 row-start-3'>
+      <div className='col-start-1 row-start-3 cursor-pointer'>
         <Image
           src={prevVideo.snippet.thumbnails.medium.url}
           alt={prevVideo.snippet.title}
@@ -53,7 +53,7 @@ export default function MotionPlayer(props) {
           }}
         />
       </div>
-      <div className='col-start-4 row-start-3'>
+      <div className='col-start-4 row-start-3 cursor-pointer'>
         <Image
           src={nextVideo.snippet.thumbnails.medium.url}
           alt={nextVideo.snippet.title}
