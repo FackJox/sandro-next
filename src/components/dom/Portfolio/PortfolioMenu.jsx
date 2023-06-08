@@ -1,7 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
-export function PortfolioMenu() {
+
+export default function PortfolioMenu() {
   const [isHovering, setIsHovering] = useState({ motion: false, stills: false })
 
   const handleMouseOver = (element) => {

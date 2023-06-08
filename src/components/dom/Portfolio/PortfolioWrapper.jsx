@@ -3,13 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 
-const PortfolioMenu = dynamic(
-  () => import('@/components/dom/portfolio/PortfolioMenu').then((mod) => mod.PortfolioMenu),
-  {
-    ssr: false,
-    loading: () => <p>Loading...</p>,
-  },
-)
+// const PortfolioMenu = dynamic(
+//   () => import('@/components/dom/portfolio/PortfolioMenu').then((mod) => mod.PortfolioMenu),
+//   {
+//     ssr: false,
+//     loading: () => <p>Loading...</p>,
+//   },
+// )
+import PortfolioMenu from './PortfolioMenu'
 import MotionGallery from '@/components/dom/Portfolio/Motion/MotionGallery'
 import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
 import StillsGallery from '@/components/dom/Portfolio/Stills/StillsGallery'
