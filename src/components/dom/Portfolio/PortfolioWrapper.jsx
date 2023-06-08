@@ -6,7 +6,7 @@ import { useState } from 'react'
 const PortfolioMenu = dynamic(
   () => import('@/components/dom/portfolio/PortfolioMenu').then((mod) => mod.PortfolioMenu),
   {
-    ssr: true,
+    ssr: false,
     loading: () => <p>Loading...</p>,
   },
 )
