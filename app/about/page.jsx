@@ -7,11 +7,11 @@ import { useEffect } from 'react'
 
 
 const AboutFirst = dynamic(() => import('@/components/dom/About/AboutFirst'), {
-  ssr: true,
+  ssr: false,
   loading: () => <p>Loading...</p>,
 })
 const AboutSecond = dynamic(() => import('@/components/dom/About/AboutSecond'), {
-  ssr: true,
+  ssr: false,
   loading: () => <p>Loading...</p>,
 })
 

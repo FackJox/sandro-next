@@ -76,7 +76,7 @@ export const useStore = create(
         const currentTime = Date.now()
         const lastIncrementTime = get().lastIncrementTime
         if (currentTime - lastIncrementTime >= 500 && !isAnimationPlaying) {
-          console.log('increment master trigger triggered')
+          // console.log('increment master trigger triggered')
           set((state) => {
             const trigger = state.masterTrigger + 1
             return {
