@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 
 
-const AboutFirst = ({ isClicked, handleClick }) => {
+function AboutFirst ({ isClicked, handleClick })  {
 
   
   const gridVariants = {
