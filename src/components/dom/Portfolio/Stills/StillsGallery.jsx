@@ -6,27 +6,16 @@ import { useState, useEffect, Suspense } from 'react'
 import Image from 'next/image'
 
 export default function StillsGallery(props) {
-  const { images, folders, handleOnFolderClick, activeFolder, setIndex, totalCount, handleOnLoadMore } = props
+  const { images, folders, handleOnFolderClick, activeFolder, setIndex, totalCount, handleOnLoadMore, imageProps } = props
 
   console.log('🚀 ~ file: StillsGallery.jsx:27 ~ StillsGallery ~ images:', images)
 
   console.log('🚀 ~ file: StillsGallery.jsx:30 ~ StillsGallery ~ folders:', folders)
 
   const NextJsImage = ({ imageProps: { src, alt, title, sizes, className, onClick }, wrapperStyle }) => (
-    <div style={wrapperStyle}>
+    <div style={wrapperStyle} onClick={onClick}>
       <div style={{ display: 'block', position: 'relative', width: '100%', height: '100%' }}>
-        <Image
-          fill
-          src={src}
-          alt={alt}
-          title={title}
-          sizes={sizes}
-          className={className}
-          onClick={({ index }) => {
-            console.log('CLICKBABS')
-            setIndex(index)
-          }}
-        />
+        <Image fill src={src} alt={alt} title={title} sizes={sizes} className={className} />
       </div>
     </div>
   )
