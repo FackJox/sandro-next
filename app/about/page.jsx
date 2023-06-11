@@ -33,10 +33,12 @@ export default function Page() {
 
   return (
     <div  onClick={handleClick} className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
-      <AnimatePresence mode='wait'>
+      {/* <AnimatePresence mode='wait'>
         {!isClicked && <AboutFirst key='aboutfirst' isClicked={isClicked} handleClick={handleClick} />}
         {isClicked && <AboutSecond key='aboutsecond' isClicked={isClicked} handleClick={handleClick} />}
-      </AnimatePresence>
+      </AnimatePresence> */}
+      <AboutFirst />
+      <AboutSecond />
     </div>
   )
 }
