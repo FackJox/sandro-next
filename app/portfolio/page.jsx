@@ -10,11 +10,13 @@ async function getStillsData() {
   })
 
   const { resources, next_cursor: nextCursor, total_count: totalCount } = results
-  const images = mapImageResources(resources)
-  
+
+  const images = resources ? mapImageResources(resources) : []
+
   const { folders } = await getFolders()
   return { images, folders }
 }
+
 
 async function getYoutubeData() {
   const YT_PLAYLIST_ID = process.env.YT_PLAYLIST_ID
