@@ -2,109 +2,36 @@
 import React from 'react'
 import Gallery from 'react-photo-album'
 // import photos from '../../helpers/photos'
-import { useState, useEffect, Suspense } from "react";
-import Image from "next/image";
-import PhotoAlbum from "react-photo-album";
+import { useState, useEffect, Suspense } from 'react'
+import Image from 'next/image'
 
-import { mapImageResources } from "@/helpers/cloudinary";
+export default function StillsGallery(props) {
+  const { images, folders, handleOnFolderClick, activeFolder, setIndex, totalCount, handleOnLoadMore } = props
 
+  console.log('🚀 ~ file: StillsGallery.jsx:27 ~ StillsGallery ~ images:', images)
 
+  console.log('🚀 ~ file: StillsGallery.jsx:30 ~ StillsGallery ~ folders:', folders)
 
-
-
-export default function StillsGallery({
-	images: defaultImages,
-	nextCursor: defaultNextCursor,
-	totalCount: defaultTotalCount,
-	folders: defaultFolders,
-}) {
-const [images, setImages] = useState(defaultImages || [])
-const [folders, setFolders] = useState([])
-	const [nextCursor, setNextCursor] = useState(defaultNextCursor);
-	const [totalCount, setTotalCount] = useState(defaultTotalCount);
-	const [activeFolder, setActiveFolder] = useState();
-  
-
-	console.log("images in ImageGallery", images);
-	console.log("activeFolder in ImageGallery", activeFolder);
-	console.log("folders in ImageGallery", folders);
-
-	async function handleOnLoadMore(e) {
-		e.preventDefault();
-
-		const results = await fetch(' /api', {
-      method: 'POST',
-      body: JSON.stringify({
-        expression: `folder=""`,
-        nextCursor,
-      }),
-    }).then((r) => r.json())
-
-		const {
-			resources,
-			next_cursor: nextPageCursor,
-			total_count: updatedTotalCount,
-      folders
-		} = results;
-
-		const images = mapImageResources(resources);
-
-		setImages((prev) => {
-			return [...prev, ...images];
-		});
-		setNextCursor(nextPageCursor);
-		setTotalCount(updatedTotalCount);
-	}
-
-	function handleOnFolderClick(e) {
-		const folderPath = e.target.dataset.folderPath;
-		setActiveFolder(folderPath);
-		setNextCursor(undefined);
-		setImages([]);
-		setTotalCount(0);
-	}
-
-	useEffect(() => {
-		(async function run() {
-			const results = await fetch('/api'  , {
-        method: 'POST',
-        body: JSON.stringify({
-          expression: `folder="${activeFolder || ''}"`,
-        }),
-      }).then((r) => r.json())
-
-			const {
-				resources,
-				next_cursor: nextPageCursor,
-				total_count: updatedTotalCount,
-        folders
-			} = results;
-			console.log("🚀 ~ file: StillsGallery.jsx:89 ~ run ~ folders:", folders)
-
-			const images = mapImageResources(resources);
-      setFolders(folders)
-			setImages(images);
-			setNextCursor(nextPageCursor);
-			setTotalCount(updatedTotalCount);
-		})();
-	}, [activeFolder]);
-  console.log("imagesin ImageGallery", images)
-
-  console.log("folders", folders)
-  const NextJsImage = ({
-    imageProps: { src, alt, title, sizes, className, onClick },
-    wrapperStyle,
-  }) => (
+  const NextJsImage = ({ imageProps: { src, alt, title, sizes, className, onClick }, wrapperStyle }) => (
     <div style={wrapperStyle}>
-        <div style={{ display: "block", position: "relative", width: "100%", height: "100%" }}>
-            <Image fill src={src} alt={alt} title={title} sizes={sizes} className={className} onClick={onClick} />
-        </div>
+      <div style={{ display: 'block', position: 'relative', width: '100%', height: '100%' }}>
+        <Image
+          fill
+          src={src}
+          alt={alt}
+          title={title}
+          sizes={sizes}
+          className={className}
+          onClick={({ index }) => {
+            console.log('CLICKBABS')
+            setIndex(index)
+          }}
+        />
+      </div>
     </div>
-  );
-  
+  )
 
-  
-	return (
+  return (
     <>
       <div className='z-10 flex-col flex-auto w-screen h-screen bg-syellow'>
         <div className='relative flex-col justify-center flex-auto align-center h-screen'>
@@ -157,6 +84,10 @@ const [folders, setFolders] = useState([])
               // spacing='0'
               // width='100%'
               // renderPhoto={NextJsImage}
+              onClick={({ index }) => {
+                console.log('CLICKBABS')
+                setIndex(index)
+              }}
             />
           </div>
           <div>
@@ -181,5 +112,3 @@ const [folders, setFolders] = useState([])
     </>
   )
 }
- 
-
