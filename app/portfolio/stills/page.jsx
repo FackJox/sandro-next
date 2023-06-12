@@ -1,6 +1,5 @@
 import { search, mapImageResources, getFolders } from '@/helpers/cloudinary'
 
-import { PortfolioWrapper } from '@/components/dom/Portfolio/PortfolioWrapper'
 import { useStore } from '@/helpers/store'
 import { StillsWrapper } from '@/components/dom/Portfolio/Stills/StillsWrapper'
 

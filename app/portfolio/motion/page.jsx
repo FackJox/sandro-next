@@ -1,5 +1,4 @@
 import { search, mapImageResources, getFolders } from '@/helpers/cloudinary'
-import { PortfolioWrapper } from '@/components/dom/Portfolio/PortfolioWrapper'
 import { useStore } from '@/helpers/store'
 import { MotionWrapper } from '@/components/dom/Portfolio/Motion/MotionWrapper'
 
