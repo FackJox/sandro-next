@@ -1,17 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
 import { useFrame, useThree } from '@react-three/fiber'
-import {
-  useGLTF,
-  PerspectiveCamera,
-  useAnimations,
-  CameraShake,
-  OrbitControls,
-} from '@react-three/drei'
-
+import { useGLTF, PerspectiveCamera, useAnimations, CameraShake, OrbitControls } from '@react-three/drei'
+import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 import { useStore } from '@/helpers/store'
 
 function Rig({ finalPosition, finalRotation, camera }) {
+  console.log("🚀 ~ file: Mountains.jsx:9 ~ Rig ~ camera:", camera)
+  console.log("🚀 ~ file: Mountains.jsx:9 ~ Rig ~ finalRotation:", finalRotation)
+  console.log("🚀 ~ file: Mountains.jsx:9 ~ Rig ~ finalPosition:", finalPosition)
   useEffect(() => {
     camera.position.copy(finalPosition)
     camera.rotation.copy(finalRotation)
@@ -38,39 +35,28 @@ function Rig({ finalPosition, finalRotation, camera }) {
 }
 
 export default function Mountains(props) {
-  const {
-    initialized,
-    isLoading,
-    setIsLoading,
-    setIsInitialized,
-    setWireMesh,
-    incrementMasterTrigger,
-    incrementTextTrigger,
-    resetIndexTriggersStores,
-    setIsAnimationPlaying,
-  } = useStore()
-  const [localIsAnimationPlaying, setLocalIsAnimationPlaying] = useState(true)
-  const localIsAnimationPlayingRef = useRef(localIsAnimationPlaying)
-  const [finalPosition, setFinalPosition] = useState()
-  const [finalRotation, setFinalRotation] = useState()
-
   const group = useRef()
   const CameraActionRef = useRef()
+  const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
+  const animationTriggersRef = useRef(useStore.getState().canvasTriggers.animationTriggers)
+
   const FirstPersonControlsRef = useRef()
   const [renderTrigger, setRenderTrigger] = useState(0)
 
   const { nodes, materials, animations } = useGLTF('/models/mountains.glb', true)
   const { mixer, actions } = useAnimations(animations, group)
 
-  const animationTriggersRef = useRef(useStore.getState().canvasTriggers.animationTriggers)
-  const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
+  const [finalPosition, setFinalPosition] = useState()
+  const [finalRotation, setFinalRotation] = useState()
 
+  const onAnimationFinished = () => {
+    setLocalIsAnimationPlaying(false)
 
-  useEffect(() => {
-    if (mixer) {
-      mixer.timeScale = 1.5
-    }
-  }, [mixer])
+    setFinalPosition(CameraActionRef.current.position.clone())
+    setFinalRotation(CameraActionRef.current.rotation.clone())
+  }
+  
+  usePlayAnimations(mixer, actions, onAnimationFinished)
 
   useEffect(() => {
     const unsubscribeAnimTriggers = useStore.subscribe(
@@ -95,111 +81,6 @@ export default function Mountains(props) {
       unsubscribeAnimTriggers()
     }
   }, [])
-
-  useEffect(() => {
-    localIsAnimationPlayingRef.current = localIsAnimationPlaying
-  }, [localIsAnimationPlaying])
-
-    useEffect(() => {
-      setIsAnimationPlaying(localIsAnimationPlaying)
-    }, [localIsAnimationPlaying])
-
-  useEffect(() => {
-    if (actions && animationTriggersRef.current == 1) {
-      setIsLoading(false)
-      mixer.stopAllAction()
-      actions.CameraAction1.reset()
-      actions.CameraAction1.play()
-      actions.CameraAction1.clampWhenFinished = true
-      actions.CameraAction1.loop = THREE.LoopOnce
-      setIsInitialized(true)
-      setLocalIsAnimationPlaying(actions.CameraAction1.isRunning())
-      mixer.addEventListener('finished', onAnimationFinished)
-
-      // let ticker = setInterval(() => {
-      //   const progress = actions.CameraAction1.time / actions.CameraAction1._clip.duration
-
-      //   if (progress.toFixed(1) == 0.6) {
-      //     incrementTextTrigger()
-      //   }
-      // }, 100)
-
-      // actions.CameraAction1._clip.tracks.forEach((track) => {
-      //   const times = track.times
-      //   const endTime = times[times.length - 1]
-      //   setTimeout(() => clearInterval(ticker), endTime * 1000 + 500)
-      // })
-    }
-  }, [actions])
-
-  useEffect(() => {
-    resetPlayedAnimations()
-    if (actions) {
-      handleAnimations()
-    }
-  }, [animationTriggersRef.current])
-
-  useEffect(() => {
-    incrementMasterTrigger()
-  }, [isAnimationPlayingRef.current])
-
-  const onAnimationFinished = () => {
-    setLocalIsAnimationPlaying(false)
-
-    setFinalPosition(CameraActionRef.current.position.clone())
-    setFinalRotation(CameraActionRef.current.rotation.clone())
-  }
-
-  useEffect(() => {
-    if (animationTriggersRef.current >= 6) {
-      resetIndexTriggersStores()
-      resetPlayedAnimations()
-    }
-  }, [animationTriggersRef.current])
-
-
-
-  const prevPlayedAnimationsRef = useRef(new Set())
-  const [playedAnimations, setPlayedAnimations] = useState(new Set())
-  const resetPlayedAnimations = () => {
-    setPlayedAnimations(new Set())
-  }
-
-  useEffect(() => {
-    const prevPlayedAnimations = prevPlayedAnimationsRef.current
-
-    if (prevPlayedAnimations && !localIsAnimationPlayingRef.current) {
-    }
-
-    prevPlayedAnimationsRef.current = playedAnimations
-  }, [playedAnimations])
-
-  const handleAnimations = () => {
-    // setRenderTrigger((prev) => prev + 1)
-    const playedAnimations = prevPlayedAnimationsRef.current
-    const currentAnimationName = `CameraAction${animationTriggersRef.current}`
-    if (actions && !localIsAnimationPlayingRef.current && !playedAnimations.has(currentAnimationName)) {
-      const currentAnimation = actions[currentAnimationName]
-      setPlayedAnimations((prevPlayedAnimations) => {
-        const updatedSet = new Set(prevPlayedAnimations)
-        updatedSet.add(currentAnimationName)
-        return updatedSet
-      })
-
-      if (currentAnimation && animationTriggersRef.current >= 2 && !playedAnimations.has(currentAnimationName)) {
-        mixer.stopAllAction()
-        currentAnimation.reset()
-        currentAnimation.timeScale = 1
-        currentAnimation.setDuration(currentAnimation._clip.duration)
-        currentAnimation.clampWhenFinished = true
-        currentAnimation.loop = THREE.LoopOnce
-        currentAnimation.play()
-        setLocalIsAnimationPlaying(currentAnimation.isRunning())
-        mixer.addEventListener('finished', onAnimationFinished)
-      }
-    }
-  }
-
 
   return (
     <group ref={group} dispose={null} {...props}>
@@ -253,7 +134,7 @@ export default function Mountains(props) {
           position={[-119.1, 114.33, 72.58]}
           rotation={[-0.08, -0.74, -0.05]}
         />
-        {CameraActionRef.current && !localIsAnimationPlayingRef.current && animationTriggersRef.current !== 3 ? (
+        {CameraActionRef.current && finalPosition && finalRotation && !isAnimationPlayingRef.current && animationTriggersRef.current !== 3 ? (
           <Rig finalPosition={finalPosition} finalRotation={finalRotation} camera={CameraActionRef.current} />
         ) : null}
 
