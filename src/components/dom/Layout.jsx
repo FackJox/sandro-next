@@ -9,7 +9,7 @@ import { handleAnimations } from '@/components/canvas/Mountains/Mountains'
 
 const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
 
-const pathnames = ['/', '/portfolio', '/about', '/contact']
+const pathnames = ['/', '/portfolio', '/portfolio/motion', '/portfolio/stills', '/about/1', '/about/2', '/contact']
 
 import { usePathname } from 'next/navigation'
 
@@ -43,11 +43,20 @@ export const useNavigationEvent = (setRouteTrigger, navigateTo) => {
       case '/portfolio':
         setRouteTrigger(2)
         break
-      case '/about':
+      case '/portfolio/motion':
         setRouteTrigger(3)
         break
-      case '/contact':
+      case '/portfolio/stills':
         setRouteTrigger(4)
+        break
+      case '/about/1':
+        setRouteTrigger(5)
+        break
+      case '/about/2':
+        setRouteTrigger(6)
+        break
+      case '/contact':
+        setRouteTrigger(7)
         break
       default:
         break

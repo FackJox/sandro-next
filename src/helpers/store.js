@@ -85,20 +85,20 @@ export const useStore = create(
               canvasTriggers: {
                 ...state.canvasTriggers,
                 animationTriggers:
-                  trigger === 3 || trigger === 5 || trigger === 7 || trigger === 9 || trigger === 10
+                  trigger === 3 || trigger === 7 || trigger === 11 || trigger === 12 || trigger === 13
                     ? (state.canvasTriggers?.animationTriggers || 0) + 1
                     : state.canvasTriggers?.animationTriggers,
-                textTriggers:
-                  trigger === 1 || trigger === 4 || trigger === 9
-                    ? (state.canvasTriggers?.textTriggers || 0) + 1
-                    : state.canvasTriggers?.textTriggers,
+                // textTriggers:
+                //   trigger === 1 || trigger === 4 || trigger === 9
+                //     ? (state.canvasTriggers?.textTriggers || 0) + 1
+                //     : state.canvasTriggers?.textTriggers,
                 sunTriggers:
                   trigger === 1 ? (state.canvasTriggers?.sunTriggers || 0) + 1 : state.canvasTriggers?.sunTriggers,
               },
               domTriggers: {
                 ...state.domTriggers,
                 routeTriggers:
-                  trigger === 4 || trigger === 6 || trigger === 8
+                  trigger === 4 || trigger === 5 || trigger === 6 || trigger === 7 || trigger === 9 || trigger === 10
                     ? (state.domTriggers.routeTriggers || 0) + 1
                     : state.domTriggers.routeTriggers,
                 animationTriggers:

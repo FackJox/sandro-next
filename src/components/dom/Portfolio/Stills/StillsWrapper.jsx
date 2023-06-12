@@ -14,34 +14,10 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import { useEffect } from 'react'
 import { mapImageResources } from '@/helpers/cloudinary'
 
-// const PortfolioMenu = dynamic(
-//   () => import('@/components/dom/portfolio/PortfolioMenu').then((mod) => mod.PortfolioMenu),
-//   {
-//     ssr: false,
-//     loading: () => <p>Loading...</p>,
-//   },
-// )
-import PortfolioMenu from './PortfolioMenu'
-import MotionGallery from '@/components/dom/Portfolio/Motion/MotionGallery'
-import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
 import StillsGallery from '@/components/dom/Portfolio/Stills/StillsGallery'
 
-export function PortfolioWrapper({ motionData, stillsData }) {
-  const [currentVideo, setCurrentVideo] = useState(motionData.videos.items[0])
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [prevVideo, setPrevVideo] = useState(motionData.videos.items[0])
-  const [nextVideo, setNextVideo] = useState(motionData.videos.items[0])
-  const [playing, setPlaying] = useState(false)
-
-  const url = 'https://www.youtube.com/watch?v=3pezSYoVje8'
-  const [motionPlayerVisible, setMotionPlayerVisible] = useState(false)
-  const toggleMotionPlayer = () => {
-    setMotionPlayerVisible(!motionPlayerVisible)
-  }
-
-  const playlists = motionData.playlists.items
-  const videos = motionData.videos.items
-
+export function StillsWrapper({ stillsData }) {
+ 
   const {
     images: defaultImages,
     nextCursor: defaultNextCursor,
@@ -109,20 +85,7 @@ export function PortfolioWrapper({ motionData, stillsData }) {
     })()
   }, [activeFolder])
 
-  const searchParams = useSearchParams()
-
-  const [selectedComponent, setSelectedComponent] = useState(null)
-
-  useEffect(() => {
-    console.log("🚀 ~ file: PortfolioWrapper.jsx:118 ~ useEffect ~ searchParams:", searchParams)
-    console.log("🚀 ~ file: PortfolioWrapper.jsx:118 ~ useEffect ~ searchParams.gal:", searchParams.gal)
-    if (searchParams.gal === 'motion') {
-      setSelectedComponent(<MotionGallery />)
-    } else if (searchParams.gal === 'stills') {
-      setSelectedComponent(<StillsGallery />)
-    }
-  }, [searchParams])
-
+ 
 
   return (
     <AnimatePresence>
@@ -132,52 +95,7 @@ export function PortfolioWrapper({ motionData, stillsData }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 2.5 }}
       >
-        {/* <PortfolioMenu /> */}
-
-        {/* {motionPlayerVisible ? (
-          <div className='fixed z-50 flex items-center justify-center w-screen h-screen bg-black bg-opacity/50'>
-            <div className='relative bg-white'>
-              <button className='absolute top-0 right-0 p-2' onClick={toggleMotionPlayer}>
-                Close
-              </button>
-              <MotionPlayer
-                currentVideo={currentVideo}
-                prevVideo={prevVideo}
-                nextVideo={nextVideo}
-                playing={playing}
-                setPlaying={setPlaying}
-                currentIndex={currentIndex}
-                setCurrentIndex={setCurrentIndex}
-                videos={videos}
-                setCurrentVideo={setCurrentVideo}
-                setPrevVideo={setPrevVideo}
-                setNextVideo={setNextVideo}
-                toggleMotionPlayer={toggleMotionPlayer}
-              />
-            </div>
-          </div>
-        ) : (
-          <MotionGallery
-            videos={videos}
-            currentIndex={currentIndex}
-            setCurrentIndex={setCurrentIndex}
-            currentVideo={currentVideo}
-            prevVideo={prevVideo}
-            nextVideo={nextVideo}
-            setCurrentVideo={setCurrentVideo}
-            setPrevVideo={setPrevVideo}
-            setNextVideo={setNextVideo}
-            playlists={playlists}
-            playing={playing}
-            setPlaying={setPlaying}
-            toggleMotionPlayer={toggleMotionPlayer}
-          />
-        )} */}
-
-        {/* <MotionPlayer url={url} playing={true} /> */}
-
-        {selectedComponent}
-        {/* <StillsGallery
+        <StillsGallery
           images={images}
           folders={folders}
           handleOnFolderClick={handleOnFolderClick}
@@ -193,7 +111,7 @@ export function PortfolioWrapper({ motionData, stillsData }) {
           close={() => setIndex(-1)}
           // enable optional lightbox plugins
           plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-        /> */}
+        />
       </motion.div>
     </AnimatePresence>
   )

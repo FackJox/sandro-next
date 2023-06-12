@@ -16,6 +16,15 @@ const nextConfig = {
   // compiler: {
   //   styledComponents: true,
   // },
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/about/1',
+        permanent: true,
+      },
+    ]
+  },
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
   experimental: {
     reactRoot: 'concurrent',
@@ -78,6 +87,7 @@ module.exports = (_phase, { defaultConfig }) => {
     ...nextConfig,
   })
 
+  
   const finalConfig = {}
   Object.keys(wConfig).forEach((key) => {
     if (!KEYS_TO_OMIT.includes(key)) {

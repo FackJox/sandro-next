@@ -20,7 +20,7 @@ export default function Page() {
       >
         <div className='grid grid-cols-3 grid-rows-2 gap-2'>
           <div className='col-span-3'></div>
-          <Link href='/portfolio' className=''>
+          <Link href='/portfolio/stills' className=''>
             <div className='row-start-2'>
             
               <p className='w-[200px] h-16 text-4xl text-center text-icewhite'>STILLS</p>
@@ -32,7 +32,7 @@ export default function Page() {
               <p className='w-[200px] h-16  text-5xl text-center text-gold'>ABOUT</p>
             </div>
           </Link>
-          <Link href='/portfolio' className=''>
+          <Link href='/portfolio/motion' className=''>
 
           <div className='row-start-2'>
            

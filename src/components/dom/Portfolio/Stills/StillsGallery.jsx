@@ -72,7 +72,7 @@ export default function StillsGallery(props) {
               // padding='18'
               // spacing='0'
               // width='100%'
-              // renderPhoto={NextJsImage}
+              renderPhoto={NextJsImage}
               onClick={({ index }) => {
                 console.log('CLICKBABS')
                 setIndex(index)

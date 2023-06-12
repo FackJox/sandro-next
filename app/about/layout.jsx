@@ -22,8 +22,6 @@ import { AboutSecond } from '@/components/dom/About/AboutSecond'
 export default function Page() {
   
   
-
-
   const [isClicked, setIsClicked] = useState(false)
 
   const handleClick = () => {
