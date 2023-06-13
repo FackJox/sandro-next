@@ -1,9 +1,11 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
+import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 
 export default function PortfolioMenu() {
   const [isHovering, setIsHovering] = useState({ motion: false, stills: false })
+  usePlayAnimations(2)
 
   const handleMouseOver = (element) => {
     setIsHovering({ ...isHovering, [element]: true })

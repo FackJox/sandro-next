@@ -17,7 +17,7 @@ const Loader = dynamic(() => import('@/components/dom/Loader').then((mod) => mod
   ssr: true,
 })
 
-export default function Scene({ ...props }) {
+export default function Scene({ setContextValue, ...props }) {
   const scalingParams = {
     scaleY: 1,
     scaleXZ: 4.3,
@@ -48,7 +48,7 @@ export default function Scene({ ...props }) {
       <Sky />
 
       <group position={[0, -100, 0]}>
-        <Mountains />
+        <Mountains setContextValue={setContextValue} />
         <InstancesMountains>
           <InstancedMountains
             key='top'

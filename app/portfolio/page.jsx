@@ -4,6 +4,8 @@ import { useStore } from '@/helpers/store'
 import PortfolioMenu from '@/components/dom/Portfolio/PortfolioMenu'
 
 
+
+
 async function getStillsData() {
   const results = await search({
     expression: 'folder=""',
@@ -45,7 +47,7 @@ async function getYoutubeData() {
 
 export default async function Page() {
   
-  
+
   
    const stills = getStillsData()
     const yt = getYoutubeData();

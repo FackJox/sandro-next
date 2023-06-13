@@ -4,10 +4,11 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 
 export default function Page() {
 
-
+usePlayAnimations(1)
 
 
   return (

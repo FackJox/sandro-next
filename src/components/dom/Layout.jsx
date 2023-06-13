@@ -3,6 +3,7 @@ import { useRef, useEffect, useCallback, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import { debounce } from 'lodash'
+import { AnimationsContext } from '@/helpers/AnimationsContext'
 
 import { useStore } from '@/helpers/store'
 import { handleAnimations } from '@/components/canvas/Mountains/Mountains'
@@ -28,12 +29,10 @@ export const useNavigationEvent = (setRouteTrigger, navigateTo) => {
     return () => unsubscribe()
   }, [])
 
-
   useEffect(() => {
     // console.log('🚀 ~ file: Layout.jsx:19 ~ useNavigationEvent ~ pathname:', pathname)
     // console.log('🚀 ~ file: Layout.jsx:19 ~ useNavigationEvent ~ pathanemcurrent:', pathnameRef.current)
   }, [pathnameRef.current])
-
 
   useEffect(() => {
     // console.log('🚀 ~ file: Layout.jsx:32 ~ onPathnameChange ~ onPathnameChange:', pathname)
@@ -111,8 +110,8 @@ const Layout = ({ children }) => {
   const handleWheel = useCallback(
     debounce(
       () => {
-        console.log("handlewheel")
-        console.log("🚀 ~ file: Layout.jsx:163 ~ Layout ~ isAnimationPlayingRef:", isAnimationPlayingRef)
+        console.log('handlewheel')
+        console.log('🚀 ~ file: Layout.jsx:163 ~ Layout ~ isAnimationPlayingRef:', isAnimationPlayingRef)
         incrementMasterTrigger()
       },
       500,
@@ -131,34 +130,45 @@ const Layout = ({ children }) => {
   //   console.log('🚀 ~ file: Layout.jsx:54 ~ Layout ~ isAnimationPlayingRef.current:', isAnimationPlayingRef.current)
   // }, [isAnimationPlayingRef.current])
 
+  const [contextValue, setContextValue] = useState({
+    mixer: null,
+    actions: null,
+    setFinalPosition: null,
+    setFinalRotation: null,
+    cameraActionCurrent: null,
+  })
+
   return (
-    <div
-      ref={ref}
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
-        touchAction: 'auto',
-      }}
-    >
-      {children}
-      <Scene
+    <AnimationsContext.Provider value={contextValue}>
+      <div
+        ref={ref}
         style={{
-          position: 'fixed',
+          position: 'absolute',
           top: 0,
           left: 0,
-          zIndex: -10,
           width: '100vw',
           height: '100vh',
-          pointerEvents: 'none',
+          overflow: 'hidden',
+          touchAction: 'auto',
         }}
-        eventSource={ref}
-        eventPrefix='client'
-      />
-    </div>
+      >
+        {children}
+        <Scene
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: -10,
+            width: '100vw',
+            height: '100vh',
+            pointerEvents: 'none',
+          }}
+          eventSource={ref}
+          eventPrefix='client'
+          setContextValue={setContextValue}
+        />
+      </div>
+    </AnimationsContext.Provider>
   )
 }
 

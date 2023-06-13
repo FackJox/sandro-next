@@ -7,11 +7,13 @@ const Contact = dynamic(() => import('@/components/dom/Contact').then((mod) => m
 })
 import { useEffect } from 'react'
 
-export default function Page({props}) {
-  
-  
+import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
+
+export default function Page() {
+  usePlayAnimations(4)
+
   // console.log("🚀 ~ file: page.jsx:10 ~ Page ~ props:", props)
- 
+
   return (
     <AnimatePresence>
       <motion.div

@@ -19,18 +19,19 @@ import { useEffect } from 'react'
 import { AboutFirst } from '@/components/dom/About/AboutFirst'
 import { AboutSecond } from '@/components/dom/About/AboutSecond'
 
+import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
+
 export default function Page() {
-  
-  
+  usePlayAnimations(3)
+
   const [isClicked, setIsClicked] = useState(false)
 
   const handleClick = () => {
-      setIsClicked(!isClicked)
-
+    setIsClicked(!isClicked)
   }
 
   return (
-    <div  onClick={handleClick} className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
+    <div onClick={handleClick} className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
       <AnimatePresence mode='wait'>
         {!isClicked && <AboutFirst key='aboutfirst' isClicked={isClicked} handleClick={handleClick} />}
         {isClicked && <AboutSecond key='aboutsecond' isClicked={isClicked} handleClick={handleClick} />}
