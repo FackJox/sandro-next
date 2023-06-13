@@ -15,6 +15,7 @@ export const useStore = create(
 
       isAnimationPlaying: false,
       setIsAnimationPlaying: (value) => {
+        console.log("ANIMATION PLAYING", value)
         const incrementMasterTrigger = get().incrementMasterTrigger
         set(() => ({ isAnimationPlaying: value }))
       },
@@ -76,7 +77,7 @@ export const useStore = create(
         const currentTime = Date.now()
         const lastIncrementTime = get().lastIncrementTime
         if (currentTime - lastIncrementTime >= 500 && !isAnimationPlaying) {
-          // console.log('increment master trigger triggered')
+          console.log('increment master trigger triggered')
           set((state) => {
             const trigger = state.masterTrigger + 1
             return {
@@ -85,7 +86,7 @@ export const useStore = create(
               canvasTriggers: {
                 ...state.canvasTriggers,
                 animationTriggers:
-                  trigger === 3 || trigger === 7 || trigger === 11 || trigger === 12 || trigger === 13
+                  trigger === 3 || trigger === 4 || trigger === 5 || trigger === 6 || trigger === 13
                     ? (state.canvasTriggers?.animationTriggers || 0) + 1
                     : state.canvasTriggers?.animationTriggers,
                 // textTriggers:

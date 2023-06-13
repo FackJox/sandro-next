@@ -4,39 +4,12 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { useGLTF, PerspectiveCamera, useAnimations, CameraShake, OrbitControls } from '@react-three/drei'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 import { useStore } from '@/helpers/store'
-
-function Rig({ finalPosition, finalRotation, camera }) {
-  console.log("🚀 ~ file: Mountains.jsx:9 ~ Rig ~ camera:", camera)
-  console.log("🚀 ~ file: Mountains.jsx:9 ~ Rig ~ finalRotation:", finalRotation)
-  console.log("🚀 ~ file: Mountains.jsx:9 ~ Rig ~ finalPosition:", finalPosition)
-  useEffect(() => {
-    camera.position.copy(finalPosition)
-    camera.rotation.copy(finalRotation)
-  }, [camera, finalPosition, finalRotation])
-
-  const [vec] = useState(() => new THREE.Vector3())
-  const { mouse } = useThree()
-
-  useFrame(() => {
-    vec.set(finalPosition.x + mouse.x * 2, finalPosition.y, finalPosition.z)
-    camera.position.lerp(vec, 0.05)
-  })
-
-  return (
-    <CameraShake
-      maxYaw={0.01}
-      maxPitch={0.01}
-      maxRoll={0.01}
-      yawFrequency={0.5}
-      pitchFrequency={0.5}
-      rollFrequency={0.4}
-    />
-  )
-}
+import { CameraRig } from '@/components/canvas/CameraRig'
 
 export default function Mountains(props) {
   const group = useRef()
-  const CameraActionRef = useRef()
+  const cameraActionRef = useRef()
+
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
   const animationTriggersRef = useRef(useStore.getState().canvasTriggers.animationTriggers)
 
@@ -45,42 +18,17 @@ export default function Mountains(props) {
 
   const { nodes, materials, animations } = useGLTF('/models/mountains.glb', true)
   const { mixer, actions } = useAnimations(animations, group)
-
+  const [cameraActionCurrent, setCameraActionCurrent] = useState()
   const [finalPosition, setFinalPosition] = useState()
   const [finalRotation, setFinalRotation] = useState()
 
-  const onAnimationFinished = () => {
-    setLocalIsAnimationPlaying(false)
-
-    setFinalPosition(CameraActionRef.current.position.clone())
-    setFinalRotation(CameraActionRef.current.rotation.clone())
-  }
   
-  usePlayAnimations(mixer, actions, onAnimationFinished)
 
   useEffect(() => {
-    const unsubscribeAnimTriggers = useStore.subscribe(
-      (newState) => {
-        animationTriggersRef.current = newState.canvasTriggers.animationTriggers
-      },
-      (state) => {
-        state.canvasTriggers.animationTriggers !== animationTriggersRef.current
-      },
-    )
+    setCameraActionCurrent(cameraActionRef.current)
+  }, [cameraActionRef.current])
 
-    const unsubscribeAnimPlaying = useStore.subscribe(
-      (newState) => {
-        isAnimationPlayingRef.current = newState.isAnimationPlaying
-      },
-      (state) => {
-        state.isAnimationPlaying !== isAnimationPlayingRef.current
-      },
-    )
-    return () => {
-      unsubscribeAnimPlaying()
-      unsubscribeAnimTriggers()
-    }
-  }, [])
+  usePlayAnimations(mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent)
 
   return (
     <group ref={group} dispose={null} {...props}>
@@ -88,7 +36,7 @@ export default function Mountains(props) {
         <PerspectiveCamera
           name='Camera1'
           makeDefault={false}
-          ref={CameraActionRef}
+          ref={cameraActionRef}
           far={10000}
           near={0.1}
           fov={36.2 + 0}
@@ -126,7 +74,7 @@ export default function Mountains(props) {
         <PerspectiveCamera
           name='CameraAction'
           key='CameraAction'
-          ref={CameraActionRef}
+          ref={cameraActionRef}
           makeDefault={true}
           far={1000000}
           near={0.1}
@@ -134,8 +82,12 @@ export default function Mountains(props) {
           position={[-119.1, 114.33, 72.58]}
           rotation={[-0.08, -0.74, -0.05]}
         />
-        {CameraActionRef.current && finalPosition && finalRotation && !isAnimationPlayingRef.current && animationTriggersRef.current !== 3 ? (
-          <Rig finalPosition={finalPosition} finalRotation={finalRotation} camera={CameraActionRef.current} />
+        {cameraActionRef.current &&
+        finalPosition &&
+        finalRotation &&
+        !isAnimationPlayingRef.current &&
+        animationTriggersRef.current !== 3 ? (
+          <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
         ) : null}
 
         {/* {CameraActionRef.current && !localIsAnimationPlayingRef.current && animationTriggersRef.current !== 3 ? (

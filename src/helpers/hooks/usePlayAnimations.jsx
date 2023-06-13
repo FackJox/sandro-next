@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { useStore } from '@/helpers/store'
+import { CameraShake } from '@react-three/drei'
 
-const usePlayAnimations = (mixer, actions, onAnimationFinished) => {
+const usePlayAnimations = (mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent) => {
   const [localIsAnimationPlaying, setLocalIsAnimationPlaying] = useState(false)
   const localIsAnimationPlayingRef = useRef(localIsAnimationPlaying)
   const animationTriggersRef = useRef(useStore.getState().canvasTriggers.animationTriggers)
@@ -19,19 +20,58 @@ const usePlayAnimations = (mixer, actions, onAnimationFinished) => {
     setIsAnimationPlaying,
   } = useStore()
 
+  const cameraActionRef = useRef(cameraActionCurrent)
+
+  useEffect(() => {
+    const unsubscribeAnimTriggers = useStore.subscribe(
+      (newState) => {
+        animationTriggersRef.current = newState.canvasTriggers.animationTriggers
+      },
+      (state) => {
+        state.canvasTriggers.animationTriggers !== animationTriggersRef.current
+      },
+    )
+
+    const unsubscribeAnimPlaying = useStore.subscribe(
+      (newState) => {
+        isAnimationPlayingRef.current = newState.isAnimationPlaying
+      },
+      (state) => {
+        state.isAnimationPlaying !== isAnimationPlayingRef.current
+      },
+    )
+    return () => {
+      unsubscribeAnimPlaying()
+      unsubscribeAnimTriggers()
+    }
+  }, [])
+
+  useEffect(() => {
+    cameraActionRef.current = cameraActionCurrent
+    console.log('🚀 ~ file: usePlayAnimations.jsx:34 ~ usePlayAnimations ~ cameraActionRef:', cameraActionRef)
+  }, [cameraActionCurrent])
+  
+  
+
+
   useEffect(() => {
     if (mixer) {
       mixer.timeScale = 1.5
     }
   }, [mixer])
 
+
+
+
+
   useEffect(() => {
     localIsAnimationPlayingRef.current = localIsAnimationPlaying
   }, [localIsAnimationPlaying])
 
   useEffect(() => {
-    setIsAnimationPlaying(localIsAnimationPlaying)
-  }, [localIsAnimationPlaying])
+    setIsAnimationPlaying(localIsAnimationPlayingRef.current)
+    console.log('localIsAnimationPlayingRef', localIsAnimationPlayingRef.current)
+  }, [localIsAnimationPlayingRef])
 
   useEffect(() => {
     if (actions && animationTriggersRef.current == 1) {
@@ -56,7 +96,7 @@ const usePlayAnimations = (mixer, actions, onAnimationFinished) => {
 
   useEffect(() => {
     incrementMasterTrigger()
-  }, [isAnimationPlayingRef.current])
+  }, [localIsAnimationPlayingRef.current])
 
   useEffect(() => {
     if (animationTriggersRef.current >= 6) {
@@ -103,6 +143,18 @@ const usePlayAnimations = (mixer, actions, onAnimationFinished) => {
         setLocalIsAnimationPlaying(currentAnimation.isRunning())
         mixer.addEventListener('finished', onAnimationFinished)
       }
+    }
+  }
+
+  const onAnimationFinished = () => {
+   
+    if (cameraActionRef.current) {
+      setLocalIsAnimationPlaying(false)
+
+      setFinalPosition(cameraActionRef.current.position.clone())
+      setFinalRotation(cameraActionRef.current.rotation.clone())
+
+      mixer.removeEventListener('finished', onAnimationFinished)
     }
   }
 }

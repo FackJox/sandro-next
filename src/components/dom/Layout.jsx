@@ -111,6 +111,8 @@ const Layout = ({ children }) => {
   const handleWheel = useCallback(
     debounce(
       () => {
+        console.log("handlewheel")
+        console.log("🚀 ~ file: Layout.jsx:163 ~ Layout ~ isAnimationPlayingRef:", isAnimationPlayingRef)
         incrementMasterTrigger()
       },
       500,
