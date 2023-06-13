@@ -5,3 +5,5 @@ const AnimationsContext = createContext()
 export const useAnimationsContext = () => {
   return useContext(AnimationsContext)
 }
+
+export { AnimationsContext }

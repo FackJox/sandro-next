@@ -5,8 +5,9 @@ import { CameraShake } from '@react-three/drei'
 import { useAnimationsContext } from '@/helpers/AnimationsContext'
 
 const usePlayAnimations = (mountAnimation) => {
+  console.log('🚀 ~ file: usePlayAnimations.jsx:8 ~ usePlayAnimations ~ mountAnimation:', mountAnimation)
   const { mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent } = useAnimationsContext()
-
+ 
   const [localIsAnimationPlaying, setLocalIsAnimationPlaying] = useState(false)
   const localIsAnimationPlayingRef = useRef(localIsAnimationPlaying)
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
@@ -33,10 +34,12 @@ const usePlayAnimations = (mountAnimation) => {
   }, [cameraActionCurrent])
 
   useEffect(() => {
-    if (mixer) {
+    if (mixer && actions && mountAnimation) {
       mixer.timeScale = 1.5
+      mixer.stopAllAction()
+      handleAnimations(mountAnimation)
     }
-  }, [mixer])
+  }, [mixer, actions, mountAnimation])
 
   useEffect(() => {
     localIsAnimationPlayingRef.current = localIsAnimationPlaying
@@ -44,23 +47,12 @@ const usePlayAnimations = (mountAnimation) => {
 
   useEffect(() => {
     setIsAnimationPlaying(localIsAnimationPlayingRef.current)
-    console.log('localIsAnimationPlayingRef', localIsAnimationPlayingRef.current)
   }, [localIsAnimationPlayingRef])
-
-  useEffect(() => {
-    setIsLoading(false)
-    mixer.stopAllAction()
-    setIsInitialized(true)
-
-    if (actions && mountAnimation) {
-      handleAnimations()
-    }
-  }, [])
 
   const handleAnimations = (mountAnimation) => {
     const currentAnimationName = `CameraAction${mountAnimation}`
 
-    if (actions && !localIsAnimationPlayingRef.current) {
+    if (actions && !localIsAnimationPlayingRef.current && mountAnimation) {
       const currentAnimation = actions[currentAnimationName]
 
       mixer.stopAllAction()
@@ -70,7 +62,6 @@ const usePlayAnimations = (mountAnimation) => {
       currentAnimation.clampWhenFinished = true
       currentAnimation.loop = THREE.LoopOnce
       currentAnimation.play()
-
       setLocalIsAnimationPlaying(currentAnimation.isRunning())
       mixer.addEventListener('finished', onAnimationFinished)
     }
