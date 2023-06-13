@@ -98,7 +98,7 @@ export default function MotionGallery(props) {
         <div>
           <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
             <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
-              SCROLL
+              BACK
             </p>
           </div>
           <div className='inline-flex'>

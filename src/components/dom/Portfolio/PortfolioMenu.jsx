@@ -1,22 +1,26 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Link from 'next/link'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
+import useNavigation from '@/helpers/hooks/useNavigation'
 
 export default function PortfolioMenu() {
+  const ref = useRef()
   const [isHovering, setIsHovering] = useState({ motion: false, stills: false })
-  usePlayAnimations(2)
-
+  
   const handleMouseOver = (element) => {
     setIsHovering({ ...isHovering, [element]: true })
   }
-
+  
   const handleMouseOut = (element) => {
     setIsHovering({ ...isHovering, [element]: false })
   }
 
+  usePlayAnimations(2)
+  useNavigation(ref, '/about')
+
   return (
-    <div className='flex flex-col h-screen font-BrandonReg '>
+    <div ref={ref} className='flex flex-col w-screen h-screen font-BrandonReg '>
       <div className='grid h-full grid-cols-1 align-middle md:grid-cols-2'>
         <Link href='/portfolio/motion' className='flex items-center justify-center align-middle'>
           <div

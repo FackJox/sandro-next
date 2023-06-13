@@ -23,6 +23,20 @@ export default function Mountains({props, setContextValue}) {
   const [finalRotation, setFinalRotation] = useState()
 
   useEffect(() => {
+    const unsubscribeAnimPlaying = useStore.subscribe(
+      (newState) => {
+        isAnimationPlayingRef.current = newState.isAnimationPlaying
+      },
+      (state) => {
+        state.isAnimationPlaying !== isAnimationPlayingRef.current
+      },
+    )
+    return () => {
+      unsubscribeAnimPlaying()
+    }
+  }, [])
+
+  useEffect(() => {
     setCameraActionCurrent(cameraActionRef.current)
   }, [cameraActionRef.current])
 
@@ -90,11 +104,11 @@ export default function Mountains({props, setContextValue}) {
           position={[-119.1, 114.33, 72.58]}
           rotation={[-0.08, -0.74, -0.05]}
         />
+        
         {cameraActionRef.current &&
         finalPosition &&
         finalRotation &&
-        !isAnimationPlayingRef.current &&
-        animationTriggersRef.current !== 3 ? (
+        !isAnimationPlayingRef.current ? (
           <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
         ) : null}
 

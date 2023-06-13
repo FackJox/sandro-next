@@ -52,6 +52,7 @@ const usePlayAnimations = (mountAnimation) => {
   const handleAnimations = (mountAnimation) => {
     const currentAnimationName = `CameraAction${mountAnimation}`
 
+    console.log("🚀 ~ file: usePlayAnimations.jsx:55 ~ handleAnimations ~ currentAnimationName:", currentAnimationName)
     if (actions && !localIsAnimationPlayingRef.current && mountAnimation) {
       const currentAnimation = actions[currentAnimationName]
 
