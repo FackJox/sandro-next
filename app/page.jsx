@@ -10,8 +10,14 @@ import useNavigation from '@/helpers/hooks/useNavigation'
 export default function Page() {
   const ref = useRef()
   usePlayAnimations(1)
+  const router = useRouter()
 
   useNavigation(ref, '/portfolio')
+
+
+  const handleClick = () => {
+    router.push('/about')
+  }
 
   return (
     <AnimatePresence>
@@ -29,11 +35,14 @@ export default function Page() {
               <p className='w-[200px] h-16 text-4xl text-center text-icewhite'>STILLS</p>
             </div>
           </Link>
-          <Link href='/about' className=''>
-            <div className='row-start-2'>
+          {/* <Link href='/about' className=''> */}
+          <div>
+
+            <div onClick={handleClick} className='row-start-2'>
               <p className='w-[200px] h-16  text-5xl text-center text-gold'>ABOUT</p>
             </div>
-          </Link>
+          </div>
+          {/* </Link> */}
           <Link href='/portfolio/motion' className=''>
             <div className='row-start-2'>
               <p className='w-[200px] h-12 text-4xl text-center text-icewhite'>MOTION</p>

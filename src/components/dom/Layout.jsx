@@ -1,12 +1,7 @@
 'use client'
-import { useRef, useEffect, useCallback, useState } from 'react'
+import { useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/navigation'
-import { debounce } from 'lodash'
 import { AnimationsContext } from '@/helpers/AnimationsContext'
-
-import { useStore } from '@/helpers/store'
-import { handleAnimations } from '@/components/canvas/Mountains/Mountains'
 
 const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
 

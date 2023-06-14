@@ -4,7 +4,6 @@ import { Stars } from "@react-three/drei"
 export default function NightSky() {
     return (
         <>
-            {/* <ambientLight intensity={0.8} /> */}
         
             <Stars
                 radius={4000} // Radius of the inner sphere (default=100)

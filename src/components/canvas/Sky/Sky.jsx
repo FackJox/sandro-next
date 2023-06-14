@@ -12,7 +12,6 @@ import { lerpColor, hexToRgb, rgbToHex, animateFogColor } from '@/helpers/colour
 
 export default function Sky() {
   const [angleTraversed, setAngleTraversed] = useState(0)
-  // const sunTriggersRef = useRef(useStore.getState().canvasTriggers.sunTriggers)
   const { setSunCycleTriggers } = useStore()
   const [sunPosition, setSunPosition] = useState([])
   const [sunRotations, setSunRotations] = useState(0)
@@ -30,7 +29,6 @@ export default function Sky() {
  const [dayNightCycle, setDayNightCycle] = useState(true)
  const localSunCycleRef = useRef(localSunCycle)
 
- // Update the ref's current value whenever localSunCycle changes
  useEffect(() => {
    localSunCycleRef.current = localSunCycle
  }, [localSunCycle])
@@ -58,20 +56,7 @@ export default function Sky() {
 
 
  const sunCycleRef = useRef(useStore.getState().sunCycle)
-//  useEffect(() => {
-//    const unsubscribeSunTriggers = useStore.subscribe(
-//      (newState) => {
-//        sunTriggersRef.current = newState.canvasTriggers.sunTriggers
-//      },
-//      (state) => {
-//        state.canvasTriggers.sunTriggers !== sunTriggersRef.current
-//      },
-//    )
 
-//    return () => {
-//      unsubscribeSunTriggers()
-//    }
-//  }, [])
 
  useEffect(() => {
    const unsubscribe = useStore.subscribe(
@@ -85,7 +70,6 @@ export default function Sky() {
 
   useEffect(() => {
     const initialSunRadiusPosition = [1, 1, 1]
-    // const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
     setSunPosition(initialSunPos.toArray())
   }, [])
 
@@ -107,12 +91,7 @@ export default function Sky() {
     }
   }, [])
 
-  //   useEffect(() => {
-  //     // Synchronize localSunCycle with the global state
-  //     setSunCycle(localSunCycle)
-  //   }, [localSunCycle, setSunCycle])
 
-  // > 0.231
   const distanceFromCenter = 450000
   const sunCentre = new THREE.Vector3(-353.93, 88.44, 56.42)
   const orbitAxis = new THREE.Vector3(-(180 * Math.PI) / 180, (90 * Math.PI) / 180, (180 * Math.PI) / 180)
@@ -161,7 +140,6 @@ useFrame(() => {
       .applyAxisAngle(orbitAxis, (speed * Math.PI) / 180)
       .add(sunCentre)
 
-    // Check if dayNightCycle is true or if the distance between initialSunPos and nextSunPos is greater than a small threshold
     if (dayNightCycle || initialSunPos.distanceTo(nextSunPos) > 1) {
       setLocalSunCycle(nextSunPos)
       setSunPosition((prevSunPosition) => {
@@ -178,30 +156,6 @@ useFrame(() => {
     // console.log("🚀 ~ file: DaySky.jsx:90 ~ useEffect ~ rayleigh:", rayleigh)
   }, [rayleigh])
 
-  // useEffect(() => {
-  // 	const startRayleigh = rayleigh;
-  // 	const targetRayleigh = sunCycle < -100 ? 0.5 : -8.0 ;
-  // 	const duration = 5.5 * 1000
-
-  // 	const startTime = performance.now();
-  // 	const updateRayleigh = () => {
-  // 	  const elapsed = performance.now() - startTime;
-  // 	  const progress = Math.min(elapsed / duration, 1);
-
-  // 	  setRayleigh(Math.max(-10.0, Math.min(0.5, THREE.MathUtils.lerp(startRayleigh, targetRayleigh, progress))));
-  // 	//   console.log("🚀 ~ file: DaySky.jsx:106 ~ updateRayleigh ~ rayleigh.current:", rayleighRef.current)
-  // 	  if (progress < 1) {
-  // 		requestAnimationFrame(updateRayleigh);
-  // 	  }
-  // 	};
-
-  // 	updateRayleigh();
-  //   }, [sunCycle]);
-
-  // useEffect(() => {
-  // 	console.log("🚀 ~ file: DaySky.jsx:117 ~ useEffect ~ rayleighRef.current:", rayleighRef.current)
-  // }, [rayleighRef.current])
- 
 
   useEffect(() => {
     const currentCondition = localSunCycle < 1
