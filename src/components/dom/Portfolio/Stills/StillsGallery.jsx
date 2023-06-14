@@ -4,6 +4,7 @@ import Gallery from 'react-photo-album'
 // import photos from '../../helpers/photos'
 import { useState, useEffect, Suspense } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function StillsGallery(props) {
   const { images, folders, handleOnFolderClick, activeFolder, setIndex, totalCount, handleOnLoadMore, imageProps } = props
@@ -88,11 +89,13 @@ export default function StillsGallery(props) {
           </div>
         </div>
         <div>
+        <Link href='/portfolio' className=''>
           <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-lwhite'>
             <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
               BACK
             </p>
-          </div>
+            </div>
+          </Link>
           <div className='inline-flex'>
             <div className='absolute right-0 bottom-9 lg:bottom-12 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
           </div>

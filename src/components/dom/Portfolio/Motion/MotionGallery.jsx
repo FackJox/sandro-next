@@ -3,6 +3,7 @@ import React from 'react'
 import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
 import Image from 'next/image'
 import { useState, useEffect, Suspense } from 'react'
+import Link from 'next/link'
 
 const ScrollTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -96,11 +97,13 @@ export default function MotionGallery(props) {
           </div>
         </div>
         <div>
-          <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-            <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
-              BACK
-            </p>
-          </div>
+          <Link href='/portfolio' className=''>
+            <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
+              <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
+                BACK
+              </p>
+            </div>
+          </Link>
           <div className='inline-flex'>
             <div className='absolute right-0 bottom-9 lg:bottom-12 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
           </div>
