@@ -12,7 +12,7 @@ import { lerpColor, hexToRgb, rgbToHex, animateFogColor } from '@/helpers/colour
 
 export default function Sky() {
   const [angleTraversed, setAngleTraversed] = useState(0)
-  const sunTriggersRef = useRef(useStore.getState().canvasTriggers.sunTriggers)
+  // const sunTriggersRef = useRef(useStore.getState().canvasTriggers.sunTriggers)
   const { setSunCycleTriggers } = useStore()
   const [sunPosition, setSunPosition] = useState([])
   const [sunRotations, setSunRotations] = useState(0)
@@ -58,20 +58,20 @@ export default function Sky() {
 
 
  const sunCycleRef = useRef(useStore.getState().sunCycle)
- useEffect(() => {
-   const unsubscribeSunTriggers = useStore.subscribe(
-     (newState) => {
-       sunTriggersRef.current = newState.canvasTriggers.sunTriggers
-     },
-     (state) => {
-       state.canvasTriggers.sunTriggers !== sunTriggersRef.current
-     },
-   )
+//  useEffect(() => {
+//    const unsubscribeSunTriggers = useStore.subscribe(
+//      (newState) => {
+//        sunTriggersRef.current = newState.canvasTriggers.sunTriggers
+//      },
+//      (state) => {
+//        state.canvasTriggers.sunTriggers !== sunTriggersRef.current
+//      },
+//    )
 
-   return () => {
-     unsubscribeSunTriggers()
-   }
- }, [])
+//    return () => {
+//      unsubscribeSunTriggers()
+//    }
+//  }, [])
 
  useEffect(() => {
    const unsubscribe = useStore.subscribe(
@@ -102,10 +102,10 @@ export default function Sky() {
   }, [])
 
   useEffect(() => {
-    if (!wireMeshRef.current && sunPosition && sunTriggersRef.current < 2) {
+    if (!wireMeshRef.current && sunPosition) {
       setSunRotating(true)
     }
-  }, [sunTriggersRef.current])
+  }, [])
 
   //   useEffect(() => {
   //     // Synchronize localSunCycle with the global state

@@ -11,10 +11,7 @@ export default function Mountains({props, setContextValue}) {
   const cameraActionRef = useRef()
 
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
-  const animationTriggersRef = useRef(useStore.getState().canvasTriggers.animationTriggers)
 
-  const FirstPersonControlsRef = useRef()
-  const [renderTrigger, setRenderTrigger] = useState(0)
 
   const { nodes, materials, animations } = useGLTF('/models/mountains.glb', true)
   const { mixer, actions } = useAnimations(animations, group)
@@ -40,6 +37,14 @@ export default function Mountains({props, setContextValue}) {
     setCameraActionCurrent(cameraActionRef.current)
   }, [cameraActionRef.current])
 
+    // useEffect(() => {
+    //   console.log('cameraActionRef.current:', cameraActionRef.current)
+    //   console.log('finalPosition:', finalPosition)
+    //   console.log('finalRotation:', finalRotation)
+    //   console.log('isAnimationPlayingRef.current:', isAnimationPlayingRef.current)
+    // }, [cameraActionRef.current, finalPosition, finalRotation, isAnimationPlayingRef.current])
+
+
   // usePlayAnimations(mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent)
 
   useEffect(() => {
@@ -58,7 +63,6 @@ export default function Mountains({props, setContextValue}) {
         <PerspectiveCamera
           name='Camera1'
           makeDefault={false}
-          ref={cameraActionRef}
           far={10000}
           near={0.1}
           fov={36.2 + 0}

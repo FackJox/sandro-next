@@ -6,6 +6,15 @@ import * as THREE from 'three'
 
 export function CameraRig({ finalPosition, finalRotation, camera }) {
 
+ useEffect(() => {
+   console.log('CameraRig mounted')
+
+   return () => {
+     console.log('CameraRig dismounted')
+   }
+ }, [])
+
+
   useEffect(() => {
     camera.position.copy(finalPosition)
     camera.rotation.copy(finalRotation)
