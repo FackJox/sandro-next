@@ -26,18 +26,15 @@ const usePlayAnimations = (mountAnimation) => {
   }, [mixer, actions, mountAnimation])
 
   useEffect(() => {
-    console.log('🚀 ~ file: usePlayAnimations.jsx:32 ~ useEffect ~ localIsAnimationPlaying:', localIsAnimationPlaying)
-    
+    // Perform actions based on the updated value of localIsAnimationPlaying
+    console.log('🚀 ~ file: usePlayAnimations.jsx:Updated ~ localIsAnimationPlaying:', localIsAnimationPlaying)
   }, [localIsAnimationPlaying])
 
   const handleAnimations = (mountAnimation) => {
-    setLocalIsAnimationPlaying((prevState) => {
-      const newState = !prevState
-      return newState
-    })
+    setLocalIsAnimationPlaying((prevState) => !prevState)
     setForceUpdate((prev) => !prev)
     const currentAnimationName = `CameraAction${mountAnimation}`
-    if (actions && !localIsAnimationPlaying && mountAnimation) {
+    if (actions && !localIsAnimationPlayingRef.current && mountAnimation) {
       const currentAnimation = actions[currentAnimationName]
 
       mixer.stopAllAction()
@@ -62,15 +59,23 @@ const usePlayAnimations = (mountAnimation) => {
     }
   }
 
-  const getLocalIsAnimationPlaying = () => {
-    console.log(
-      '🚀 ~ file: usePlayAnimations.jsx:67 ~ getLocalIsAnimationPlaying ~ localIsAnimationPlaying:',
-      localIsAnimationPlaying,
-    )
-    return localIsAnimationPlaying
+  const localIsAnimationPlayingRef = useRef(localIsAnimationPlaying)
+
+  useEffect(() => {
+    localIsAnimationPlayingRef.current = localIsAnimationPlaying
+    console.log("🚀 ~ file: usePlayAnimations.jsx:66 ~ useEffect ~ localIsAnimationPlayingRef.current:", localIsAnimationPlayingRef.current)
+  }, [localIsAnimationPlaying])
+
+const getLocalIsAnimationPlaying = () => {
+  console.log(
+    '🚀 ~ file: usePlayAnimations.jsx:67 ~ getLocalIsAnimationPlaying ~ localIsAnimationPlaying:',
+    localIsAnimationPlayingRef.current,
+  );
+  return localIsAnimationPlayingRef.current;
   }
 
   return getLocalIsAnimationPlaying
+
 }
 
 export default usePlayAnimations
