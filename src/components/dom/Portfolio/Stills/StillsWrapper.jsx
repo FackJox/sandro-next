@@ -1,9 +1,6 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
-import dynamic from 'next/dynamic'
-import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
-// import { Lightbox, Fullscreen, Slideshow, Thumbnails, Zoom } from 'yet-another-react-lightbox'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen'
@@ -31,10 +28,6 @@ export function StillsWrapper({ stillsData }) {
   const [totalCount, setTotalCount] = useState(defaultTotalCount)
   const [activeFolder, setActiveFolder] = useState()
   const [index, setIndex] = useState(-1)
-
-  // console.log('images in ImageGallery', images)
-  // console.log('activeFolder in ImageGallery', activeFolder)
-  // console.log('folders in ImageGallery', folders)
 
   async function handleOnLoadMore(e) {
     e.preventDefault()

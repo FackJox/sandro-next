@@ -11,10 +11,8 @@ import { lerpColor, hexToRgb, rgbToHex, animateFogColor } from '@/helpers/colour
 
 
 export default function Sky() {
-  const [angleTraversed, setAngleTraversed] = useState(0)
-  const { setSunCycleTriggers } = useStore()
+
   const [sunPosition, setSunPosition] = useState([])
-  const [sunRotations, setSunRotations] = useState(0)
   const [sunRotating, setSunRotating] = useState(false)
  const [rayleigh, setRayleigh] = useState(-8.0)
  const rayleighRef = useRef(rayleigh)

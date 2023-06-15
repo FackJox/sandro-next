@@ -1,10 +1,8 @@
-import { search, mapImageResources, getFolders } from '@/helpers/cloudinary'
-import { useStore } from '@/helpers/store'
 import { MotionWrapper } from '@/components/dom/Portfolio/Motion/MotionWrapper'
 
 
-async function getYoutubeData() {
-  const YT_PLAYLIST_ID = process.env.YT_PLAYLIST_ID
+async function getYoutubeData(playlistId) {
+  const YT_PLAYLIST_ID = playlistId || process.env.YT_PLAYLIST_ID
   const YT_API_KEY = process.env.YT_API_KEY
   const YT_CHANNEL_ID = process.env.YT_CHANNEL_ID
   const MAX_RESULTS = `15`
@@ -21,7 +19,6 @@ async function getYoutubeData() {
   const dataAllVideos = await responseVideos.json()
   const dataPlaylists = await responsePlaylists.json()
   const dataPLVideos = await responsePLVideos.json()
-  console.log('🚀 ~ file: page.jsx:32 ~ getYoutubeData ~ dataPlaylists:', dataPlaylists, dataPLVideos)
 
   return { videos: dataAllVideos, playlists: dataPlaylists, plVideos: dataPLVideos }
 }
@@ -30,10 +27,15 @@ export default async function Page() {
   const yt = getYoutubeData()
   const [ motionData] = await Promise.all([yt])
 
+   const handlePlaylistChange = async (playlistId) => {
+     const newMotionData = await getYoutubeData(playlistId)
+     // Update your state or store with the newMotionData
+   }
+
 
   return (
     <>
-      <MotionWrapper motionData={motionData}/>
+      <MotionWrapper motionData={motionData} onPlaylistChange={handlePlaylistChange} />
     </>
   )
 }

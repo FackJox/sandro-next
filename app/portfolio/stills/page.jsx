@@ -1,6 +1,4 @@
 import { search, mapImageResources, getFolders } from '@/helpers/cloudinary'
-
-import { useStore } from '@/helpers/store'
 import { StillsWrapper } from '@/components/dom/Portfolio/Stills/StillsWrapper'
 
 async function getStillsData() {

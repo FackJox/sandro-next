@@ -1,51 +1,29 @@
 import React, { useRef, useEffect, useState } from 'react'
-import * as THREE from 'three'
-import { useFrame, useThree } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, useAnimations, CameraShake, OrbitControls } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, useAnimations } from '@react-three/drei'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
-import { useStore } from '@/helpers/store'
 import { CameraRig } from '@/components/canvas/CameraRig'
 
-export default function Mountains({props, setContextValue}) {
+export default function Mountains({ props, setContextValue }) {
   const group = useRef()
   const cameraActionRef = useRef()
-
-  const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
-
 
   const { nodes, materials, animations } = useGLTF('/models/mountains.glb', true)
   const { mixer, actions } = useAnimations(animations, group)
   const [cameraActionCurrent, setCameraActionCurrent] = useState()
   const [finalPosition, setFinalPosition] = useState()
   const [finalRotation, setFinalRotation] = useState()
+  const getLocalIsAnimationPlaying = usePlayAnimations()
+  const [latestIsAnimationPlaying, setLatestIsAnimationPlaying] = useState(getLocalIsAnimationPlaying())
 
   useEffect(() => {
-    const unsubscribeAnimPlaying = useStore.subscribe(
-      (newState) => {
-        isAnimationPlayingRef.current = newState.isAnimationPlaying
-      },
-      (state) => {
-        state.isAnimationPlaying !== isAnimationPlayingRef.current
-      },
-    )
-    return () => {
-      unsubscribeAnimPlaying()
-    }
-  }, [])
-
+    setLatestIsAnimationPlaying(getLocalIsAnimationPlaying())
+  }, [getLocalIsAnimationPlaying])
+  
   useEffect(() => {
     setCameraActionCurrent(cameraActionRef.current)
   }, [cameraActionRef.current])
 
-    // useEffect(() => {
-    //   console.log('cameraActionRef.current:', cameraActionRef.current)
-    //   console.log('finalPosition:', finalPosition)
-    //   console.log('finalRotation:', finalRotation)
-    //   console.log('isAnimationPlayingRef.current:', isAnimationPlayingRef.current)
-    // }, [cameraActionRef.current, finalPosition, finalRotation, isAnimationPlayingRef.current])
 
-
-  // usePlayAnimations(mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent)
 
   useEffect(() => {
     setContextValue({
@@ -108,11 +86,8 @@ export default function Mountains({props, setContextValue}) {
           position={[-119.1, 114.33, 72.58]}
           rotation={[-0.08, -0.74, -0.05]}
         />
-        
-        {cameraActionRef.current &&
-        finalPosition &&
-        finalRotation &&
-        !isAnimationPlayingRef.current ? (
+
+        {cameraActionRef.current && finalPosition && finalRotation && !latestIsAnimationPlaying ? (
           <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
         ) : null}
 

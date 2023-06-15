@@ -14,7 +14,6 @@ export default function Page() {
   const ref = useRef()
   usePlayAnimations(4)
   useNavigation(ref, '/')
-  // console.log("🚀 ~ file: page.jsx:10 ~ Page ~ props:", props)
 
   return (
     <AnimatePresence>

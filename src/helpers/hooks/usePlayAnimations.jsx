@@ -5,29 +5,13 @@ import { CameraShake } from '@react-three/drei'
 import { useAnimationsContext } from '@/helpers/AnimationsContext'
 
 const usePlayAnimations = (mountAnimation) => {
-  // console.log('🚀 ~ file: usePlayAnimations.jsx:8 ~ usePlayAnimations ~ mountAnimation:', mountAnimation)
   const { mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent } = useAnimationsContext()
- 
+
   const [localIsAnimationPlaying, setLocalIsAnimationPlaying] = useState(false)
   const localIsAnimationPlayingRef = useRef(localIsAnimationPlaying)
-  const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
-  const { setIsLoading, setIsInitialized, setIsAnimationPlaying } = useStore()
+  const { setIsLoading, setIsInitialized } = useStore()
 
   const cameraActionRef = useRef(cameraActionCurrent)
-
-  useEffect(() => {
-    const unsubscribeAnimPlaying = useStore.subscribe(
-      (newState) => {
-        isAnimationPlayingRef.current = newState.isAnimationPlaying
-      },
-      (state) => {
-        state.isAnimationPlaying !== isAnimationPlayingRef.current
-      },
-    )
-    return () => {
-      unsubscribeAnimPlaying()
-    }
-  }, [])
 
   useEffect(() => {
     cameraActionRef.current = cameraActionCurrent
@@ -40,25 +24,18 @@ const usePlayAnimations = (mountAnimation) => {
       handleAnimations(mountAnimation)
     }
   }, [mixer, actions, mountAnimation])
-
+  
   useEffect(() => {
-    localIsAnimationPlayingRef.current = localIsAnimationPlaying
-    console.log("🚀 ~ file: usePlayAnimations.jsx:46 ~ useEffect ~ localIsAnimationPlayingRef.current:", localIsAnimationPlayingRef.current)
-    console.log("🚀 ~ file: usePlayAnimations.jsx:46 ~ useEffect ~ localIsAnimationPlaying:", localIsAnimationPlaying)
+    setLocalIsAnimationPlaying((prevState) => {
+      localIsAnimationPlayingRef.current = prevState
+      return prevState
+    })
+    console.log("🚀 ~ file: usePlayAnimations.jsx:31 ~ usePlayAnimations ~ localIsAnimationPlaying:", localIsAnimationPlaying)
+    console.log("🚀 ~ file: usePlayAnimations.jsx:31 ~ setLocalIsAnimationPlaying ~ localIsAnimationPlayingRef.current:", localIsAnimationPlayingRef.current)
   }, [localIsAnimationPlaying])
-
-  useEffect(() => {
-    console.log(
-      '🚀 ~ file: usePlayAnimations.jsx:52 ~ useEffect ~ localIsAnimationPlayingRef.current:',
-      localIsAnimationPlayingRef.current,
-    )
-    setIsAnimationPlaying(localIsAnimationPlayingRef.current)
-  }, [localIsAnimationPlaying])
-
+  
   const handleAnimations = (mountAnimation) => {
     const currentAnimationName = `CameraAction${mountAnimation}`
-
-    // console.log("🚀 ~ file: usePlayAnimations.jsx:55 ~ handleAnimations ~ currentAnimationName:", currentAnimationName)
     if (actions && !localIsAnimationPlayingRef.current && mountAnimation) {
       const currentAnimation = actions[currentAnimationName]
 
@@ -70,7 +47,6 @@ const usePlayAnimations = (mountAnimation) => {
       currentAnimation.loop = THREE.LoopOnce
       currentAnimation.play()
       setLocalIsAnimationPlaying(currentAnimation.isRunning())
-      console.log("🚀 ~ file: usePlayAnimations.jsx:68 ~ handleAnimations ~ (currentAnimation.isRunning():", currentAnimation.isRunning())
       mixer.addEventListener('finished', onAnimationFinished)
     }
   }
@@ -78,13 +54,22 @@ const usePlayAnimations = (mountAnimation) => {
   const onAnimationFinished = () => {
     if (cameraActionRef.current) {
       setLocalIsAnimationPlaying(false)
-
       setFinalPosition(cameraActionRef.current.position.clone())
       setFinalRotation(cameraActionRef.current.rotation.clone())
 
       mixer.removeEventListener('finished', onAnimationFinished)
     }
   }
+
+  const getLocalIsAnimationPlaying = () => {
+    console.log(
+      '🚀 ~ file: usePlayAnimations.jsx:67 ~ getLocalIsAnimationPlaying ~ localIsAnimationPlayingRef.current:',
+      localIsAnimationPlayingRef.current,
+    )
+    return localIsAnimationPlayingRef.current
+  }
+
+  return getLocalIsAnimationPlaying
 }
 
 export default usePlayAnimations

@@ -1,46 +1,26 @@
 'use client'
 
-import dynamic from 'next/dynamic'
 import { AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-
-import { useStore } from '@/helpers/store'
-
-// const AboutFirst = dynamic(() => import('@/components/dom/About/AboutFirst'), {
-//   ssr: false,
-//   loading: () => <p>Loading...</p>,
-// })
-// const AboutSecond = dynamic(() => import('@/components/dom/About/AboutSecond'), {
-//   ssr: false,
-//   loading: () => <p>Loading...</p>,
-// })
-
-
 import { AboutFirst } from '@/components/dom/About/AboutFirst'
+import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 
 export default function Page({isClicked, handleClick}) {
   const ref = useRef(null)
   const router = useRouter()
-
-  const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
+  const getLocalIsAnimationPlaying = usePlayAnimations()
+  const [latestIsAnimationPlaying, setLatestIsAnimationPlaying] = useState(getLocalIsAnimationPlaying())
 
   useEffect(() => {
-    const unsubscribe = useStore.subscribe(
-      (newState) => {
-        isAnimationPlayingRef.current = newState.isAnimationPlaying
-      },
-      (state) => state.isAnimationPlaying !== isAnimationPlayingRef.current,
-    )
-    return () => unsubscribe()
-  }, [])
+    setLatestIsAnimationPlaying(getLocalIsAnimationPlaying())
+  }, [getLocalIsAnimationPlaying])
 
   const handleWheel = useCallback(() => {
-    if (!isAnimationPlayingRef.current) {
+    if (!latestIsAnimationPlaying) {
       router.push('/about/2')
     }
-  }, [router, isAnimationPlayingRef])
+  }, [router, latestIsAnimationPlaying])
 
   useEffect(() => {
     let refVar = ref.current

@@ -11,12 +11,6 @@ export const useStore = create(
       isLoading: true,
       setIsLoading: (value) => set(() => ({ isLoading: value })),
 
-      isAnimationPlaying: false,
-      setIsAnimationPlaying: (value) => {
-        console.log("ANIMATION PLAYING", value)
-        set(() => ({ isAnimationPlaying: value }))
-      },
-
       // wireMesh: false,
       // setWireMesh: (value) => set(() => ({ wireMesh: value })),
 

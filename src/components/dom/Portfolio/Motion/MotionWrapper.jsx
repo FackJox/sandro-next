@@ -1,29 +1,12 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
-import dynamic from 'next/dynamic'
-import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
-// import { Lightbox, Fullscreen, Slideshow, Thumbnails, Zoom } from 'yet-another-react-lightbox'
-import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
-import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen'
-import Slideshow from 'yet-another-react-lightbox/plugins/slideshow'
-import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
-import Zoom from 'yet-another-react-lightbox/plugins/zoom'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
-import { useEffect } from 'react'
-import { mapImageResources } from '@/helpers/cloudinary'
 
-// const PortfolioMenu = dynamic(
-//   () => import('@/components/dom/portfolio/PortfolioMenu').then((mod) => mod.PortfolioMenu),
-//   {
-//     ssr: false,
-//     loading: () => <p>Loading...</p>,
-//   },
-// )
+
 import MotionGallery from '@/components/dom/Portfolio/Motion/MotionGallery'
 import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
-import StillsGallery from '@/components/dom/Portfolio/Stills/StillsGallery'
 
 export function MotionWrapper({ motionData }) {
   console.log("🚀 ~ file: MotionWrapper.jsx:29 ~ MotionWrapper ~ motionData:", motionData)
@@ -41,6 +24,14 @@ export function MotionWrapper({ motionData }) {
 
   const playlists = motionData.playlists.items
   const videos = motionData.videos.items
+
+   const [selectedPlaylistId, setSelectedPlaylistId] = useState(null)
+
+   useEffect(() => {
+     if (selectedPlaylistId) {
+       onPlaylistChange(selectedPlaylistId)
+     }
+   }, [selectedPlaylistId, onPlaylistChange])
 
 
 

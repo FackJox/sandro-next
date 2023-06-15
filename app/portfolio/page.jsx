@@ -1,9 +1,5 @@
 import { search, mapImageResources, getFolders } from '@/helpers/cloudinary'
-
-import { useStore } from '@/helpers/store'
 import PortfolioMenu from '@/components/dom/Portfolio/PortfolioMenu'
-
-
 
 
 async function getStillsData() {
@@ -39,7 +35,7 @@ async function getYoutubeData() {
   const dataAllVideos = await responseVideos.json()
   const dataPlaylists = await responsePlaylists.json()
   const dataPLVideos = await responsePLVideos.json()
-  console.log('🚀 ~ file: page.jsx:32 ~ getYoutubeData ~ dataPlaylists:', dataPlaylists, dataPLVideos)
+  
   
   return { videos: dataAllVideos, playlists: dataPlaylists, plVideos: dataPLVideos }
 }
@@ -53,7 +49,6 @@ export default async function Page() {
     const yt = getYoutubeData();
     const [stillsData, motionData] = await Promise.all([stills, yt]);
 
-    console.log('🚀 ~ file: page.jsx:58 ~ Page ~ motionData:', motionData)
 
   return (
     <>

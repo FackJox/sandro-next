@@ -27,9 +27,7 @@ export default function MotionPlayer(props) {
     setCurrentIndex,
     videos,
   } = props
-  // console.log('🚀 ~ file: MotionPlayer.jsx:17 ~ MotionPlayer ~ currentVideo:', currentVideo)
-  // console.log('🚀 ~ file: MotionPlayer.jsx:17 ~ MotionPlayer ~ nextVideo:', nextVideo)
-  // console.log('🚀 ~ file: MotionPlayer.jsx:17 ~ MotionPlayer ~ prevVideo:', prevVideo)
+
 
   return (
     <div className='grid w-screen h-screen grid-cols-4 grid-rows-6 gap-4'>
