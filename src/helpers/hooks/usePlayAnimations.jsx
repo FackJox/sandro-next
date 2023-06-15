@@ -6,9 +6,9 @@ import { useAnimationsContext } from '@/helpers/AnimationsContext'
 
 const usePlayAnimations = (mountAnimation) => {
   const { mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent } = useAnimationsContext()
+  const [forceUpdate, setForceUpdate] = useState(false)
 
   const [localIsAnimationPlaying, setLocalIsAnimationPlaying] = useState(false)
-  const localIsAnimationPlayingRef = useRef(localIsAnimationPlaying)
   const { setIsLoading, setIsInitialized } = useStore()
 
   const cameraActionRef = useRef(cameraActionCurrent)
@@ -19,24 +19,25 @@ const usePlayAnimations = (mountAnimation) => {
 
   useEffect(() => {
     if (mixer && actions && mountAnimation) {
-      mixer.timeScale = 1.4
+      mixer.timeScale = 0.4
       mixer.stopAllAction()
       handleAnimations(mountAnimation)
     }
   }, [mixer, actions, mountAnimation])
-  
+
   useEffect(() => {
-    setLocalIsAnimationPlaying((prevState) => {
-      localIsAnimationPlayingRef.current = prevState
-      return prevState
-    })
-    console.log("🚀 ~ file: usePlayAnimations.jsx:31 ~ usePlayAnimations ~ localIsAnimationPlaying:", localIsAnimationPlaying)
-    console.log("🚀 ~ file: usePlayAnimations.jsx:31 ~ setLocalIsAnimationPlaying ~ localIsAnimationPlayingRef.current:", localIsAnimationPlayingRef.current)
+    console.log('🚀 ~ file: usePlayAnimations.jsx:32 ~ useEffect ~ localIsAnimationPlaying:', localIsAnimationPlaying)
+    
   }, [localIsAnimationPlaying])
-  
+
   const handleAnimations = (mountAnimation) => {
+    setLocalIsAnimationPlaying((prevState) => {
+      const newState = !prevState
+      return newState
+    })
+    setForceUpdate((prev) => !prev)
     const currentAnimationName = `CameraAction${mountAnimation}`
-    if (actions && !localIsAnimationPlayingRef.current && mountAnimation) {
+    if (actions && !localIsAnimationPlaying && mountAnimation) {
       const currentAnimation = actions[currentAnimationName]
 
       mixer.stopAllAction()
@@ -63,10 +64,10 @@ const usePlayAnimations = (mountAnimation) => {
 
   const getLocalIsAnimationPlaying = () => {
     console.log(
-      '🚀 ~ file: usePlayAnimations.jsx:67 ~ getLocalIsAnimationPlaying ~ localIsAnimationPlayingRef.current:',
-      localIsAnimationPlayingRef.current,
+      '🚀 ~ file: usePlayAnimations.jsx:67 ~ getLocalIsAnimationPlaying ~ localIsAnimationPlaying:',
+      localIsAnimationPlaying,
     )
-    return localIsAnimationPlayingRef.current
+    return localIsAnimationPlaying
   }
 
   return getLocalIsAnimationPlaying
