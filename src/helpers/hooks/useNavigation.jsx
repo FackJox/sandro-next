@@ -3,40 +3,48 @@ import { useRouter } from 'next/navigation'
 import { debounce } from 'lodash'
 import { useSwipeable } from 'react-swipeable'
 import usePlayAnimations from './usePlayAnimations'
+import { useStore } from '@/helpers/store'
 
 const useNavigation = (ref, nextRoute) => {
   const router = useRouter()
 
-   const getLocalIsAnimationPlaying = usePlayAnimations()
-   const [latestIsAnimationPlaying, setLatestIsAnimationPlaying] = useState(getLocalIsAnimationPlaying())
-   
-   useEffect(() => {
-    //  console.log("🚀 ~ file: useNavigation.jsx:12 ~ useNavigation ~ latestIsAnimationPlaying:", latestIsAnimationPlaying)
-     setLatestIsAnimationPlaying(getLocalIsAnimationPlaying())
-   }, [getLocalIsAnimationPlaying])
+const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
 
+useEffect(() => {
+  const unsubscribe = useStore.subscribe(
+    (newState) => {
+      isAnimationPlayingRef.current = newState.isAnimationPlaying
+    },
+    (state) => {
+      state.isAnimationPlaying !== isAnimationPlayingRef.current
+    },
+  )
+  return () => {
+    unsubscribe()
+  }
+}, [])
 
   const handleWheel = useCallback(
     debounce(
       () => {
-        if (!latestIsAnimationPlaying) {
+        if (!isAnimationPlayingRef.current) {
           router.push(nextRoute)
         }
       },
       1000,
       { leading: true, trailing: false },
     ),
-    [router, latestIsAnimationPlaying],
+    [router, isAnimationPlayingRef.current],
   )
 
   const swipeHandlers = useSwipeable({
     onSwipedUp: () => {
-      if (!latestIsAnimationPlaying) {
+      if (!isAnimationPlayingRef.current) {
         router.push(nextRoute)
       }
     },
     onSwipedDown: () => {
-      if (!latestIsAnimationPlaying) {
+      if (!isAnimationPlayingRef.current) {
         router.push(nextRoute)
       }
     },

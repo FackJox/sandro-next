@@ -5,33 +5,42 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { AboutFirst } from '@/components/dom/About/AboutFirst'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
+import { useStore } from '@/helpers/store'
 
-export default function Page({isClicked, handleClick}) {
+export default function Page({ isClicked, handleClick }) {
   const ref = useRef(null)
   const router = useRouter()
-  const getLocalIsAnimationPlaying = usePlayAnimations()
-  const [latestIsAnimationPlaying, setLatestIsAnimationPlaying] = useState(getLocalIsAnimationPlaying())
+  usePlayAnimations(1)
+  const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
 
   useEffect(() => {
-    setLatestIsAnimationPlaying(getLocalIsAnimationPlaying())
-  }, [getLocalIsAnimationPlaying])
+    const unsubscribe = useStore.subscribe(
+      (newState) => {
+        isAnimationPlayingRef.current = newState.isAnimationPlaying
+      },
+      (state) => {
+        state.isAnimationPlaying !== isAnimationPlayingRef.current
+      },
+    )
+    return () => {
+      unsubscribe()
+    }
+  }, [])
 
   const handleWheel = useCallback(() => {
-    if (!latestIsAnimationPlaying) {
+    if (!isAnimationPlayingRef.current) {
       router.push('/about/2')
     }
-  }, [router, latestIsAnimationPlaying])
+  }, [router, isAnimationPlayingRef.current])
 
   useEffect(() => {
     let refVar = ref.current
     ref.current.addEventListener('wheel', handleWheel)
     return () => refVar.removeEventListener('wheel', handleWheel)
   }, [handleWheel])
-  
-  
 
   return (
-    <div  onClick={handleClick} className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
+    <div onClick={handleClick} className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
       <AnimatePresence mode='wait'>
         {!isClicked && <AboutFirst key='aboutfirst' isClicked={isClicked} handleClick={handleClick} />}
       </AnimatePresence>

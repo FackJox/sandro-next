@@ -6,24 +6,36 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
+import { useStore } from '@/helpers/store'
+
 
 import { AboutSecond } from '@/components/dom/About/AboutSecond'
 
 export default function Page({ isClicked, handleClick }) {
   const ref = useRef(null)
   const router = useRouter()
-  const getLocalIsAnimationPlaying = usePlayAnimations()
-  const [latestIsAnimationPlaying, setLatestIsAnimationPlaying] = useState(getLocalIsAnimationPlaying())
+  usePlayAnimations(2)
+  const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
 
   useEffect(() => {
-    setLatestIsAnimationPlaying(getLocalIsAnimationPlaying())
-  }, [getLocalIsAnimationPlaying])
+    const unsubscribe = useStore.subscribe(
+      (newState) => {
+        isAnimationPlayingRef.current = newState.isAnimationPlaying
+      },
+      (state) => {
+        state.isAnimationPlaying !== isAnimationPlayingRef.current
+      },
+    )
+    return () => {
+      unsubscribe()
+    }
+  }, [])
 
   const handleWheel = useCallback(() => {
-    if (!latestIsAnimationPlaying) {
+    if (!isAnimationPlayingRef.current) {
       router.push('/contact')
     }
-  }, [router, latestIsAnimationPlaying])
+  }, [router, isAnimationPlayingRef.current])
 
   useEffect(() => {
     let refVar = ref.current

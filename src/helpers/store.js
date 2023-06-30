@@ -11,13 +11,18 @@ export const useStore = create(
       isLoading: true,
       setIsLoading: (value) => set(() => ({ isLoading: value })),
 
+      isAnimationPlaying: false,
+      setIsAnimationPlaying: (value) => {
+        console.log("ANIMATION IS ", value)
+        set(() => ({ isAnimationPlaying: value }))
+      },
+
       // wireMesh: false,
       // setWireMesh: (value) => set(() => ({ wireMesh: value })),
 
       // sunCycle: 0.0,
       // setSunCycle: (value) => set(() => ({ sunCycle: value })),
-
-     
+      
     }),
   ),
 )
