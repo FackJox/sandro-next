@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { useGLTF, PerspectiveCamera, useAnimations } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
-import { CameraRig } from '@/components/canvas/CameraRig'
+// import { CameraRig } from '@/components/canvas/CameraRig'
 import { useStore } from '@/helpers/store'
 
 
@@ -12,21 +12,21 @@ export default function Mountains({ props, setContextValue }) {
 
   const { nodes, materials, animations } = useGLTF('/models/mountains.glb', true)
   const { mixer, actions } = useAnimations(animations, group)
-  // console.log("🚀 ~ file: Mountains.jsx:15 ~ Mountains ~ actions:", actions)
+  console.log("🚀 ~ file: Mountains.jsx:15 ~ Mountains ~ actions:", actions)
   const [cameraActionCurrent, setCameraActionCurrent] = useState()
   const [finalPosition, setFinalPosition] = useState()
   const [finalRotation, setFinalRotation] = useState()
-  
+
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
-  
-  
+
+
   const { camera } = useThree()
-    
-    useEffect(() => {
-      console.log(camera)
-    }, [camera])
-    
-  
+
+  useEffect(() => {
+    console.log("camera usethree", camera)
+  }, [camera])
+
+
   useEffect(() => {
     const unsubscribe = useStore.subscribe(
       (newState) => {
@@ -35,30 +35,30 @@ export default function Mountains({ props, setContextValue }) {
       (state) => {
         state.isAnimationPlaying !== isAnimationPlayingRef.current
       },
-      )
-      return () => {
-        unsubscribe()
-      }
-    }, [])
-    
-    useEffect(() => {
-      console.log(
-        '🚀 ~ file: Mountains.jsx:37 ~ useEffect ~ isAnimationPlayingRef.current:',
-        isAnimationPlayingRef.current,
-      )
-      // console.log('🚀 ~ file: Mountains.jsx:18 ~ Mountains ~ finalPosition:', finalPosition)
-      // console.log('🚀 ~ file: Mountains.jsx:18 ~ Mountains ~ finalRotation:', finalRotation)
-    }, [isAnimationPlayingRef.current, finalPosition, finalRotation])
+    )
+    return () => {
+      unsubscribe()
+    }
+  }, [])
+
+  useEffect(() => {
+    console.log(
+      '🚀 ~ file: Mountains.jsx:37 ~ useEffect ~ isAnimationPlayingRef.current:',
+      isAnimationPlayingRef.current,
+    )
+    // console.log('🚀 ~ file: Mountains.jsx:18 ~ Mountains ~ finalPosition:', finalPosition)
+    // console.log('🚀 ~ file: Mountains.jsx:18 ~ Mountains ~ finalRotation:', finalRotation)
+  }, [isAnimationPlayingRef.current, finalPosition, finalRotation])
 
 
-useEffect(() => {
-  console.log('🚀 ~ file: Mountains.jsx:36 ~ useEffect ~ cameraActionRef.current:', cameraActionRef.current)
-  setCameraActionCurrent(cameraActionRef.current)
-  console.log('🚀 ~ file: Mountains.jsx:38 ~ useEffect ~ cameraActionRef.current:', cameraActionRef.current)
-  
-}, [cameraActionRef.current])
+  useEffect(() => {
+    // console.log('🚀 ~ file: Mountains.jsx:36 ~ useEffect ~ cameraActionRef.current:', cameraActionRef.current)
+    setCameraActionCurrent(cameraActionRef.current)
+    // console.log('🚀 ~ file: Mountains.jsx:38 ~ useEffect ~ cameraActionRef.current:', cameraActionRef.current)
 
-useEffect(() => {
+  }, [cameraActionRef.current])
+
+  useEffect(() => {
     setContextValue({
       mixer,
       actions,
@@ -120,9 +120,9 @@ useEffect(() => {
           rotation={[-0.08, -0.74, -0.05]}
         />
 
-        {cameraActionRef.current && finalPosition && finalRotation && !isAnimationPlayingRef.current ? (
+        {/* {cameraActionRef.current && finalPosition && finalRotation && !isAnimationPlayingRef.current ? (
           <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
-        ) : null}
+        ) : null} */}
 
         {/* {CameraActionRef.current && !localIsAnimationPlayingRef.current && animationTriggersRef.current !== 3 ? (
           <OrbitControls makeDefault />

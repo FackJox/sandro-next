@@ -7,7 +7,6 @@ import { useStore } from '@/helpers/store'
 
 const useNavigation = (ref, nextRoute) => {
   const router = useRouter()
-
 const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
 
 useEffect(() => {
@@ -27,6 +26,7 @@ useEffect(() => {
   const handleWheel = useCallback(
     debounce(
       () => {
+        console.log("scrolly", nextRoute)
         if (!isAnimationPlayingRef.current) {
           router.push(nextRoute)
         }
