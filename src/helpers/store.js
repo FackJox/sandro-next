@@ -11,9 +11,11 @@ export const useStore = create(
       isLoading: true,
       setIsLoading: (value) => set(() => ({ isLoading: value })),
 
+      lastIncrementTime: 0,
+
       isAnimationPlaying: false,
       setIsAnimationPlaying: (value) => {
-        console.log("ANIMATION IS ", value)
+        console.log("ANIMATION PLAYING", value)
         set(() => ({ isAnimationPlaying: value }))
       },
 
@@ -22,7 +24,8 @@ export const useStore = create(
 
       // sunCycle: 0.0,
       // setSunCycle: (value) => set(() => ({ sunCycle: value })),
-      
+
+
     }),
   ),
 )

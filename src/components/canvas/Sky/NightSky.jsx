@@ -4,7 +4,7 @@ import { Stars } from "@react-three/drei"
 export default function NightSky() {
     return (
         <>
-        
+
             <Stars
                 radius={4000} // Radius of the inner sphere (default=100)
                 depth={50} // Depth of area where stars should fit (default=50)
