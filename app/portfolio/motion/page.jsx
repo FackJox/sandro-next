@@ -16,7 +16,7 @@ async function getYoutubeData() {
   const dataAllVideos = await responseVideos.json()
   const dataPlaylists = await responsePlaylists.json()
 
-  const plVideos = []
+  const plVideos = {}
 
   await Promise.all(dataPlaylists.items.map(async (playlist) => {
     const YT_PLAYLIST_ID = playlist.id
