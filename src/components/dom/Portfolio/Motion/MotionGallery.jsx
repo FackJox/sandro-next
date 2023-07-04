@@ -23,14 +23,20 @@ export default function MotionGallery(props) {
     currentIndex,
     setCurrentIndex,
     toggleMotionPlayer,
+    setSelectedPlaylistId
   } = props
 
   const [activePlaylist, setActivePlaylist] = useState()
 
-  function handleOnPlaylistClick(e) {
-    const playlistPath = e.target.dataset.playlistPath
-    setActivePlaylist(playlistPath)
+  function handleOnPlaylistClick(selectedPlaylistId) {
+    setSelectedPlaylistId(selectedPlaylistId);
+    console.log("playlistId", selectedPlaylistId)
   }
+
+  useEffect(() => {
+    console.log("VIDEOS", videos)
+  }, [videos])
+
 
   return (
     <>
@@ -39,15 +45,14 @@ export default function MotionGallery(props) {
           <ul className='flex pt-[7.5%] align-center justify-center'>
             {playlists &&
               playlists.map((playlist) => {
-                const isActive = playlist.etag === activePlaylist
-                // console.log('FOLDERSZ', playlists)
+                const isActive = playlist.id === activePlaylist
+                console.log('FOLDERSZ', playlists)
                 return (
-                  <li key={playlist.etag} data-active-folder={isActive}>
+                  <li key={playlist.id} data-active-folder={isActive}>
                     <button
-                      data-playlist-path={playlist.etag}
+                      data-playlist-path={playlist.id}
                       className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
-                      onClick={handleOnPlaylistClick}
-                    >
+                      onClick={() => handleOnPlaylistClick(playlist.id)}                    >
                       #{playlist.snippet.localized.title}{' '}
                     </button>
                   </li>

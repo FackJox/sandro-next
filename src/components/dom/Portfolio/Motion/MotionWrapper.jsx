@@ -1,6 +1,6 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 
@@ -15,8 +15,8 @@ export function MotionWrapper({ motionData }) {
   const [prevVideo, setPrevVideo] = useState(motionData.videos.items[0])
   const [nextVideo, setNextVideo] = useState(motionData.videos.items[0])
   const [playing, setPlaying] = useState(false)
+  const [playlistVideos, setPlaylistVideos] = useState(motionData.videos.items);
 
-  const url = 'https://www.youtube.com/watch?v=3pezSYoVje8'
   const [motionPlayerVisible, setMotionPlayerVisible] = useState(false)
   const toggleMotionPlayer = () => {
     setMotionPlayerVisible(!motionPlayerVisible)
@@ -27,11 +27,24 @@ export function MotionWrapper({ motionData }) {
 
    const [selectedPlaylistId, setSelectedPlaylistId] = useState(null)
 
+  const onPlaylistChange = (playlistId) => {
+    let plVideos;
+    if (playlistId && motionData.plVideos.hasOwnProperty(playlistId)) {
+      plVideos = motionData.plVideos[playlistId].items;
+    } else {
+      plVideos = motionData.videos;
+    }
+    setPlaylistVideos(plVideos);
+    console.log("plVideos", plVideos)
+  }
+
+
    useEffect(() => {
      if (selectedPlaylistId) {
        onPlaylistChange(selectedPlaylistId)
      }
-   }, [selectedPlaylistId, onPlaylistChange])
+   }, [selectedPlaylistId])
+   
 
 
 
@@ -68,9 +81,10 @@ export function MotionWrapper({ motionData }) {
           </div>
         ) : (
           <MotionGallery
-            videos={videos}
+              videos={playlistVideos}
             currentIndex={currentIndex}
             setCurrentIndex={setCurrentIndex}
+              setSelectedPlaylistId={setSelectedPlaylistId}
             currentVideo={currentVideo}
             prevVideo={prevVideo}
             nextVideo={nextVideo}
