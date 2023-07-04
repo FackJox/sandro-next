@@ -6,11 +6,12 @@ import { useAnimationsContext } from '@/helpers/AnimationsContext'
 
 const usePlayAnimations = (mountAnimation) => {
   const { mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent } = useAnimationsContext()
-
   const [localIsAnimationPlaying, setLocalIsAnimationPlaying] = useState(false)
   const localIsAnimationPlayingRef = useRef(localIsAnimationPlaying)
+  const { setIsLoading, setIsInitialized, setIsAnimationPlaying, lastPlayedMountAnimation, setLastPlayedMountAnimation } = useStore()
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
-  const { setIsLoading, setIsInitialized, setIsAnimationPlaying } = useStore()
+  const lastPlayedMountAnimationRef = useRef(useStore.getState().lastPlayedMountAnimation)
+
 
   const cameraActionRef = useRef(cameraActionCurrent)
 
@@ -29,11 +30,28 @@ const usePlayAnimations = (mountAnimation) => {
   }, [])
 
   useEffect(() => {
-    cameraActionRef.current = cameraActionCurrent
-  }, [cameraActionCurrent])
+    const unsubscribe = useStore.subscribe(
+      (newState) => {
+        lastPlayedMountAnimationRef.current = newState.lastPlayedMountAnimation
+      },
+      (state) => {
+        state.lastPlayedMountAnimation !== lastPlayedMountAnimationRef.current
+      },
+    )
+    return () => {
+      unsubscribe()
+    }
+  }, [])
 
   useEffect(() => {
-    if (mixer && actions && mountAnimation) {
+    cameraActionRef.current = cameraActionCurrent
+  }, [cameraActionCurrent])
+  
+
+  useEffect(() => {
+    console.log("lastPlayedMountAnimation", lastPlayedMountAnimationRef.current)
+    console.log("mountAnimation", mountAnimation)
+    if (mixer && actions && mountAnimation && mountAnimation !== lastPlayedMountAnimationRef.current) {
       mixer.timeScale = 1.5
       mixer.stopAllAction()
       handleAnimations(mountAnimation)
@@ -49,10 +67,11 @@ const usePlayAnimations = (mountAnimation) => {
   //   setIsAnimationPlaying(localIsAnimationPlaying)
   // }, [localIsAnimationPlaying])
 
+
   const handleAnimations = (mountAnimation) => {
     const currentAnimationName = `CameraAction${mountAnimation}`
-
-    if (actions && !localIsAnimationPlayingRef.current && mountAnimation) {
+    console.log("mountAnimation", mountAnimation)
+    if (actions && !localIsAnimationPlayingRef.current && mountAnimation ) {
       const currentAnimation = actions[currentAnimationName]
 
       mixer.stopAllAction()
@@ -65,6 +84,9 @@ const usePlayAnimations = (mountAnimation) => {
       setLocalIsAnimationPlaying(currentAnimation.isRunning())
       setIsAnimationPlaying(currentAnimation.isRunning())
       mixer.addEventListener('finished', onAnimationFinished)
+
+      // Store the last played mountAnimation number
+      setLastPlayedMountAnimation(mountAnimation)
     }
   }
 

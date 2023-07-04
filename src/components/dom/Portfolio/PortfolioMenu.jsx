@@ -1,8 +1,9 @@
 'use client'
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef , useEffect} from 'react'
 import Link from 'next/link'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 import useNavigation from '@/helpers/hooks/useNavigation'
+import { usePathname } from 'next/navigation';
 
 export default function PortfolioMenu() {
   const ref = useRef()
@@ -16,7 +17,11 @@ export default function PortfolioMenu() {
     setIsHovering({ ...isHovering, [element]: false })
   }
 
-  usePlayAnimations(2)
+      usePlayAnimations(2)
+    
+
+
+
   useNavigation(ref, '/about')
 
   return (

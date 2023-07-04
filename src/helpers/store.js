@@ -19,6 +19,9 @@ export const useStore = create(
         set(() => ({ isAnimationPlaying: value }))
       },
 
+      lastPlayedMountAnimation: null,
+      setLastPlayedMountAnimation: (animationNumber) => set(() => ({ lastPlayedMountAnimation: animationNumber })),
+
       // wireMesh: false,
       // setWireMesh: (value) => set(() => ({ wireMesh: value })),
 
