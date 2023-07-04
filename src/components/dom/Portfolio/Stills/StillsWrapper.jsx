@@ -10,6 +10,7 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import { useEffect } from 'react'
 import { mapImageResources } from '@/helpers/cloudinary'
+import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 
 import StillsGallery from '@/components/dom/Portfolio/Stills/StillsGallery'
 
@@ -50,6 +51,8 @@ export function StillsWrapper({ stillsData }) {
     setNextCursor(nextPageCursor)
     setTotalCount(updatedTotalCount)
   }
+
+  usePlayAnimations(2)
 
   function handleOnFolderClick(e) {
     const folderPath = e.target.dataset.folderPath

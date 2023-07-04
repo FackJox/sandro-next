@@ -35,14 +35,14 @@ export default function Page() {
               <p className='w-[200px] h-16 text-4xl text-center text-icewhite'>STILLS</p>
             </div>
           </Link>
-          {/* <Link href='/about' className=''> */}
+          <Link href='/about' className=''>
           <div>
 
-            <div onClick={handleClick} className='row-start-2'>
+            <div  className='row-start-2'>
               <p className='w-[200px] h-16  text-5xl text-center text-gold'>ABOUT</p>
             </div>
           </div>
-          {/* </Link> */}
+          </Link>
           <Link href='/portfolio/motion' className=''>
             <div className='row-start-2'>
               <p className='w-[200px] h-12 text-4xl text-center text-icewhite'>MOTION</p>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 
+import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 
 import MotionGallery from '@/components/dom/Portfolio/Motion/MotionGallery'
 import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
@@ -21,6 +22,8 @@ export function MotionWrapper({ motionData }) {
   const toggleMotionPlayer = () => {
     setMotionPlayerVisible(!motionPlayerVisible)
   }
+
+  usePlayAnimations(2)
 
   const playlists = motionData.playlists.items
   const videos = motionData.videos.items

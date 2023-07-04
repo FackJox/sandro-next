@@ -42,7 +42,7 @@ export default function Page({ isClicked, handleClick }) {
   return (
     <div onClick={handleClick} className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
       <AnimatePresence mode='wait'>
-        {!isClicked && <AboutFirst key='aboutfirst' isClicked={isClicked} handleClick={handleClick} />}
+       <AboutFirst key='aboutfirst' />
       </AnimatePresence>
     </div>
   )
