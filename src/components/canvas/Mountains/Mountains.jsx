@@ -32,10 +32,10 @@ export default function Mountains({ props, setContextValue }) {
   }, [])
 
   useEffect(() => {
-    console.log(
-      '🚀 ~ file: Mountains.jsx:37 ~ useEffect ~ isAnimationPlayingRef.current:',
-      isAnimationPlayingRef.current,
-    )
+    // console.log(
+    //   '🚀 ~ file: Mountains.jsx:37 ~ useEffect ~ isAnimationPlayingRef.current:',
+    //   isAnimationPlayingRef.current,
+    // )
     // console.log('🚀 ~ file: Mountains.jsx:18 ~ Mountains ~ finalPosition:', finalPosition)
     // console.log('🚀 ~ file: Mountains.jsx:18 ~ Mountains ~ finalRotation:', finalRotation)
   }, [isAnimationPlayingRef.current])

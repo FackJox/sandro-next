@@ -4,8 +4,7 @@ import dynamic from 'next/dynamic'
 import { AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { useEffect, useRef } from 'react'
-
-
+import { useStore } from '@/helpers/store'
 import { AboutFirst } from '@/components/dom/About/AboutFirst'
 import { AboutSecond } from '@/components/dom/About/AboutSecond'
 
@@ -14,6 +13,8 @@ import useNavigation from '@/helpers/hooks/useNavigation'
 
 export default function Page() {
   const ref = useRef()
+  const { setSunCycle } = useStore()
+
   usePlayAnimations(3)
   useNavigation(ref, '/contact')
 
@@ -22,6 +23,10 @@ export default function Page() {
   const handleClick = () => {
     setIsClicked(!isClicked)
   }
+  useEffect(() => {
+    setSunCycle(true);
+  }, []);
+
 
   return (
     <div ref={ref} onClick={handleClick} className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'>

@@ -49,8 +49,8 @@ const usePlayAnimations = (mountAnimation) => {
   
 
   useEffect(() => {
-    console.log("lastPlayedMountAnimation", lastPlayedMountAnimationRef.current)
-    console.log("mountAnimation", mountAnimation)
+    // console.log("lastPlayedMountAnimation", lastPlayedMountAnimationRef.current)
+    // console.log("mountAnimation", mountAnimation)
     if (mixer && actions && mountAnimation && mountAnimation !== lastPlayedMountAnimationRef.current) {
       mixer.timeScale = 1.5
       mixer.stopAllAction()
@@ -70,7 +70,7 @@ const usePlayAnimations = (mountAnimation) => {
 
   const handleAnimations = (mountAnimation) => {
     const currentAnimationName = `CameraAction${mountAnimation}`
-    console.log("mountAnimation", mountAnimation)
+    // console.log("mountAnimation", mountAnimation)
     if (actions && !localIsAnimationPlayingRef.current && mountAnimation ) {
       const currentAnimation = actions[currentAnimationName]
 
@@ -92,7 +92,7 @@ const usePlayAnimations = (mountAnimation) => {
 
   const onAnimationFinished = () => {
     if (cameraActionRef.current) {
-      console.log('INANIMATIONFINISHED')
+      // console.log('INANIMATIONFINISHED')
       setLocalIsAnimationPlaying(false)
       setIsAnimationPlaying(localIsAnimationPlaying)
       setFinalPosition(cameraActionRef.current.position.clone())

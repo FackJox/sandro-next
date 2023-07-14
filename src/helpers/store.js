@@ -25,10 +25,11 @@ export const useStore = create(
       // wireMesh: false,
       // setWireMesh: (value) => set(() => ({ wireMesh: value })),
 
-      // sunCycle: 0.0,
-      // setSunCycle: (value) => set(() => ({ sunCycle: value })),
-
-
+      sunCycle: true,
+      setSunCycle: (value) => {
+        console.log("sunCycle store", value)
+        set(() => ({ sunCycle: value }))
+      },
     }),
   ),
 )
