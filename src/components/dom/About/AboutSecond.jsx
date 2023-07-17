@@ -2,6 +2,7 @@
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function AboutSecond ({ isClicked, handleClick }) {
   const gridVariants = {
@@ -25,7 +26,7 @@ export function AboutSecond ({ isClicked, handleClick }) {
       onClick={handleClick}
       className='flex-col items-center justify-center h-full text-2xl text-left align-middle font-Poppins text-icewhite'
     >
-      <div className='flex h-1/6'></div>
+      <div className='grid h-1/2'></div>
       <motion.div
         className='grid h-full grid-cols-3 pb-32 align-middle grid-rows-8'
         initial='initial'
@@ -94,6 +95,18 @@ export function AboutSecond ({ isClicked, handleClick }) {
             className='rounded-[536px] object-cover'
           />
         </div>
+        <div>
+          <Link href='/portfolio' className=''>
+            <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
+              <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
+                BACK
+              </p>
+            </div>
+          </Link>
+          <div className='inline-flex'>
+            <div className='absolute right-0 bottom-9 lg:bottom-12 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
+          </div>
+          </div>
       </motion.div>
     </div>
   )

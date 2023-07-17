@@ -12,7 +12,7 @@ export default function Head() {
       <meta name='language' content='english' />
       <meta httpEquiv='content-type' content='text/html' />
       <meta name='author' content={author} />
-      <meta name='designer' content={author} />
+      <meta   name='designer' content={author} />
       <meta name='publisher' content={author} />
 
       {/* Search Engine Optimization Meta Tags */}

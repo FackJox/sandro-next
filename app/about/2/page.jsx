@@ -44,7 +44,7 @@ export default function Page({ isClicked, handleClick }) {
   }, [handleWheel])
 
   return (
-    <div onClick={handleClick} className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
+    <div onClick={handleClick} className='z-40 flex items-center justify-center  w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
       <AnimatePresence mode='wait'>
         {isClicked && <AboutSecond key='aboutsecond' isClicked={isClicked} handleClick={handleClick} />}
       </AnimatePresence>

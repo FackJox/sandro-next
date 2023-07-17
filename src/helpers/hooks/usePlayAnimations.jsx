@@ -5,7 +5,7 @@ import { CameraShake } from '@react-three/drei'
 import { useAnimationsContext } from '@/helpers/AnimationsContext'
 
 const usePlayAnimations = (mountAnimation) => {
-  const { mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent } = useAnimationsContext()
+const { mixer, actions, setFinalPosition, setFinalRotation, cameraActionCurrent } = useAnimationsContext() || {}
   const [localIsAnimationPlaying, setLocalIsAnimationPlaying] = useState(false)
   const localIsAnimationPlayingRef = useRef(localIsAnimationPlaying)
   const { setIsLoading, setIsInitialized, setIsAnimationPlaying, lastPlayedMountAnimation, setLastPlayedMountAnimation } = useStore()
