@@ -2,12 +2,12 @@ import Image from 'next/image'
 
 export function Contact() {
   return (
-    <div className='flex-col items-center justify-center h-full align-middle'>
-      <div className='flex h-1/5'></div>
+    <div className='flex-col items-center justify-center h-full w-screen align-middle'>
+      <div className='flex h-1/4'></div>
 
       <div className='grid grid-cols-2 grid-rows-5 place-items-center justify-items-center '>
         <div className='flex items-center col-span-2 row-start-2'>
-          <p className='w-[860px]  text-center text-5xl font-bold text-syellow'>CONNECT TUNNEL RAT</p>
+          <p className='w-[860px]  text-center text-5xl font-bold text-syellow'>CONNECT</p>
         </div>
         <div className='flex items-center col-span-2 row-start-3'>
           <p className='w-[827px]  text-center text-4xl text-syellow'>

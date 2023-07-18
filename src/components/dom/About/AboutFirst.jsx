@@ -23,7 +23,7 @@ export function AboutFirst() {
         exit='exit'
         variants={gridVariants}
       >
-        <div className='flex items-center justify-center col-span-3'>HIGH ALTITUDES TUNNEL RAT</div>
+        <div className='flex items-center justify-center col-span-3'>HIGH ALTITUDES</div>
         <div className='flex items-center col-span-2 col-start-2 row-start-5 pl-40'>
           <p className='h-[108px] w-[530px] text-left font-Poppins text-2xl text-icewhite'>
             I love people, cameras and mountains and have spent the last decade bringing those passions together.

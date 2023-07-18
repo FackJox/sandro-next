@@ -32,10 +32,6 @@ const [isAnimationPlaying, setIsAnimationPlaying] = useState(useStore.getState()
     }
   }, [])
 
-  useEffect(() => {
-    console.log('🚀 ~ file: Mountains.jsx:37 ~ useEffect ~ isAnimationPlaying:', isAnimationPlaying)
-  }, [isAnimationPlaying])
-
 
 
 
@@ -107,10 +103,7 @@ const [isAnimationPlaying, setIsAnimationPlaying] = useState(useStore.getState()
           rotation={[-0.08, -0.74, -0.05]}
         />
 
-        {/* {CameraActionRef.current && finalPosition && finalRotation && !isAnimationPlayingRef.current ? (
-          <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
-        ) : console.log("camerarigdismounted")} */}
-
+   
         {CameraActionRef.current && finalPosition && finalRotation && !isAnimationPlaying ? (
           <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
         ) : (
