@@ -109,10 +109,8 @@ export default function Mountains({ props, setContextValue }) {
           position={[-119.1, 114.33, 72.58]}
           rotation={[-0.08, -0.74, -0.05]}
         />
-        {CameraActionRef.current &&
-          finalPosition &&
-          finalRotation &&
-          !isAnimationPlayingRef ? (
+        
+        {CameraActionRef.current && finalPosition && finalRotation && !isAnimationPlayingRef.current ? (
           <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
         ) : null}
 
@@ -127,6 +125,7 @@ export default function Mountains({ props, setContextValue }) {
           geometry={nodes.EverestDistant1HD.geometry}
           position={[-101.24, 48.69, 505.31]}
         >
+          {/* <MeshDistortMaterial distort={0.1} speed={6} wireframe={true} emissive={'#fcc600'} /> */}
           <meshStandardMaterial map={materials.DistantMountainMat.map} />
         </mesh>
         <mesh

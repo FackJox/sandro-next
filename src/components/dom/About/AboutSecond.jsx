@@ -11,26 +11,14 @@ export function AboutSecond ({ isClicked, handleClick }) {
     exit: { opacity: 0, y: -100, transition: { duration: 0.5 } },
   }
 
-  const control = useAnimation()
-
-  useEffect(() => {
-    if (isClicked) {
-      control.start('animate')
-    } else {
-      control.start('initial')
-    }
-  }, [control, isClicked])
 
   return (
-    <div
-      onClick={handleClick}
-      className='flex-col items-center justify-center h-full text-2xl text-left align-middle font-Poppins text-icewhite'
-    >
-      <div className='grid h-1/2'></div>
+    <div className='flex-col items-center justify-center h-full text-2xl text-left align-middle font-Poppins text-icewhite'>
+      <div className='flex h-1/6'></div>
       <motion.div
         className='grid h-full grid-cols-3 pb-32 align-middle grid-rows-8'
         initial='initial'
-        animate={control}
+        animate='animate'
         exit='exit'
         variants={gridVariants}
       >
@@ -95,7 +83,6 @@ export function AboutSecond ({ isClicked, handleClick }) {
             className='rounded-[536px] object-cover'
           />
         </div>
-       
       </motion.div>
     </div>
   )

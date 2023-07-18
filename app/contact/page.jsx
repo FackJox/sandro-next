@@ -10,7 +10,16 @@ const Contact = dynamic(() => import('@/components/dom/Contact').then((mod) => m
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 import useNavigation from '@/helpers/hooks/useNavigation'
 
+import { useStore } from '@/helpers/store'
 export default function Page() {
+
+  const { setPageInView } = useStore()
+
+    useEffect(() => {
+
+      setPageInView('contact')
+    }, [])
+
   const ref = useRef()
   usePlayAnimations(4)
   useNavigation(ref, '/')

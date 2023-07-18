@@ -1,16 +1,23 @@
 'use client'
 
-import { AnimatePresence } from 'framer-motion'
-import { useEffect } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
+
 import { AboutFirst } from '@/components/dom/About/AboutFirst'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
+import useNavigation from '@/helpers/hooks/useNavigation'
 import { useStore } from '@/helpers/store'
 
-export default function Page({ isClicked, handleClick }) {
+export default function Page() {
+  const { setPageInView } = useStore()
+  useEffect(() => {
+    setPageInView('aboutfirst')
+  }, [])
+
   const ref = useRef(null)
   const router = useRouter()
-  usePlayAnimations(1)
+  usePlayAnimations(3)
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
 
   useEffect(() => {
@@ -27,23 +34,17 @@ export default function Page({ isClicked, handleClick }) {
     }
   }, [])
 
-  const handleWheel = useCallback(() => {
-    if (!isAnimationPlayingRef.current) {
-      router.push('/about/2')
-    }
-  }, [router, isAnimationPlayingRef.current])
-
-  useEffect(() => {
-    let refVar = ref.current
-    ref.current.addEventListener('wheel', handleWheel)
-    return () => refVar.removeEventListener('wheel', handleWheel)
-  }, [handleWheel])
+  useNavigation(ref, '/about/2')
 
   return (
-    <div onClick={handleClick} className='z-40 flex items-center justify-center w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
-      <AnimatePresence mode='wait'>
-       <AboutFirst key='aboutfirst' />
-      </AnimatePresence>
-    </div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { delay: 3.8, duration: 2 } }}
+      exit={{ opacity: 0, transition: { duration: 2.5 } }}
+      className='z-40 flex items-center justify-center w-screen h-screen overflow-hidden bg-transparent text-icewhite'
+    >
+      <AboutFirst key='aboutfirst' />
+    </motion.div>
   )
 }

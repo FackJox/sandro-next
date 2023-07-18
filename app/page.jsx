@@ -6,12 +6,18 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 import useNavigation from '@/helpers/hooks/useNavigation'
+import { useStore } from '@/helpers/store'
 
 export default function Page() {
+  const { setPageInView } = useStore()
   const ref = useRef()
   usePlayAnimations(1)
   useNavigation(ref, '/portfolio')
 
+  useEffect(() => {
+    setPageInView('home')
+
+  },[])
 
 
  return (

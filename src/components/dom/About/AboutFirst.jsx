@@ -5,33 +5,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-export function AboutFirst({ isClicked, handleClick }) {
+export function AboutFirst() {
   const gridVariants = {
     initial: { opacity: 0, y: 100 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
     exit: { opacity: 0, y: -100, transition: { duration: 0.5 } },
   }
 
-  const control = useAnimation()
-
-  useEffect(() => {
-    if (isClicked) {
-      control.start('exit')
-    } else {
-      control.start('animate')
-    }
-  }, [control, isClicked])
 
   return (
-    <div
-      onClick={handleClick}
-      className='flex-col items-center justify-center h-full text-2xl text-left align-middle font-Poppins text-icewhite'
-    >
+    <div className='flex-col items-center justify-center h-full text-2xl text-left align-middle font-Poppins text-icewhite'>
       <div className='flex h-1/6'></div>
       <motion.div
         className='grid h-full grid-cols-3 pb-32 align-middle grid-rows-8'
         initial='initial'
-        animate={control}
+        animate='animate'
         exit='exit'
         variants={gridVariants}
       >
@@ -94,7 +82,6 @@ export function AboutFirst({ isClicked, handleClick }) {
             className=' rounded-[536px] object-cover'
           />
         </div>
-       
       </motion.div>
     </div>
   )

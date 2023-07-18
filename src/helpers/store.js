@@ -15,7 +15,7 @@ export const useStore = create(
 
       isAnimationPlaying: false,
       setIsAnimationPlaying: (value) => {
-        console.log("ANIMATION PLAYING", value)
+        console.log('ANIMATION PLAYING', value)
         set(() => ({ isAnimationPlaying: value }))
       },
 
@@ -27,8 +27,14 @@ export const useStore = create(
 
       sunCycle: true,
       setSunCycle: (value) => {
-        console.log("sunCycle store", value)
+        console.log('sunCycle store', value)
         set(() => ({ sunCycle: value }))
+      },
+
+      pageInView: null,
+      setPageInView: (value) => {
+        console.log('pageInView store', value)
+        set(() => ({ pageInView: value }))
       },
     }),
   ),

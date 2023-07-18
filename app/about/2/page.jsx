@@ -1,20 +1,23 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
-import { useStore } from '@/helpers/store'
+import { motion } from 'framer-motion'
 
+import useNavigation from '@/helpers/hooks/useNavigation'
+
+import { useStore } from '@/helpers/store'
 
 import { AboutSecond } from '@/components/dom/About/AboutSecond'
 
-export default function Page({ isClicked, handleClick }) {
+export default function Page() {
+  const { setPageInView } = useStore()
+
+  useEffect(() => {
+    setPageInView('aboutsecond')
+  }, [])
   const ref = useRef(null)
-  const router = useRouter()
-  usePlayAnimations(2)
   const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
 
   useEffect(() => {
@@ -31,23 +34,17 @@ export default function Page({ isClicked, handleClick }) {
     }
   }, [])
 
-  const handleWheel = useCallback(() => {
-    if (!isAnimationPlayingRef.current) {
-      router.push('/contact')
-    }
-  }, [router, isAnimationPlayingRef.current])
-
-  useEffect(() => {
-    let refVar = ref.current
-    ref.current.addEventListener('wheel', handleWheel)
-    return () => refVar.removeEventListener('wheel', handleWheel)
-  }, [handleWheel])
+  useNavigation(ref, 'contact')
 
   return (
-    <div onClick={handleClick} className='z-40 flex items-center justify-center  w-screen h-screen overflow-hidden bg-transparent text-icewhite'>
-      <AnimatePresence mode='wait'>
-        {isClicked && <AboutSecond key='aboutsecond' isClicked={isClicked} handleClick={handleClick} />}
-      </AnimatePresence>
-    </div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { delay: 1, duration: 2 } }}
+      exit={{ opacity: 0, transition: { duration: 2.5 } }}
+      className='z-40 flex items-center justify-center  w-screen h-screen overflow-hidden bg-transparent text-icewhite'
+    >
+      <AboutSecond key='aboutsecond' />
+    </motion.div>
   )
 }

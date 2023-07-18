@@ -5,11 +5,25 @@ import Link from 'next/link'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 import useNavigation from '@/helpers/hooks/useNavigation'
 import { useRouter } from 'next/navigation'
+import { useStore } from '@/helpers/store'
+
+
 export default function Navigator() {
+  const { pageInView } = useStore()
   const ref = useRef()
   usePlayAnimations(1)
   useNavigation(ref, '/portfolio')
     const router = useRouter()
+    console.log('pageInView', pageInView)
+
+   const pageData = {home: '',
+                      portfolio: '/about',
+                      about: '/contact',
+                      contact: '/portfolio'
+
+    }
+
+
 
   return (
     <AnimatePresence>

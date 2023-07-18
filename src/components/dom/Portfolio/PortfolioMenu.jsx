@@ -8,6 +8,14 @@ import { usePathname } from 'next/navigation';
 import { useStore } from '@/helpers/store'
 
 export default function PortfolioMenu() {
+
+   const { setPageInView } = useStore()
+
+     useEffect(() => {
+
+       setPageInView('portfolio')
+     }, [])
+
   const ref = useRef()
   const [isHovering, setIsHovering] = useState({ motion: false, stills: false })
 

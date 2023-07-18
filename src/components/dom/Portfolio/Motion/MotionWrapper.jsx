@@ -11,6 +11,8 @@ import MotionGallery from '@/components/dom/Portfolio/Motion/MotionGallery'
 import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
 
 export function MotionWrapper({ motionData }) {
+
+ 
   console.log("🚀 ~ file: MotionWrapper.jsx:29 ~ MotionWrapper ~ motionData:", motionData)
   const [currentVideo, setCurrentVideo] = useState(motionData.videos.items[0])
   const [currentIndex, setCurrentIndex] = useState(0)
