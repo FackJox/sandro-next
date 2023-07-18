@@ -1,60 +1,20 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
-import { motion, AnimatePresence, useAnimation, useInView } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 import useNavigation from '@/helpers/hooks/useNavigation'
 import { useRouter } from 'next/navigation'
-
-const textVariant = {
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  hidden: { opacity: 0, y: -50 },
-}
-
-const AnimatedText = ({ text }) => {
-  const control = useAnimation()
-  const [textRef, inView] = useInView() || [null, undefined]
-
-  useEffect(() => {
-    if (inView) {
-      control.start('visible')
-    } else {
-      control.start('hidden')
-    }
-  }, [control, inView])
-
-  return (
-    <motion.p
-      ref={textRef}
-      variants={textVariant}
-      initial='hidden'
-      animate={control}
-      className='absolute right-32 bottom-6 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'
-    >
-      {text}
-    </motion.p>
-  )
-}
 export default function Navigator() {
-  const navRef = useRef()
+  const ref = useRef()
   usePlayAnimations(1)
-  const router = useRouter()
-
-  I
-  const [text, setText] = useState('SCROLL')
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setText((prevText) => (prevText === 'SCROLL' ? 'CLICK' : 'SCROLL'))
-    }, 2000)
-
-    return () => clearInterval(intervalId)
-  }, [])
+  useNavigation(ref, '/portfolio')
+    const router = useRouter()
 
   return (
     <AnimatePresence>
       <motion.div
-        ref={navRef}
+        ref={ref}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0, duration: 2 } }}
         exit={{ opacity: 0, transition: { duration: 2.5 } }}
@@ -71,7 +31,9 @@ export default function Navigator() {
           </div>
           <Link href='/portfolio' className=''>
             <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-              <AnimatedText text={text} />
+              <p className='absolute right-32 bottom-6 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'>
+                SCROLL
+              </p>
             </div>
           </Link>
           <div className='inline-flex'>
