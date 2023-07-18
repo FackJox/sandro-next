@@ -3,12 +3,11 @@ import React from 'react'
 
 import { Layout } from '@/components/dom/Layout'
 import Navigator  from '@/components/dom/Navigator'
+import { Navbar } from '@/components/dom/Navbar'
 
 import '@/global.css'
 
-const Navbar = dynamic(() => import('@/components/dom/Navbar').then((mod) => mod.Navbar), {
-  ssr: false,
-})
+
 
 export const metadata = {
   title: 'sandro gh | High Altitudes & Hostile Environments',

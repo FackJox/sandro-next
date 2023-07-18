@@ -29,13 +29,12 @@ export default function Page() {
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 1, transition: { delay: 1.75, duration: 2 } }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2.5 }}
         className='z-40 flex w-screen h-screen overflow-hidden bg-transparent text-icewhite'
       >
         <Contact />
-      
       </motion.div>
     </AnimatePresence>
   )

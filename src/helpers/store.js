@@ -33,7 +33,6 @@ export const useStore = create(
 
       pageInView: null,
       setPageInView: (value) => {
-        console.log('pageInView store', value)
         set(() => ({ pageInView: value }))
       },
     }),

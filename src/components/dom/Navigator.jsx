@@ -14,7 +14,6 @@ export default function Navigator() {
   usePlayAnimations(1)
   useNavigation(ref, '/portfolio')
     const router = useRouter()
-    console.log('pageInView', pageInView)
 
 
     function fwdRoute(pageInView){
@@ -49,15 +48,25 @@ export default function Navigator() {
         <div>
           <div onClick={() => router.back()} className='cursor-pointer'>
             <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-              <p className='absolute left-36 bottom-9 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'>BACK</p>
+              {pageInView !== 'home' ? (
+                <p className='absolute left-36 bottom-9 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'>
+                  BACK
+                </p>
+              ) : null}{' '}
             </div>
           </div>
           <div className='inline-flex'>
             <div className='absolute left-0 bottom-9 lg:bottom-24 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
           </div>
+
+     
           <Link href={fwdRoute(pageInView)} className=''>
             <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-              <p className='absolute right-20 bottom-6 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'>FWD</p>
+              {pageInView !== 'home' ? (
+                <p className='absolute right-20 bottom-6 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'>
+                  FWD
+                </p>
+              ) : null}{' '}
             </div>
           </Link>
           <div className='inline-flex'>
