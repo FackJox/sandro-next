@@ -16,12 +16,24 @@ export default function Navigator() {
     const router = useRouter()
     console.log('pageInView', pageInView)
 
-   const pageData = {home: '',
-                      portfolio: '/about',
-                      about: '/contact',
-                      contact: '/portfolio'
 
-    }
+    function fwdRoute(pageInView){
+
+      switch (pageInView) {
+        case 'home':
+          return '/portfolio'
+        case 'portfolio':
+          return '/about/1'
+        case 'aboutfirst':
+          return '/about/2'
+        case 'aboutsecond':
+          return '/contact'
+        case 'contact':
+          return '/portfolio'
+        default:
+          return ''
+      }
+            }
 
 
 
@@ -43,11 +55,9 @@ export default function Navigator() {
           <div className='inline-flex'>
             <div className='absolute left-0 bottom-9 lg:bottom-24 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
           </div>
-          <Link href='/portfolio' className=''>
+          <Link href={fwdRoute(pageInView)} className=''>
             <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-              <p className='absolute right-32 bottom-6 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'>
-                SCROLL
-              </p>
+              <p className='absolute right-20 bottom-6 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'>FWD</p>
             </div>
           </Link>
           <div className='inline-flex'>

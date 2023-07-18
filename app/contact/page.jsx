@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 const Contact = dynamic(() => import('@/components/dom/Contact').then((mod) => mod.Contact), {
   ssr: true,

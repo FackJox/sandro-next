@@ -32,12 +32,10 @@ export default function Mountains({ props, setContextValue }) {
   }, [])
 
   useEffect(() => {
-    // console.log(
-    //   '🚀 ~ file: Mountains.jsx:37 ~ useEffect ~ isAnimationPlayingRef.current:',
-    //   isAnimationPlayingRef.current,
-    // )
-    // console.log('🚀 ~ file: Mountains.jsx:18 ~ Mountains ~ finalPosition:', finalPosition)
-    // console.log('🚀 ~ file: Mountains.jsx:18 ~ Mountains ~ finalRotation:', finalRotation)
+    console.log(
+      '🚀 ~ file: Mountains.jsx:37 ~ useEffect ~ isAnimationPlayingRef.current:',
+      isAnimationPlayingRef.current)
+
   }, [isAnimationPlayingRef.current])
 
 
@@ -109,10 +107,10 @@ export default function Mountains({ props, setContextValue }) {
           position={[-119.1, 114.33, 72.58]}
           rotation={[-0.08, -0.74, -0.05]}
         />
-        
+
         {CameraActionRef.current && finalPosition && finalRotation && !isAnimationPlayingRef.current ? (
           <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
-        ) : null}
+        ) : console.log("camerarigdismounted")}
 
         {/* {CameraActionRef.current && !localIsAnimationPlayingRef.current && animationTriggersRef.current !== 3 ? (
           <OrbitControls makeDefault />
