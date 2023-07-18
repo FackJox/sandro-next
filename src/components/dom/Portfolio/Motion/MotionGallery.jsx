@@ -119,7 +119,7 @@ export default function MotionGallery(props) {
                         toggleMotionPlayer()
                       }}
                     >
-                      <div className='w-12 rounded h-12'>
+                      <div className='w-12 rounded-full h-12'>
 
                       <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 2v20l18-10L6 2z' />
