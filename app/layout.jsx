@@ -2,6 +2,8 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 
 import { Layout } from '@/components/dom/Layout'
+import Navigator  from '@/components/dom/Navigator'
+
 import '@/global.css'
 
 const Navbar = dynamic(() => import('@/components/dom/Navbar').then((mod) => mod.Navbar), {
@@ -31,6 +33,7 @@ export default function RootLayout({ children }) {
         <Layout>
           {children}
         </Layout>
+        <Navigator />
       </body>
     </html>
   )

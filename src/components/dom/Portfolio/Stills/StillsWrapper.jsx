@@ -11,6 +11,7 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import { useEffect } from 'react'
 import { mapImageResources } from '@/helpers/cloudinary'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
+import { useStore } from '@/helpers/store'
 
 import StillsGallery from '@/components/dom/Portfolio/Stills/StillsGallery'
 
@@ -81,7 +82,11 @@ export function StillsWrapper({ stillsData }) {
     })()
   }, [activeFolder])
 
- 
+   const { setSunCycle } = useStore()
+
+   useEffect(() => {
+     setSunCycle(false)
+   }, [])
 
   return (
     <AnimatePresence>

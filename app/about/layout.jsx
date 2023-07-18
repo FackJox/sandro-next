@@ -50,26 +50,7 @@ export default function Page() {
         </AnimatePresence>
       </div>
     </div>
-     <div className=' font-BrandonReg font-normal leading-[normal] text-icewhite'>
-              <p className='absolute right-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
-                SCROLL
-              </p>
-            </div>
-
-            <div className=''>
-              <div className='absolute right-0 bottom-9 lg:bottom-12 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
-            </div>
-
-            <div className=' font-BrandonReg font-normal leading-[normal] text-icewhite'>
-              <p className='absolute left-24 bottom-4 lg:bottom-6 h-8 w-[122px] lg:text-base tracking-[3.68px]'>
-                BACK
-              </p>
-            </div>
-
-            <div className=''>
-              <div className='absolute left-0 bottom-9 lg:bottom-12 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
-            </div>
-       
+     
     </motion.div>
   </AnimatePresence >
   

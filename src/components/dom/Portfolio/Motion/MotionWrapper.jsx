@@ -5,6 +5,7 @@ import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
+import { useStore } from '@/helpers/store'
 
 import MotionGallery from '@/components/dom/Portfolio/Motion/MotionGallery'
 import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
@@ -17,7 +18,11 @@ export function MotionWrapper({ motionData }) {
   const [nextVideo, setNextVideo] = useState(motionData.videos.items[0])
   const [playing, setPlaying] = useState(false)
   const [playlistVideos, setPlaylistVideos] = useState(motionData.videos.items);
+  const { setSunCycle } = useStore()
 
+  useEffect(() => {
+    setSunCycle(false)
+  }, [])
   const [motionPlayerVisible, setMotionPlayerVisible] = useState(false)
   const toggleMotionPlayer = () => {
     setMotionPlayerVisible(!motionPlayerVisible)

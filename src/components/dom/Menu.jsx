@@ -17,7 +17,8 @@ export default function Menu() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0, duration: 2 } }}
         exit={{ opacity: 0, transition: { duration: 2.5 } }}
-        className='ml-auto flex z-40 absolute top-16 right-12 justify-end bg-transparent text-icewhite'
+        className='ml-auto flex z-40 absolute top-16 right-12 justify-end bg-gray-800 text-icewhite'
+        
       >
         <div>
           <Link href='/portfolio/stills'>
