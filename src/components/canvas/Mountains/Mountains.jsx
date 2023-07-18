@@ -10,7 +10,7 @@ export default function Mountains({ props, setContextValue }) {
   const group = useRef()
   const CameraActionRef = useRef()
 
-  const isAnimationPlayingRef = useRef(useStore.getState().isAnimationPlaying)
+const [isAnimationPlaying, setIsAnimationPlaying] = useState(useStore.getState().isAnimationPlaying)
   const { nodes, materials, animations } = useGLTF('/models/mountains.glb', true)
   const { mixer, actions } = useAnimations(animations, group)
   const [cameraActionCurrent, setCameraActionCurrent] = useState()
@@ -20,23 +20,22 @@ export default function Mountains({ props, setContextValue }) {
   useEffect(() => {
     const unsubscribe = useStore.subscribe(
       (newState) => {
-        isAnimationPlayingRef.current = newState.isAnimationPlaying
+        setIsAnimationPlaying(newState.isAnimationPlaying)
       },
       (state) => {
-        state.isAnimationPlaying !== isAnimationPlayingRef.current
+        state.isAnimationPlaying !== isAnimationPlaying
       },
     )
+
     return () => {
       unsubscribe()
     }
   }, [])
 
   useEffect(() => {
-    console.log(
-      '🚀 ~ file: Mountains.jsx:37 ~ useEffect ~ isAnimationPlayingRef.current:',
-      isAnimationPlayingRef.current)
+    console.log('🚀 ~ file: Mountains.jsx:37 ~ useEffect ~ isAnimationPlaying:', isAnimationPlaying)
+  }, [isAnimationPlaying])
 
-  }, [isAnimationPlayingRef.current])
 
 
 
@@ -108,13 +107,15 @@ export default function Mountains({ props, setContextValue }) {
           rotation={[-0.08, -0.74, -0.05]}
         />
 
-        {CameraActionRef.current && finalPosition && finalRotation && !isAnimationPlayingRef.current ? (
+        {/* {CameraActionRef.current && finalPosition && finalRotation && !isAnimationPlayingRef.current ? (
           <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
-        ) : console.log("camerarigdismounted")}
+        ) : console.log("camerarigdismounted")} */}
 
-        {/* {CameraActionRef.current && !localIsAnimationPlayingRef.current && animationTriggersRef.current !== 3 ? (
-          <OrbitControls makeDefault />
-        ) : null} */}
+        {CameraActionRef.current && finalPosition && finalRotation && !isAnimationPlaying ? (
+          <CameraRig finalPosition={finalPosition} finalRotation={finalRotation} camera={cameraActionCurrent} />
+        ) : (
+          console.log('camerarigdismounted')
+        )}
 
         <mesh
           name='EverestDistant1HD'
