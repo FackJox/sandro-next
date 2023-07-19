@@ -45,34 +45,26 @@ export default function Navigator() {
         exit={{ opacity: 0, transition: { duration: 2.5 } }}
         className='z-40 w-screen h-screen justify-end bg-transparent text-icewhite'
       >
-        <div>
-          <div onClick={() => router.back()} className='cursor-pointer'>
-            <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-              {pageInView !== 'home' ? (
-                <p className='absolute left-36 bottom-9 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'>
-                  BACK
-                </p>
-              ) : null}{' '}
+        {pageInView !== 'home' ? (
+          <div>
+            <div onClick={() => router.back()} className='cursor-pointer'>
+              <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
+                <p className='absolute left-36 bottom-20 h-7 w-[122px] text-2xl tracking-[3.68px]'>BACK</p>
+              </div>
             </div>
+            <motion.div className='inline-flex' layoutId='leftline'>
+              <div className='absolute left-0 bottom-24 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
+            </motion.div>
+            <Link href={fwdRoute(pageInView)} className=''>
+              <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
+                <p className='absolute right-20 bottom-20 h-7 w-[122px] text-2xl tracking-[3.68px]'>FWD</p>
+              </div>
+            </Link>
+            <motion.div className='inline-flex' layoutId='rightline'>
+              <div className='absolute right-0 bottom-24 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
+            </motion.div>
           </div>
-          <div className='inline-flex'>
-            <div className='absolute left-0 bottom-9 lg:bottom-24 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
-          </div>
-
-     
-          <Link href={fwdRoute(pageInView)} className=''>
-            <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-              {pageInView !== 'home' ? (
-                <p className='absolute right-20 bottom-6 lg:bottom-20 h-7 w-[122px] lg:text-2xl tracking-[3.68px]'>
-                  FWD
-                </p>
-              ) : null}{' '}
-            </div>
-          </Link>
-          <div className='inline-flex'>
-            <div className='absolute right-0 bottom-9 lg:bottom-24 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
-          </div>
-        </div>
+        ) : null}
       </motion.div>
     </AnimatePresence>
   )

@@ -25,32 +25,45 @@ export default function Page() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 2.5, duration: 2 } }}
         exit={{ opacity: 0, transition: { duration: 2.5 } }}
-        className='z-40 flex items-center justify-center pb-10 w-screen h-screen bg-transparent text-icewhite'
+        className='z-40 flex flex-col items-center w-screen h-screen bg-transparent text-icewhite'
+        id='1'
       >
-        <div className='grid grid-cols-3 grid-rows-2 gap-2 w-full'>
+        <div id='2' className='flex h-3/4 w-full'></div>
+        <div id='3' className='grid grid-cols-3 grid-rows-2 gap-2 w-screen h-1/4 '>
           <Link href='/portfolio/motion'>
-            <div className='col-start-3 row-start-2 h-32 w-full flex justify-center items-center'>
-              <motion.p layoutId='motion' className='w-[200px] h-12 text-4xl lg:text-5xl text-center text-icewhite'>
+            <div className='col-start-3 row-start-2 h-32 w-full flex justify-center items-center '>
+              <motion.div className='flex' layoutId='rightline'>
+                <div className='absolute z-50 left-0  h-32 w-[132px] outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
+              </motion.div>
+              <motion.p layoutId='motion' className='h-12 w-full text-5xl lg:text-5xl text-center text-icewhite'>
                 MOTION
               </motion.p>
             </div>
           </Link>
+
           <Link href='/about'>
-            <div className='col-start-2 row-start-2 h-32 w-full flex justify-center items-center'>
-              <p className='w-[200px] h-16  text-5xl lg:text-6xl text-center text-gold'>ABOUT</p>
+            <div className='col-start-2 row-start-2 h-36 w-full flex justify-center items-center'>
+              <p className=' h-16 text-7xl text-center text-gold justify-self-center'>
+                ABOUT
+              </p>
             </div>
           </Link>
+
           <Link href='/portfolio/stills'>
             <div className='col-start-1 row-start-2 h-32 w-full flex justify-center items-center'>
-              <motion.p layoutId='stills' className='w-[200px] h-12 text-4xl lg:text-5xl text-center text-icewhite'>
+              <motion.div className='flex' layoutId='leftline'>
+                <div className='absolute z-50 right-0 h-32 w-[132px] outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
+              </motion.div>
+              <motion.p layoutId='stills' className='w-full h-12 text-5xl text-center text-icewhite'>
                 STILLS
               </motion.p>
             </div>
           </Link>
         </div>
-        <div className='absolute justify-center items-center bottom-6 lg:bottom-20 h-7 w-screen lg:text-2xl tracking-[3.68px]'>
-          <p>Swipe or Scroll to Navigate</p>
-        </div>
+
+        {/* <div id='4' className='flex items-center justify-center h-screen absolute w-screen text-xl tracking-[3.68px]'>
+          <p>click and swipe or scroll to navigate</p>
+        </div> */}
       </motion.div>
     </AnimatePresence>
   )
