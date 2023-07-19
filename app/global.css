@@ -67,8 +67,16 @@
     /* Clip-path for smaller screens */
     clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
   }
-
   
+    .menu {
+    /* Common styles */
+    scale: 00%;
+
+    /* Clip-path for smaller screens */
+    clip-path: polygon(100% 0, 30% 100%, 100% 100%);
+  }
+
+
 
   @media screen and (min-width: 768px) {
     .hover-class-left {
