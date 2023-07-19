@@ -4,8 +4,7 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
-export function AboutSecond() {
+export function AboutSecond ({ isClicked, handleClick }) {
   const gridVariants = {
     initial: { opacity: 0, y: 100 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -14,16 +13,16 @@ export function AboutSecond() {
 
 
   return (
-    <div className='flex-col items-end jjustify-items-end h-screen w-screen '>
-      <div className='flex h-1/3'></div>
+    <div className='flex-col items-center justify-center h-full text-2xl text-left align-middle font-Poppins text-icewhite'>
+      <div className='flex h-1/6'></div>
       <motion.div
-        className='grid h-2/3 grid-cols-3 align-end grid-rows-8 '
+        className='grid h-full grid-cols-3 pb-32 align-middle grid-rows-8'
         initial='initial'
         animate='animate'
         exit='exit'
         variants={gridVariants}
       >
-        <div className='flex items-center justify-center col-span-3 text-5xl text-syellow'>HOSTILE ENVIRONMENTS</div>
+        <div className='flex items-center justify-center col-span-3'>HIGH ALTITUDES</div>
         <div className='flex items-center col-span-2 col-start-2 row-start-5 pl-40'>
           <p className='h-[108px] w-[530px] text-left font-Poppins text-xl text-icewhite'>
             In between I worked on Netflix&apos;s &apos;14 Peaks&apos; as a high altitude DP and produced climbing
@@ -47,7 +46,7 @@ export function AboutSecond() {
           <p className='flex h-[108px] w-[530px] items-end justify-end text-left font-Poppins text-xl text-icewhite'>
             In 2018 I filmed the first Afghan woman as she summited Noshaq, the countries highest peak. In 2022 I flew a
             drone over K2 as the first Pakistani woman reached the top.
-          </p>
+          </p>{' '}
         </div>
         <div className='flex items-center justify-center col-start-2 row-start-4'>
           <svg
@@ -75,18 +74,16 @@ export function AboutSecond() {
             <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
           </svg>
         </div>
-        <div className='col-start-2 row-span-3 row-start-4 mt-[70px] ml-[-125px]'>
+        <div className='col-start-1 row-span-3 row-start-4 pl-24'>
           <Image
             alt='sandro flying a drone'
             src='/img/about/drone.jpg'
             width={200}
             height={246}
-            className=' rounded-[536px] object-cover'
+            className='rounded-[536px] object-cover'
           />
         </div>
       </motion.div>
     </div>
   )
 }
-
-

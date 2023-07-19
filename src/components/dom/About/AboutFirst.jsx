@@ -14,16 +14,16 @@ export function AboutFirst() {
 
 
   return (
-    <div className='flex-col items-center justify-center h-full text-2xl text-left align-middle font-Poppins text-icewhite'>
-      <div className='flex h-1/6'></div>
+    <div className='flex-col items-end jjustify-items-end h-screen w-screen '>
+      <div className='flex h-1/3'></div>
       <motion.div
-        className='grid h-full grid-cols-3 pb-32 align-middle grid-rows-8'
+        className='grid h-2/3 grid-cols-3 align-end grid-rows-8 '
         initial='initial'
         animate='animate'
         exit='exit'
         variants={gridVariants}
       >
-        <div className='flex items-center justify-center col-span-3'>HIGH ALTITUDES</div>
+        <div className='flex items-center justify-center col-span-3 text-5xl text-syellow'>HIGH ALTITUDES</div>
         <div className='flex items-center col-span-2 col-start-2 row-start-5 pl-40'>
           <p className='h-[108px] w-[530px] text-left font-Poppins text-2xl text-icewhite'>
             I love people, cameras and mountains and have spent the last decade bringing those passions together.
@@ -73,7 +73,7 @@ export function AboutFirst() {
             <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
           </svg>
         </div>
-        <div className='col-start-1 row-span-3 row-start-4 pl-24'>
+        <div className='col-start-2 row-span-3 row-start-4 mt-[70px] ml-[-125px]'>
           <Image
             alt='sandro portrait'
             src='/img/about/portrait.jpg'

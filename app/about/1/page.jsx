@@ -42,7 +42,7 @@ export default function Page() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 3.8, duration: 2 } }}
       exit={{ opacity: 0, transition: { duration: 2.5 } }}
-      className='z-40 flex items-center justify-center w-screen h-screen overflow-hidden bg-transparent text-icewhite'
+      className='z-40 flex items-center justify-center w-screen h-screen bg-transparent'
     >
       <AboutFirst key='aboutfirst' />
     </motion.div>
