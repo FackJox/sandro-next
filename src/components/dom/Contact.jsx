@@ -1,13 +1,14 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function Contact() {
   return (
     <div className='flex-col items-center justify-center h-full w-screen align-middle'>
       <div className='flex h-1/4'></div>
 
-      <div className='grid grid-cols-2 grid-rows-5 place-items-center justify-items-center '>
+      <div className='h-1/2 grid grid-cols-2 grid-rows-5 place-items-center justify-items-center '>
         <div className='flex items-center col-span-2 row-start-2'>
-          <p className='w-[860px]  text-center text-5xl font-bold text-syellow'>CONNECT</p>
+          <p className='w-[860px]  text-center text-6xl font-bold text-syellow'>CONNECT</p>
         </div>
         <div className='flex items-center col-span-2 row-start-3'>
           <p className='w-[827px]  text-center text-4xl text-syellow'>
@@ -19,13 +20,17 @@ export function Contact() {
             EMAIL: sandro.gromen-hayes@live.com
           </p>
         </div>
-        <div className='flex items-center row-start-5'>
-          <Image src='/img/contact/yt.jpg' alt='youtube' width={62} height={62} />
-        </div>
-        <div className='flex items-center row-start-5'>
-          {' '}
-          <Image src='/img/contact/insta.jpg' alt='instagram' width={62} height={62} />
-        </div>
+          <div className='flex items-center row-start-5'>
+        <Link href='https://www.youtube.com/@SandroGH5' className='' rel='noopener noreferrer' target='_blank'>
+            <Image src='/img/contact/yt.svg' alt='youtube' width={62} height={62} />
+        </Link>
+          </div>
+
+          <div className='flex items-center row-start-5'>
+        <Link href='https://www.instagram.com/sandro.g.h' className='' rel='noopener noreferrer' target='_blank'>
+            <Image src='/img/contact/insta.svg' alt='instagram' width={62} height={62} />
+        </Link>
+          </div>
       </div>
     </div>
   )
