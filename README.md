@@ -15,22 +15,36 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 
 ### Requirements
 **Simple but unique design** A simple but unique design ensures that the videos and photos are the main focus of the website, but still highlighting the client's industry. To add wow factor I designed and developed an interactive 3D mountain scene which is tranversed as the user navigates the website. I added a Day and Night sun cycle for variety and I also used Framer Motion library to animate certain elements.
+
 **Photo Gallery** A photo gallery to showcase the client's best work in a visually appealing and organised way
+
 **Video Gallery** A video gallery allows the client to display any video work captured, expanding the range of media you can showcase and providing a dynamic element to your portfolio
+
 **About Page** An About Page provides important information about the client, helping to establish their personal brand and build a connection with potential clients or collaborators
+
 **Contact Page** A Contact Page to make it easy for potential clients, and collaborators of the client to get in touch with them, opening up opportunities for work, sales, and networking
+
 **Easy to update main content** Making the main content easy to update as the client is non technical and generally a busy person often without access to a laptop 
+
 **Mobile Friendly** A mobile friendly design to ensure the portfolio looks great and functions well on all devices, from desktops to smartphones, providing a good user experience for all visitors including those in remote mountainous areas 
+
 **Performant Website** A performant website which loads quickly and runs smoothly, to provide a good user experience, and again providing a good user experience for all visitors including those in remote mountainous areas with slow internet access
   
 ### Technologies used
 **React** for the ease of declarative syntax, component-based architecture, custom hooks and performant DOM management
+
 **Next.JS** for static html, easy integrated API calls and no back end for easy hosting
+
 **React Three Fiber Library** brings the declarative and component-based nature of React to Three.js, making it easier to create and manage complex 3D scenes
+
 **Zustand** simplified state management by providing a more intuitive API  and minimalistic approach than other state management libraries
+
 **TailwindCSS** provides low-level utility classes that let you build completely custom designs directly in the React components / JSX, which increases the speed of development and makes it easier to maintain consistency
+
 **YouTube API** relying on YouTube's CDN / server infrastructure to ensure that videos are as performant as possible to a global audience
+
 **Cloudinary API** relying on Cloudinarys CDN / server infrastructure to ensure that images are as performant as possible to a global audience
+
 **Vercel Hosting** relying on Vercel's CDN / server infrastructure to ensure that the website itself is as performant as possible to a global audience.
 
  
@@ -55,7 +69,7 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 - I used small-sized, web-friendly WOFF fonts to ensure that the text in the application is rendered properly and quickly across different browsers and devices.
 
 - The overall website size is 5.4MB which is a fair size for modern websites/apps to ensure quick load times and a smooth user experience.
--
+
 
 ### Blockers
 **Clip path** - As out of the box tailwind CSS does not support clip path which I needed to style some of the elements in certain ways such as the Gallery's MOTION and STILLS menu. Although there are libraries that add this functionality to tailwind I wanted to minimise the use of dependencies and so I used vanilla CSS and classes to achieve this.
@@ -68,13 +82,20 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 
 
 ### Future Development
-**Finish off styling** including responsive design, further element animations and placeholders whilst the images load in the gallery.
-**More interactions** such as 3D text using pmndrs' Tunnel Rat tooling and wireframe mountains on click.
-**Loader** to be displayed when the site is loading, these will be footsteps in snow created by a SVG following a path on a white background.
+**Finish off styling** including responsive design, further element animations and placeholders whilst the images load in the gallery
+
+**More interactions** such as 3D text using pmndrs' Tunnel Rat tooling and wireframe mountains on click
+
+**Loader** to be displayed when the site is loading, these will be footsteps in snow created by a SVG following a path on a white background
+
 **Day Night cycle pause** on certain pages and in wireframe mode for ease of visibility of some elements and model
+
 **Movement interaction** Smooth out mouse movement interaction and use gyroscope for mobile devices
-**Post processing** to add more polish and mood to the 3D scene, I want to add depth of field and some bokeh or lens flare lighting effects when the sun rises as if the camera has a lens for added realism. The depth of field will also hide some artifacts from the small model.
+
+**Post processing** to add more polish and mood to the 3D scene, I want to add depth of field and some bokeh or lens flare lighting effects when the sun rises as if the camera has a lens for added realism. The depth of field will also hide some artifacts from the small model
+
 **All Videos on YouTube Gallery** I need to add a #ALL on the YouTube gallery, this is loaded by the first API call but currently not easily accessed once the user presses into the different playlists 
+
 **Bugs**
 
 ### Bugs
