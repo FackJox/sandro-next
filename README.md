@@ -99,10 +99,10 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 **Bugs**
 
 ### Bugs
-Currently not all of the site is mobile friendly
-Currently the Gallery's styling needs to be finished
-Currently the menu doesn't open
-Currently the back button doesn't go back on some routes
+- Currently not all of the site is mobile friendly
+- Currently the Gallery's styling needs to be finished
+- Currently the menu doesn't open
+- Currently the back button doesn't go back on some routes
 
 
 ### Lessons Learnt
