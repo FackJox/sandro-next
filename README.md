@@ -18,7 +18,7 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 
 **Photo Gallery** A photo gallery to showcase the client's best work in a visually appealing and organised way
 
-**Video Gallery** A video gallery allows the client to display any video work captured, expanding the range of media you can showcase and providing a dynamic element to your portfolio
+**Video Gallery** A video gallery allows the client to display any video work captured, expanding the range of media showcased and providing a dynamic element to the portfolio
 
 **About Page** An About Page provides important information about the client, helping to establish their personal brand and build a connection with potential clients or collaborators
 
