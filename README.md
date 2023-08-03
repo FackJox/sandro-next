@@ -28,7 +28,7 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 
 **Mobile Friendly** A mobile friendly design to ensure the portfolio looks great and functions well on all devices, from desktops to smartphones, providing a good user experience for all visitors including those in remote mountainous areas 
 
-**Performant Website** A performant website which loads quickly and runs smoothly, to provide a good user experience, and again providing a good user experience for all visitors including those in remote mountainous areas with slow internet access
+**Performant Website** A performant website which loads quickly and runs smoothly, to provide a good user experience for all visitors including those in remote mountainous areas with slow internet access
   
 ### Technologies used
 **React** for the ease of declarative syntax, component-based architecture, custom hooks and performant DOM management
