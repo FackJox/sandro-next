@@ -10,8 +10,12 @@ A portfolio website for the client Sandro Gromen-Hayes, a filmmaker who speciali
 ### Solution
 Design and Build a portfolio website that stands out, loads quickly on slow internet, is mobile friendly and is easy to maintain and update 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ### Deployment
-The website is currently deployed on Vercel and can be found here: https://sandro-site.vercel.app/ 
+The website is currently deployed on Vercel and can be found here: https://sandro-site.vercel.app/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Requirements
 **Simple but unique design** A simple but unique design ensures that the videos and photos are the main focus of the website, but still highlighting the client's industry. To add wow factor I designed and developed an interactive 3D mountain scene which is tranversed as the user navigates the website. I added a Day and Night sun cycle for variety and I also used Framer Motion library to animate certain elements.
@@ -29,6 +33,8 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 **Mobile Friendly** A mobile friendly design to ensure the portfolio looks great and functions well on all devices, from desktops to smartphones, providing a good user experience for all visitors including those in remote mountainous areas 
 
 **Performant Website** A performant website which loads quickly and runs smoothly, to provide a good user experience for all visitors including those in remote mountainous areas with slow internet access
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
 ### Technologies used
 **React** for the ease of declarative syntax, component-based architecture, custom hooks and performant DOM management
@@ -47,7 +53,8 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 
 **Vercel Hosting** relying on Vercel's CDN / server infrastructure to ensure that the website itself is as performant as possible to a global audience.
 
- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ### Wins
 **useNavigation** is a custom React Hook which reacts to user interactions such as scrolling or swiping. The hook takes two arguments: a reference to a DOM element to listen for events and the next route to be navigated to. This simplified and removed a lot of repeated code as initially I had the logic in each of the pages/components where routing was possible.
 
@@ -70,6 +77,7 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 
 - The overall website size is 5.4MB which is a fair size for modern websites/apps to ensure quick load times and a smooth user experience.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Blockers
 **Clip path** - As out of the box tailwind CSS does not support clip path which I needed to style some of the elements in certain ways such as the Gallery's MOTION and STILLS menu. Although there are libraries that add this functionality to tailwind I wanted to minimise the use of dependencies and so I used vanilla CSS and classes to achieve this.
@@ -80,6 +88,7 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 
 **Next 13 migration and app layout** - different app router system, this is a less developed system and doesn't yet have features such as router.events that Next 12 had and so required a different approach to routing logic that I have used before.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Future Development
 **Finish off styling** including responsive design, further element animations and placeholders whilst the images load in the gallery
@@ -96,9 +105,7 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 
 **All Videos on YouTube Gallery** I need to add a #ALL on the YouTube gallery, this is loaded by the first API call but currently not easily accessed once the user presses into the different playlists 
 
-### Bugs
-https://github.com/FackJox/sandro-next/issues
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Lessons Learnt
 **Trigger system** Initially I had a complex custom trigger system in my zustand store to manage the timeline of events and animations, this was bad developer experience as whenever I added new functionality I had to update all of the triggers to the new sequence. I removed all of this and rewrote the logic so now event are triggered on components mounting and dismounting.
@@ -106,3 +113,9 @@ https://github.com/FackJox/sandro-next/issues
 **Custom hooks** are a powerful tool within React that encapsulates complex logic into functions, enhancing code reusability and readability. I implemented the useNavigation and usePlayAnimations hooks which simplifies navigation-related code by responding to user interactions like scrolling or swiping., and manages the state and effects for playing animations using various built-in React hooks and a custom context hook. Through custom Hooks, I was able to write components in a more functional manner, enhancing their readability and ease of testing. They also allowed me to reuse stateful logic across multiple components without altering the component hierarchy, reducing code duplication and simplifying their understanding and management
 
 **Vector maths**  was used extensively for managing states, animations, and object transformations in the Day / Night sun cycle.  The initial position of the sun is set using the THREE.Vector3 method, which creates a new vector instance. The clone, sub, applyAxisAngle, add, and toArray methods are used to perform vector operations that calculate the new position of the sun at every frame. The axis of rotation for the sun's orbit is calculated using the THREE.Vector3 method. This vector represents the amount of rotation around each axis (x, y, z). The applyAxisAngle method is used to apply this rotation to the sun's position vector. The useFrame hook is used to continuously update the position of the sun, creating an animation effect.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+### Bugs
+https://github.com/FackJox/sandro-next/issues
+
