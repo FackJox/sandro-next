@@ -96,13 +96,8 @@ The website is currently deployed on Vercel and can be found here: https://sandr
 
 **All Videos on YouTube Gallery** I need to add a #ALL on the YouTube gallery, this is loaded by the first API call but currently not easily accessed once the user presses into the different playlists 
 
-**Bugs**
-
 ### Bugs
-- Currently not all of the site is mobile friendly
-- Currently the Gallery's styling needs to be finished
-- Currently the menu doesn't open
-- Currently the back button doesn't go back on some routes
+https://github.com/FackJox/sandro-next/issues
 
 
 ### Lessons Learnt
