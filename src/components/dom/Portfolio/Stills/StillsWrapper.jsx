@@ -12,6 +12,8 @@ import { mapImageResources } from '@/helpers/cloudinary'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 import { useStore } from '@/helpers/store'
 
+
+
 import StillsGallery from '@/components/dom/Portfolio/Stills/StillsGallery'
 
 export function StillsWrapper({ stillsData }) {
@@ -81,6 +83,11 @@ export function StillsWrapper({ stillsData }) {
     })()
   }, [activeFolder])
 
+  const { setPageInView } = useStore()
+
+  useEffect(() => {
+    setPageInView('portfolio')
+  }, [])
   
 
    const { setSunCycle } = useStore()

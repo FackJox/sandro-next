@@ -21,6 +21,12 @@ export function MotionWrapper({ motionData }) {
   const [playing, setPlaying] = useState(false)
   const [playlistVideos, setPlaylistVideos] = useState(motionData.videos.items);
   const { setSunCycle } = useStore()
+  const { setPageInView } = useStore()
+
+  useEffect(() => {
+    setPageInView('portfolio')
+  }, [])
+
 
   useEffect(() => {
     setSunCycle(false)

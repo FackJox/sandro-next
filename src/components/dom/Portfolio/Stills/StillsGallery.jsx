@@ -9,13 +9,13 @@ import Link from 'next/link'
 export default function StillsGallery(props) {
   const { images, folders, handleOnFolderClick, activeFolder, setIndex, totalCount, handleOnLoadMore, imageProps } = props
   
-  useEffect(() => {
-    console.log('🚀 ~ file: StillsGallery.jsx:27 ~ StillsGallery ~ images:', images)
-    console.log("🚀 ~ file: StillsGallery.jsx:11 ~ StillsGallery ~ activeFolder:", activeFolder)
+  // useEffect(() => {
+  //   console.log('🚀 ~ file: StillsGallery.jsx:27 ~ StillsGallery ~ images:', images)
+  //   console.log("🚀 ~ file: StillsGallery.jsx:11 ~ StillsGallery ~ activeFolder:", activeFolder)
 
-    console.log('🚀 ~ file: StillsGallery.jsx:11 ~ StillsGallery ~ totalCount:', totalCount)
-    console.log('🚀 ~ file: StillsGallery.jsx:30 ~ StillsGallery ~ folders:', folders)
-  }, [images, folders, totalCount, activeFolder])
+  //   console.log('🚀 ~ file: StillsGallery.jsx:11 ~ StillsGallery ~ totalCount:', totalCount)
+  //   console.log('🚀 ~ file: StillsGallery.jsx:30 ~ StillsGallery ~ folders:', folders)
+  // }, [images, folders, totalCount, activeFolder])
 
 
   const NextJsImage = ({ imageProps: { src, alt, title, sizes, className, onClick }, wrapperStyle }) => (

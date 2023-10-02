@@ -15,9 +15,12 @@ export default function Navigator() {
   useNavigation(ref, '/portfolio')
     const router = useRouter()
 
+    useEffect(() => {
+
+      console.log("🚀 ~ file: Navigator.jsx:20 ~ fwdRoute ~ pageInView:", pageInView)
+    }, [pageInView])
 
     function fwdRoute(pageInView){
-    console.log("🚀 ~ file: Navigator.jsx:20 ~ fwdRoute ~ pageInView:", pageInView)
 
       switch (pageInView) {
         case 'home':
@@ -34,6 +37,7 @@ export default function Navigator() {
           return ''
       }
             }
+            
 
 
 
