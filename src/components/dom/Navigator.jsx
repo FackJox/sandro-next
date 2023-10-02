@@ -17,6 +17,7 @@ export default function Navigator() {
 
 
     function fwdRoute(pageInView){
+    console.log("🚀 ~ file: Navigator.jsx:20 ~ fwdRoute ~ pageInView:", pageInView)
 
       switch (pageInView) {
         case 'home':

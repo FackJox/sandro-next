@@ -82,7 +82,7 @@ export default function MotionGallery(props) {
 
   return (
     <>
-      <div className='z-10 flex-col flex-auto w-screen h-screen'>
+      <div className='z-10 flex w-screen h-screen '>
         <div className='relative flex-col '>
           <div className='relative flex '>
             <div className='relative flex-col  mt-32 text-sm md:text-base justify-center items-center align-middle ml-auto mr-auto '>
@@ -92,7 +92,7 @@ export default function MotionGallery(props) {
               <ul className='flex w-full '>
                 <li key='all'>
                   <button
-                    className='justify-center items-center ml-3 w-full md:ml-1 md:mr-1 h-full text-left tracking-wide md:tracking-[3.68px] uppercase leading-relaxed font-normal font-BrandonReg text-icewhite'
+                    className='justify-center items-center ml-3 w-full md:mx-1 h-full text-left tracking-wide md:tracking-[3.68px] uppercase leading-relaxed font-normal font-BrandonReg text-icewhite'
                     onClick={() => handleOnPlaylistClick()}
                   >
                     #all{' '}
@@ -106,7 +106,7 @@ export default function MotionGallery(props) {
                     return (
                       <li key={playlist.id} data-active-folder={isActive}>
                         <button
-                          className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
+                          className='justify-center items-center ml-3 w-full md:ml-1 md:mr-1 h-full text-left tracking-wide md:tracking-[3.68px] uppercase leading-relaxed font-normal font-BrandonReg text-icewhite'
                           onClick={() => handleOnPlaylistClick(playlist.id)}
                         >
                           {' '}

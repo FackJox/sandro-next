@@ -63,7 +63,7 @@ export function StillsWrapper({ stillsData }) {
   }
 
   useEffect(() => {
-    ;(async function run() {
+    (async function run() {
       const results = await fetch('/api', {
         method: 'POST',
         body: JSON.stringify({
@@ -80,6 +80,8 @@ export function StillsWrapper({ stillsData }) {
       setTotalCount(updatedTotalCount)
     })()
   }, [activeFolder])
+
+  
 
    const { setSunCycle } = useStore()
 

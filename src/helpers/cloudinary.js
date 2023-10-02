@@ -27,7 +27,7 @@ export async function search(options = {}) {
         title: resource.public_id,
         src: resource.secure_url,
         width,
-        height
+        height,
       }
     });
   }
