@@ -82,7 +82,7 @@ export default function MotionGallery(props) {
 
   return (
     <>
-      <div className='z-10 flex w-screen h-screen '>
+      <div className='z-10 flex-col flex-auto w-screen h-screen'>
         <div className='relative flex-col '>
           <div className='relative flex '>
             <div className='relative flex-col  mt-32 text-sm md:text-base justify-center items-center align-middle ml-auto mr-auto '>
@@ -106,7 +106,7 @@ export default function MotionGallery(props) {
                     return (
                       <li key={playlist.id} data-active-folder={isActive}>
                         <button
-                          className=' w-full h-full ml-3 mr-3 md:ml-1 md:mr-1 text-left uppercase tracking-wide md:tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'
+                          className='text-[1.1vw] uppercase tracking-[3.68px] leading-relaxed pt-[10%] font-normal font-BrandonReg text-icewhite'
                           onClick={() => handleOnPlaylistClick(playlist.id)}
                         >
                           {' '}
@@ -119,7 +119,7 @@ export default function MotionGallery(props) {
             </div>
           </div>
 
-          <div className='relative grid w-screen p-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-2/3 overflow-auto scrollbar-hide '>
+          <div className='relative grid items-start justify-start w-screen p-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-2/3 overflow-auto scrollbar-hide '>
             {videos &&
               Array.isArray(videos) &&
               videos.map((video, index) => {

@@ -1,14 +1,13 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
-import 'yet-another-react-lightbox/styles.css'
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen'
 import Slideshow from 'yet-another-react-lightbox/plugins/slideshow'
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
 import Zoom from 'yet-another-react-lightbox/plugins/zoom'
+import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
-import { useEffect } from 'react'
 import { mapImageResources } from '@/helpers/cloudinary'
 import usePlayAnimations from '@/helpers/hooks/usePlayAnimations'
 import { useStore } from '@/helpers/store'
@@ -110,7 +109,13 @@ export function StillsWrapper({ stillsData }) {
           open={index >= 0}
           index={index}
           close={() => setIndex(-1)}
-          // enable optional lightbox plugins
+          styles={{
+            root: {
+              '--yarl__color_button': 'rgb(252, 195, 0, 1)',
+              '--yarl__color_button_disabled': 'rgb(243, 152, 42, 0.3)',
+              '--yarl__color_button_active': 'rgb(243, 152, 42, 1)',
+            },
+          }}
           plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
         />
       </motion.div>
