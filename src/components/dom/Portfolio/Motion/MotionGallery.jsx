@@ -152,7 +152,7 @@ export default function MotionGallery(props) {
                         toggleMotionPlayer()
                       }}
                     >
-                      <div className='w-12 rounded-full h-12 mt-4 m-auto'>
+                      <div className='w-12 rounded-full h-12 ml-6 m-auto'>
                         <svg
                           fill='#ffaf31'
                           height='32px'
