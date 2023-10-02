@@ -3,7 +3,6 @@ import { Stars } from "@react-three/drei"
 
 export default function NightSky() {
 
-    console.log("night sky mounted")
     return (
         <>
 

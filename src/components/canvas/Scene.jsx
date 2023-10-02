@@ -19,6 +19,7 @@ const Loader = dynamic(() => import('@/components/dom/Loader').then((mod) => mod
 })
 
 export default function Scene({ setContextValue, ...props }) {
+  const [ loadInstance, setLoadInstance ] = useState(false)
   const scalingParams = {
     scaleY: 1,
     scaleXZ: 4.3,
@@ -37,6 +38,10 @@ export default function Scene({ setContextValue, ...props }) {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
+
+  useEffect(() => {
+    setLoadInstance(true)
+  }, [Mountains])
 
   const canvasRef = useRef()
   return (
@@ -58,7 +63,11 @@ export default function Scene({ setContextValue, ...props }) {
 
       <group position={[0, -100, 0]}>
         <Mountains setContextValue={setContextValue} />
-        <InstancesMountains>
+
+        {loadInstance? 
+          <InstancesMountains>
+          <Suspense fallback={null}>
+
           <InstancedMountains
             key='top'
             position={[1484 * scalingParams.posMult, 0, 0]}
@@ -83,7 +92,7 @@ export default function Scene({ setContextValue, ...props }) {
             scale={[-scalingParams.scaleXZ, scalingParams.scaleY, scalingParams.scaleXZ]}
             castShadows={false}
             recieveShadows={false}
-          />
+            />
           <InstancedMountains
             key='right'
             position={[0, 0, 2011 * scalingParams.posMult]}
@@ -125,8 +134,10 @@ export default function Scene({ setContextValue, ...props }) {
             scale={[-scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
             castShadows={false}
             recieveShadows={false}
-          />
-        </InstancesMountains>
+            />
+            </Suspense>
+        </InstancesMountains> 
+        : null}
       </group>
 
       <Preload all />

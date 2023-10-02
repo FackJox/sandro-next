@@ -6,6 +6,11 @@ const context = createContext();
 export function InstancesMountains({ children, ...props }) {
 
   const { nodes } = useGLTF("/models/mountains.glb");
+
+   if (!nodes) {
+     return null
+   }
+
   const instances = useMemo(
     () => ({
       EverestDistantHD: nodes.EverestDistant1HD,
@@ -34,7 +39,7 @@ export function InstancedMountains(props) {
   
   const group = useRef();
   
-  
+  instances.needsUpdate = true
   
   return (
     <group ref={group} dispose={null} {...props}>

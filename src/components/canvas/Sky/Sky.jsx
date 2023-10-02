@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Sky as DaySky, Html } from '@react-three/drei'
+import { Sky as DaySky, Clouds } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useStore } from '@/helpers/store'
 import NightSky from './NightSky'
+import {CloudsComponent} from './CloudsComponent'
 
 import { lerpColor, hexToRgb, rgbToHex, animateFogColor } from '@/helpers/colours'
 
@@ -167,6 +168,26 @@ export default function Sky() {
         distance={distanceFromCenter}
         sunPosition={sunPosition}
       />
+      <Clouds material={THREE.MeshBasicMaterial}>
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+        <CloudsComponent />
+      </Clouds>
     </>
   )
 }
