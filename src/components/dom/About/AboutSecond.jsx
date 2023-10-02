@@ -4,14 +4,12 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
 export function AboutSecond() {
   const gridVariants = {
     initial: { opacity: 0, y: 100 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
     exit: { opacity: 0, y: -100, transition: { duration: 0.5 } },
   }
-
 
   return (
     <div className='flex-col items-end jjustify-items-end h-screen w-screen '>
@@ -88,5 +86,3 @@ export function AboutSecond() {
     </div>
   )
 }
-
-

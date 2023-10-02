@@ -13,7 +13,7 @@ import MotionPlayer from '@/components/dom/Portfolio/Motion/MotionPlayer'
 export function MotionWrapper({ motionData }) {
 
  
-  console.log("🚀 ~ file: MotionWrapper.jsx:29 ~ MotionWrapper ~ motionData:", motionData)
+  // console.log("🚀 ~ file: MotionWrapper.jsx:29 ~ MotionWrapper ~ motionData:", motionData)
   const [currentVideo, setCurrentVideo] = useState(motionData.videos.items[0])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [prevVideo, setPrevVideo] = useState(motionData.videos.items[0])
@@ -45,16 +45,19 @@ export function MotionWrapper({ motionData }) {
       plVideos = motionData.videos;
     }
     setPlaylistVideos(plVideos);
-    console.log("plVideos", plVideos)
+    console.log("🚀 ~ file: MotionWrapper.jsx:48 ~ onPlaylistChange ~ plVideos:", plVideos)
   }
 
 
-   useEffect(() => {
-     if (selectedPlaylistId) {
-       onPlaylistChange(selectedPlaylistId)
-     }
-   }, [selectedPlaylistId])
-   
+
+useEffect(() => {
+  if (selectedPlaylistId) {
+    console.log('🚀 ~ file: MotionWrapper.jsx:54 ~ useEffect ~ selectedPlaylistId:', selectedPlaylistId)
+    onPlaylistChange(selectedPlaylistId)
+  } else {
+    setPlaylistVideos(motionData.videos.items)
+  }
+}, [selectedPlaylistId])
 
 
 
@@ -66,7 +69,6 @@ export function MotionWrapper({ motionData }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 2.5 }}
       >
-
         {motionPlayerVisible ? (
           <div className='fixed z-50 flex items-center justify-center w-screen h-screen bg-black bg-opacity/50'>
             <div className='relative bg-white'>
@@ -91,11 +93,12 @@ export function MotionWrapper({ motionData }) {
           </div>
         ) : (
           <MotionGallery
-              videos={playlistVideos}
+            videos={playlistVideos}
             currentIndex={currentIndex}
             setCurrentIndex={setCurrentIndex}
-              setSelectedPlaylistId={setSelectedPlaylistId}
+            setSelectedPlaylistId={setSelectedPlaylistId}
             currentVideo={currentVideo}
+            setPlaylistVideos={setPlaylistVideos}
             prevVideo={prevVideo}
             nextVideo={nextVideo}
             setCurrentVideo={setCurrentVideo}
@@ -107,10 +110,6 @@ export function MotionWrapper({ motionData }) {
             toggleMotionPlayer={toggleMotionPlayer}
           />
         )}
-
-
-   
-      
       </motion.div>
     </AnimatePresence>
   )
