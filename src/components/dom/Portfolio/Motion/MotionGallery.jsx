@@ -119,7 +119,7 @@ export default function MotionGallery(props) {
             </div>
           </div>
 
-          <div className='relative grid w-screen align-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-2/3 m-6 overflow-auto'>
+          <div className='relative grid w-screen p-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-2/3 overflow-auto scrollbar-hide '>
             {videos &&
               Array.isArray(videos) &&
               videos.map((video, index) => {
@@ -127,9 +127,7 @@ export default function MotionGallery(props) {
 
                 let title = video.snippet.title.replace(/&AMP;/gi, '&')
                 title = title.replace(/&#39;/gi, "'")
-                console.log("🚀 ~ file: MotionGallery.jsx:130 ~ MotionGallery ~ title:", title)
-                
-
+                console.log('🚀 ~ file: MotionGallery.jsx:130 ~ MotionGallery ~ title:', title)
 
                 return (
                   <div key={video.etag} className='parentDiv relative flex flex-col items-center justify-center w-full'>
@@ -191,7 +189,7 @@ export default function MotionGallery(props) {
                         </svg>
                       </div>
                     </button>
-                    <div className="w-full flex relative">
+                    <div className='w-full flex relative'>
                       <p className='relative text-base truncate uppercase tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'>
                         {title}
                       </p>
