@@ -49,19 +49,23 @@ export default function Navigator() {
           <div>
             <div onClick={() => router.back()} className='cursor-pointer'>
               <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-                <p className='absolute left-36 bottom-20 h-7 w-[122px] text-2xl tracking-[3.68px]'>BACK</p>
+                <p className='absolute md:left-36 left-20 bottom-12 md:bottom-16 h-7 w-[122px] text-xl md:text-2xl tracking-wide md:tracking-[3.68px]'>
+                  BACK
+                </p>
               </div>
             </div>
             <motion.div className='inline-flex' layoutId='leftline'>
-              <div className='absolute left-0 bottom-24 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
+              <div className='absolute left-0 bottom-16 md:bottom-20 h-[0] w-[66px] md:w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
             </motion.div>
             <Link href={fwdRoute(pageInView)} className=''>
               <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-                <p className='absolute right-20 bottom-20 h-7 w-[122px] text-2xl tracking-[3.68px]'>FWD</p>
-              </div>
+                <p className='absolute md:right-20 right-1 bottom-12 md:bottom-16 h-7 w-[122px] text-xl md:text-2xl tracking-wide md:tracking-[3.68px]'>
+                  FWD
+                </p>
+              </div>  
             </Link>
             <motion.div className='inline-flex' layoutId='rightline'>
-              <div className='absolute right-0 bottom-24 h-[0] w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
+              <div className='absolute right-0 bottom-16 md:bottom-20 h-[0] w-[66px] md:w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
             </motion.div>
           </div>
         ) : null}

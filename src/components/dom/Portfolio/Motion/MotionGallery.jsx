@@ -85,14 +85,14 @@ export default function MotionGallery(props) {
       <div className='z-10 flex w-screen h-screen '>
         <div className='relative flex-col '>
           <div className='relative flex '>
-            <div className='relative flex-col  mt-32 justify-center items-center align-middle ml-auto mr-auto'>
-              <p className='relative ml-3 text-left w-1/2 text-base uppercase tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'>
+            <div className='relative flex-col  mt-32 text-sm md:text-base justify-center items-center align-middle ml-auto mr-auto '>
+              <p className='relative ml-3 md:ml-1 text-left w-1/2  uppercase tracking-wide md:tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'>
                 FILTERS:
               </p>
               <ul className='flex w-full '>
                 <li key='all'>
                   <button
-                    className='justify-center items-center w-full ml-3 mr-3 h-full text-left text-base uppercase tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'
+                    className='justify-center items-center ml-3 w-full md:ml-1 md:mr-1 h-full text-left tracking-wide md:tracking-[3.68px] uppercase leading-relaxed font-normal font-BrandonReg text-icewhite'
                     onClick={() => handleOnPlaylistClick()}
                   >
                     #all{' '}
@@ -106,7 +106,7 @@ export default function MotionGallery(props) {
                     return (
                       <li key={playlist.id} data-active-folder={isActive}>
                         <button
-                          className=' w-full h-full ml-3 mr-3 text-left text-base uppercase tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'
+                          className=' w-full h-full ml-3 mr-3 md:ml-1 md:mr-1 text-left uppercase tracking-wide md:tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'
                           onClick={() => handleOnPlaylistClick(playlist.id)}
                         >
                           {' '}
@@ -190,7 +190,7 @@ export default function MotionGallery(props) {
                       </div>
                     </button>
                     <div className='w-full flex relative'>
-                      <p className='relative text-base truncate uppercase tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'>
+                      <p className='relative text-base truncate uppercase tracking-wide md:tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'>
                         {title}
                       </p>
                     </div>
