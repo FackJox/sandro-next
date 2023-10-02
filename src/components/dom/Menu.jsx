@@ -17,23 +17,25 @@ export default function Menu() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0, duration: 2 } }}
         exit={{ opacity: 0, transition: { duration: 2.5 } }}
-        className='ml-auto flex z-40 absolute top-16 right-8 justify-end bg-gray-800 text-icewhite menu'
-        
+        className='ml-auto flex z-40 absolute top-16 right-5 justify-end bg-gray-800 text-icewhite menu '
       >
-        <div className='w-24 h-24' ></div>
-        <div>
-          <Link href='/portfolio/stills'>
-            <p className='w-24 h-8 text-base text-right text-white'>STILLS</p>
-          </Link>
-          <Link href='/about'>
-            <p className='w-24 h-8 text-2xl text-right text-[#f3982a]'>ABOUT</p>
-          </Link>
-          <Link href='/portfolio/motion'>
-            <p className='w-24  h-8 text-base text-right  text-white'>MOTION</p>
-          </Link>
-          <Link href='/contact'>
-            <p className='w-24 h-8 text-2xl text-right text-[#f3982a]'>CONTACT</p>
-          </Link>
+        <div className='flex-col mr-3 my-3git a'>
+          <div className='flex'>
+            <Link href='/about'>
+              <p className='w-36 py-3  h-8 text-xl text-right text-gold'>ABOUT</p>
+            </Link>
+          </div>
+          <div className='flex'>
+              <Link href='/contact'>
+                <p className='w-36 py-2 h-8 text-xl text-right text-icewhite'>CONTACT</p>
+              </Link>
+            </div>
+          <div className='flex'>
+
+            <Link href='/portfolio'>
+              <p className='w-36 py-1 h-8 text-xl text-right  text-gold'>PORTFOLIO</p>
+            </Link>
+          </div>
         </div>
       </motion.div>
     </AnimatePresence>

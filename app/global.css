@@ -70,11 +70,10 @@
   
     .menu {
     /* Common styles */
-    scale: 00%;
+    /* scale: 00%; */
 
     /* Clip-path for smaller screens */
-    clip-path: polygon(100% 0, 30% 100%, 100% 100%);
-  }
+clip-path: polygon(42% 19%, 85% 0, 100% 17%, 100% 100%, 0 100%, 0 86%);  }
 
 
 
