@@ -12,6 +12,7 @@ import Sky from '@/components/canvas/Sky/Sky'
 import NightSky from '@/components/canvas/Sky/NightSky'
 import Mountains from '@/components/canvas/Mountains/Mountains'
 import { InstancedMountains, InstancesMountains } from '@/components/canvas/Mountains/InstancedMountains'
+import { EffectComposer, DepthOfField } from '@react-three/postprocessing'
 
 const Loader = dynamic(() => import('@/components/dom/Loader').then((mod) => mod.Loader), {
   ssr: true,
@@ -44,6 +45,14 @@ export default function Scene({ setContextValue, ...props }) {
       <r3f.Out />
       {/* <Perf position={'bottom-left'} /> */}
       <AdaptiveDpr pixelated />
+
+      <EffectComposer>
+        <DepthOfField
+          focusDistance={0.9} // where to focus
+          focalLength={0.2} // focal length
+          bokehScale={6} // bokeh size
+        />
+      </EffectComposer>
 
       <Sky />
 
