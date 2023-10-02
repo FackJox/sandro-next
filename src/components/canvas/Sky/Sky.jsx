@@ -20,7 +20,8 @@ export default function Sky() {
   const sunCycleRef = useRef(useStore.getState().sunCycle)
   const [localSunCycle, setLocalSunCycle] = useState(sunCycleRef)
   const localSunCycleRef = useRef(localSunCycle)
-
+  const { pageInView } = useStore()
+  
 
   useEffect(() => {
     const unsubscribe = useStore.subscribe(
@@ -60,7 +61,6 @@ export default function Sky() {
 
   const initialSunPos = new THREE.Vector3(-353.93, 88.44, 56.42).clone().add(new THREE.Vector3(0, -1000, 0))
 
-
  
 
   useEffect(() => {
@@ -80,11 +80,13 @@ export default function Sky() {
     return () => unsubscribe()
   }, [])
 
+  
+
   useEffect(() => {
     if (!wireMeshRef.current && sunPosition) {
       setSunRotating(true)
     }
-  }, [])
+  }, [pageInView])
 
 
   const distanceFromCenter = 450000
@@ -135,9 +137,15 @@ export default function Sky() {
     prevSunCycleRef.current = currentCondition
   }, [localSunCycle])
 
+
+
   useEffect(() => {
     if (localSunCycleRef.current) {
-      if (localSunCycleRef.current.y < -100) {
+      if (localSunCycleRef.current.y < -100 && pageInView == 'portfolio') {
+        setShowNightSky(true)
+        setSunRotating(false)
+
+      } else if (localSunCycleRef.current.y < -100 ) {
         setShowNightSky(true)
       } else {
         setShowNightSky(false)

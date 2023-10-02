@@ -46,7 +46,7 @@ const [isVisible, setIsVisible] = useState(false)
           </svg>
         </div>
       </nav>
-      {isVisible && <Menu />}  
+      {isVisible && <Menu setIsVisible={setIsVisible} /> }
     </>
   )
 }
