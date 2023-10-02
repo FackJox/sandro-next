@@ -71,8 +71,8 @@ useEffect(() => {
       >
         {motionPlayerVisible ? (
           <div className='fixed z-50 flex items-center justify-center w-screen h-screen bg-black bg-opacity/50'>
-            <div className='relative bg-white'>
-              <button className='absolute top-0 right-0 p-2' onClick={toggleMotionPlayer}>
+            <div className='relative bg-black'>
+              <button className='absolute text-syellow top-0 right-0 p-2' onClick={toggleMotionPlayer}>
                 Close
               </button>
               <MotionPlayer

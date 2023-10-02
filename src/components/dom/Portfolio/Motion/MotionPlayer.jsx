@@ -31,7 +31,7 @@ export default function MotionPlayer(props) {
 
   return (
     <div className='grid w-screen h-screen grid-cols-4 grid-rows-6 gap-4'>
-      <div className='col-start-1 row-start-3 cursor-pointer'>
+      <div className='col-start-1 row-start-3 cursor-pointer p-20'>
         <Image
           src={prevVideo.snippet.thumbnails.medium.url}
           alt={prevVideo.snippet.title}
@@ -50,13 +50,18 @@ export default function MotionPlayer(props) {
             setPlaying(true)
           }}
         />
+        <div>
+          <p className='relative text-base text-center uppercase tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'>
+            Prev Video
+          </p>
+        </div>
       </div>
-      <div className='col-start-4 row-start-3 cursor-pointer'>
+      <div className='col-start-4 row-start-3 cursor-pointer p-20'>
         <Image
           src={nextVideo.snippet.thumbnails.medium.url}
           alt={nextVideo.snippet.title}
-          width={1280}
-          height={720}
+          width={720}
+          height={340}
           onClick={() => {
             setCurrentVideo(nextVideo)
 
@@ -69,22 +74,28 @@ export default function MotionPlayer(props) {
             setPlaying(true)
           }}
         />
+        <div>
+          <p className='relative text-base text-center uppercase tracking-[3.68px] leading-relaxed font-normal font-BrandonReg text-icewhite'>
+            Next Video
+          </p>
+        </div>
       </div>
-      <div className='col-span-2 col-start-2 row-start-5'>
+
+      <div className='h-10 col-span-2 col-start-2 row-start-5'>
         {' '}
-        <p className='flex w-[199px] h-[19px]  text-2xl font-bold text-left uppercase text-[#fcc600]'>
+        <p className='relative flex text-2xl font-bold text-left uppercase text-syellow'>
           {currentVideo.snippet.title}
         </p>
+        <p className='relative flex text-xl text-left text-icewhite '>{currentVideo.snippet.description}</p>
       </div>
-      <div className='col-span-2 col-start-2 row-start-6'>
-        <p className='flex text-xl text-left text-white '>{currentVideo.snippet.description}</p>
-      </div>
-      <div className='relative flex justify-center col-span-2 col-start-2 row-span-3 row-start-2 align-middle '>
+
+      <div className='flex relative object-contain justify-center items-center align-center aspect-video col-span-2 col-start-2 row-span-3 row-start-2 '>
         <div className='absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white'></div>
         <div className='absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white'></div>
         <div className='absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white'></div>
         <div className='absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white'></div>
-        <div className='relative justify-center object-scale-down align-middle'>
+
+        <div className='flex object-scale-down w-full h-3/4 items-center justify-center'>
           <YouTubeVideoPlayer id={currentVideo.id.videoId} playing={playing} />
           {/* <YouTubeVideoPlayer playing={playing} url={url} /> */}
         </div>

@@ -19,11 +19,12 @@ module.exports = {
       gold: '#f3982a',
       icewhite: '#d9e9ef',
       syellow: '#FCC300',
-
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    
+  ],
 }
