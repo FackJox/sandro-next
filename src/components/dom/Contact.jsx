@@ -8,16 +8,16 @@ export function Contact() {
 
       <div className='h-1/2 grid grid-cols-2 grid-rows-5 place-items-center justify-items-center '>
         <div className='flex items-center col-span-2 row-start-2'>
-          <p className='w-[860px]  text-center text-6xl font-bold text-syellow'>CONNECT</p>
+          <p className='w-[860px]  text-center text-5xl md:text-6xl font-bold text-syellow'>CONNECT</p>
         </div>
         <div className='flex items-center col-span-2 row-start-3'>
-          <p className='w-[827px]  text-center text-4xl text-syellow'>
+          <p className='w-screen md:w-[827px] text-center text-xl md:text-4xl text-syellow px-4'>
             If your story involves mountains or people, I&apos;d love to help tell it.
           </p>
         </div>
         <div className='flex items-center col-span-2 row-start-4'>
-          <p className='w-[860px] text-center text-4xl font-medium uppercase text-gold'>
-            EMAIL: sandro.gromen-hayes@live.com
+          <p className='w-[860px] text-center text-xl md:text-4xl font-medium uppercase text-gold'>
+            sandro.gromen-hayes@live.com
           </p>
         </div>
           <div className='flex items-center row-start-5'>

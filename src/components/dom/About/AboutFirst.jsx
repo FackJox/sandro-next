@@ -12,22 +12,23 @@ export function AboutFirst() {
   }
 
   return (
-    <div className='flex-col items-end jjustify-items-end h-screen w-screen '>
-      <div className='flex h-1/3'></div>
+    <div className='flex items-end h-screen w-screen'>
       <motion.div
-        className='grid h-2/3 grid-cols-3 align-end grid-rows-8 '
+        className='grid h-auto grid-cols-3 align-end grid-rows-8 pb-20 p-4'
         initial='initial'
         animate='animate'
         exit='exit'
         variants={gridVariants}
       >
-        <div className='flex items-center justify-center col-span-3 text-5xl text-syellow'>HIGH ALTITUDES</div>
-        <div className='flex items-center col-span-2 col-start-2 row-start-5 pl-40'>
-          <p className='h-[108px] w-[530px] text-left font-Poppins text-2xl text-icewhite'>
+        <div className='flex items-center justify-center col-span-3 row-start-2 col-start-1 text-2xl md:text-5xl text-syellow'>
+          HIGH ALTITUDES
+        </div>
+        <div className='flex items-center col-span-2 col-start-2 row-start-5 md:pl-40'>
+          <p className='h-[108px] w-[530px] text-left font-Poppins text-xl md:text-2xl text-icewhite'>
             I love people, cameras and mountains and have spent the last decade bringing those passions together.
           </p>
         </div>
-        <div className='flex items-center justify-center col-start-2 row-start-2'>
+        <div className='flex items-center justify-center col-start-2 row-start-3'>
           <svg
             width={4}
             height={49}
@@ -40,12 +41,12 @@ export function AboutFirst() {
             <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
           </svg>
         </div>
-        <div className='flex items-end justify-end col-span-2 col-start-1 row-start-3 pr-40 '>
-          <p className='flex h-[108px] w-[530px] items-end justify-end text-left font-Poppins text-2xl text-icewhite'>
+        <div className='flex items-end justify-end col-span-2 col-start-1 row-start-3 md:pr-40 '>
+          <p className='flex h-[108px] w-[530px] items-end justify-end text-left font-Poppins text-xl md:text-2xl text-icewhite'>
             My name is Sandro, I&apos;m a freelance film maker, photographer and part time ski bum.
           </p>
         </div>
-        <div className='flex items-center justify-center col-start-2 row-start-4'>
+        <div className='flex items-center justify-center col-start-2 row-start-5'>
           <svg
             width={4}
             height={49}
@@ -58,7 +59,7 @@ export function AboutFirst() {
             <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
           </svg>
         </div>
-        <div className='flex items-center justify-center col-start-2 row-start-6'>
+        <div className='flex items-center justify-center col-start-2 row-start-7'>
           <svg
             width={4}
             height={49}
@@ -71,7 +72,7 @@ export function AboutFirst() {
             <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
           </svg>
         </div>
-        <div className='col-start-2 row-span-3 row-start-4 mt-[70px] ml-[-125px]'>
+        <div className='col-start-2 md:row-span-3 md:row-start-1 mt-[70px] ml-[-125px]'>
           <Image
             alt='sandro portrait'
             src='/img/about/portrait.jpg'
