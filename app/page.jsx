@@ -31,21 +31,23 @@ export default function Page() {
         <div id='2' className='flex h-3/4 w-full'></div>
         <div id='3' className='grid grid-cols-3 grid-rows-2 gap-2 w-screen h-1/4 '>
           <Link href='/portfolio/motion'>
-
-            <div className='col-start-3 row-start-2 h-32 w-full flex justify-center items-center'>
+            <div className='col-start-3 row-start-2 h-32 w-full flex justify-center items-center '>
               <motion.div className='flex' layoutId='rightline'>
                 <div className='absolute z-50 left-0  h-0 w-8 md:w-[132px] outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
               </motion.div>
 
-              <motion.p layoutId='motion' className='w-full ml-3 h-8 md:h-12 text-2xl md:text-5xl text-center text-icewhite'>
+              <motion.p
+                layoutId='motion'
+                className='w-full md:h-12 text-2xl md:text-5xl text-center text-icewhite'
+              >
                 MOTION
               </motion.p>
             </div>
           </Link>
 
           <Link href='/about'>
-            <div className='col-start-2 row-start-1 md:row-start-2 h-8 md:h-36 w-full flex justify-center items-center'>
-              <p className=' h-16 text-3xl ml-2 git amd:text-7xl text-center text-gold justify-self-center'>ABOUT</p>
+            <div className='col-start-2 invisible lg:visible row-start-2 h-36 w-full flex justify-center items-center'>
+              <p className=' h-16 text-3xl md:text-7xl text-center text-gold justify-self-center'>ABOUT</p>
             </div>
           </Link>
 
@@ -55,7 +57,7 @@ export default function Page() {
                 <div className='absolute z-50 right-0 h-0 w-8 md:w-[132px] outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
               </motion.div>
 
-              <motion.p layoutId='stills' className='w-full h-8 md:h-12 text-2xl md:text-5xl text-center text-icewhite'>
+              <motion.p layoutId='stills' className='w-full md:h-12 text-2xl md:text-5xl text-center text-icewhite'>
                 STILLS
               </motion.p>
             </div>
