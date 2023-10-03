@@ -7,9 +7,6 @@ export function InstancesMountains({ children, ...props }) {
 
   const { nodes } = useGLTF("/models/mountains.glb");
 
-   if (!nodes) {
-     return null
-   }
 
   const instances = useMemo(
     () => ({
@@ -20,6 +17,7 @@ export function InstancesMountains({ children, ...props }) {
     }),
     [nodes]
   );
+  console.log("🚀 ~ file: InstancedMountains.jsx:23 ~ InstancesMountains ~ instances:", instances)
 
   return (
     <Merged meshes={instances} {...props}>

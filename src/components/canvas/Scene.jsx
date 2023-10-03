@@ -18,8 +18,8 @@ const Loader = dynamic(() => import('@/components/dom/Loader').then((mod) => mod
   ssr: true,
 })
 
-export default function Scene({ setContextValue, ...props }) {
-  const [ loadInstance, setLoadInstance ] = useState(false)
+export default function Scene({ contextValue, setContextValue, ...props }) {
+  const [loadInstance, setLoadInstance] = useState(false)
   const scalingParams = {
     scaleY: 1,
     scaleXZ: 4.3,
@@ -40,8 +40,10 @@ export default function Scene({ setContextValue, ...props }) {
   }, [])
 
   useEffect(() => {
+    console.log('🚀 ~ file: Scene.jsx:44 ~ useEffect ~ loadInstance:', loadInstance)
     setLoadInstance(true)
-  }, [Mountains])
+    console.log('🚀 ~ file: Scene.jsx:45 ~ useEffect ~ loadInstance:', loadInstance)
+  }, [contextValue])
 
   const canvasRef = useRef()
   return (
@@ -64,80 +66,77 @@ export default function Scene({ setContextValue, ...props }) {
       <group position={[0, -100, 0]}>
         <Mountains setContextValue={setContextValue} />
 
-        {loadInstance? 
+        
           <InstancesMountains>
-          <Suspense fallback={null}>
+              <InstancedMountains
+                key='top'
+                position={[1484 * scalingParams.posMult, 0, 0]}
+                rotation={[0, (180 * Math.PI) / 180, 0]}
+                scale={[scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
+                castShadows={false}
+                recieveShadows={false}
+              />
+              <InstancedMountains
+                key='bottom'
+                position={[-1893.5 * scalingParams.posMult, 0, 0]}
+                rotation={[0, (180 * Math.PI) / 180, 0]}
+                scale={[scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
+                castShadows={false}
+                recieveShadows={false}
+              />
 
-          <InstancedMountains
-            key='top'
-            position={[1484 * scalingParams.posMult, 0, 0]}
-            rotation={[0, (180 * Math.PI) / 180, 0]}
-            scale={[scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
-            castShadows={false}
-            recieveShadows={false}
-          />
-          <InstancedMountains
-            key='bottom'
-            position={[-1893.5 * scalingParams.posMult, 0, 0]}
-            rotation={[0, (180 * Math.PI) / 180, 0]}
-            scale={[scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
-            castShadows={false}
-            recieveShadows={false}
-          />
+              <InstancedMountains
+                key='left'
+                position={[0, 0, -1848.5 * scalingParams.posMult]}
+                rotation={[0, (180 * Math.PI) / 180, 0]}
+                scale={[-scalingParams.scaleXZ, scalingParams.scaleY, scalingParams.scaleXZ]}
+                castShadows={false}
+                recieveShadows={false}
+              />
+              <InstancedMountains
+                key='right'
+                position={[0, 0, 2011 * scalingParams.posMult]}
+                rotation={[0, (180 * Math.PI) / 180, 0]}
+                scale={[-scalingParams.scaleXZ, scalingParams.scaleY, scalingParams.scaleXZ]}
+                castShadows={false}
+                recieveShadows={false}
+              />
 
-          <InstancedMountains
-            key='left'
-            position={[0, 0, -1848.5 * scalingParams.posMult]}
-            rotation={[0, (180 * Math.PI) / 180, 0]}
-            scale={[-scalingParams.scaleXZ, scalingParams.scaleY, scalingParams.scaleXZ]}
-            castShadows={false}
-            recieveShadows={false}
-            />
-          <InstancedMountains
-            key='right'
-            position={[0, 0, 2011 * scalingParams.posMult]}
-            rotation={[0, (180 * Math.PI) / 180, 0]}
-            scale={[-scalingParams.scaleXZ, scalingParams.scaleY, scalingParams.scaleXZ]}
-            castShadows={false}
-            recieveShadows={false}
-          />
+              <InstancedMountains
+                key='topleft'
+                position={[1484 * scalingParams.posMult, 0, -1848.5 * scalingParams.posMult]}
+                rotation={[0, 0, 0]}
+                scale={[-scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
+                castShadows={false}
+                recieveShadows={false}
+              />
+              <InstancedMountains
+                key='topright'
+                position={[1484 * scalingParams.posMult, 0, 2011 * scalingParams.posMult]}
+                rotation={[0, 0, 0]}
+                scale={[-scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
+                castShadows={false}
+                recieveShadows={false}
+              />
 
-          <InstancedMountains
-            key='topleft'
-            position={[1484 * scalingParams.posMult, 0, -1848.5 * scalingParams.posMult]}
-            rotation={[0, 0, 0]}
-            scale={[-scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
-            castShadows={false}
-            recieveShadows={false}
-          />
-          <InstancedMountains
-            key='topright'
-            position={[1484 * scalingParams.posMult, 0, 2011 * scalingParams.posMult]}
-            rotation={[0, 0, 0]}
-            scale={[-scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
-            castShadows={false}
-            recieveShadows={false}
-          />
-
-          <InstancedMountains
-            key='bottomleft'
-            position={[-1893.5 * scalingParams.posMult, 0, -1848.5 * scalingParams.posMult]}
-            rotation={[0, 0, 0]}
-            scale={[-scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
-            castShadows={false}
-            recieveShadows={false}
-          />
-          <InstancedMountains
-            key='bottomright'
-            position={[-1893.5 * scalingParams.posMult, 0, 2011 * scalingParams.posMult]}
-            rotation={[0, 0, 0]}
-            scale={[-scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
-            castShadows={false}
-            recieveShadows={false}
-            />
-            </Suspense>
-        </InstancesMountains> 
-        : null}
+              <InstancedMountains
+                key='bottomleft'
+                position={[-1893.5 * scalingParams.posMult, 0, -1848.5 * scalingParams.posMult]}
+                rotation={[0, 0, 0]}
+                scale={[-scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
+                castShadows={false}
+                recieveShadows={false}
+              />
+              <InstancedMountains
+                key='bottomright'
+                position={[-1893.5 * scalingParams.posMult, 0, 2011 * scalingParams.posMult]}
+                rotation={[0, 0, 0]}
+                scale={[-scalingParams.scaleXZ, scalingParams.scaleY, -scalingParams.scaleXZ]}
+                castShadows={false}
+                recieveShadows={false}
+              />
+          </InstancesMountains>
+       
       </group>
 
       <Preload all />

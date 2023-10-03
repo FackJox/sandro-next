@@ -48,6 +48,7 @@ const Layout = ({ children }) => {
           eventSource={ref}
           eventPrefix='client'
           setContextValue={setContextValue}
+          contextValue={contextValue}
         />
       </div>
     </AnimationsContext.Provider>
