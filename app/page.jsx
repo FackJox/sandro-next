@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
@@ -36,10 +37,7 @@ export default function Page() {
                 <div className='absolute z-50 left-0  h-0 w-8 md:w-[132px] outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
               </motion.div>
 
-              <motion.p
-                layoutId='motion'
-                className='w-full md:h-12 text-2xl md:text-5xl text-center text-icewhite'
-              >
+              <motion.p layoutId='motion' className='pl-4 w-full md:h-12 text-3xl md:text-5xl text-center text-icewhite'>
                 MOTION
               </motion.p>
             </div>
@@ -57,16 +55,22 @@ export default function Page() {
                 <div className='absolute z-50 right-0 h-0 w-8 md:w-[132px] outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />
               </motion.div>
 
-              <motion.p layoutId='stills' className='w-full md:h-12 text-2xl md:text-5xl text-center text-icewhite'>
+              <motion.p layoutId='stills' className='w-full md:h-12 text-3xl md:text-5xl text-center text-icewhite'>
                 STILLS
               </motion.p>
             </div>
           </Link>
         </div>
 
-        {/* <div id='4' className='flex items-center justify-center h-screen absolute w-screen text-xl tracking-[3.68px]'>
-          <p>click and swipe or scroll to navigate</p>
-        </div> */}
+        <Link href='/portfolio'>
+          <div className='col-start-2 row-start-3 pb-8 w-screen flex justify-center items-center'>
+            <motion.p layoutId='arrow' className='w-screen text-syellow justify-center items-center flex'>
+              <Image priority  src='/img/arrow.svg' height={32} width={32} alt='Swipe or Scroll' />
+            </motion.p>
+          </div>
+        </Link>
+
+       
       </motion.div>
     </AnimatePresence>
   )
