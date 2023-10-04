@@ -30,7 +30,7 @@ export default function Page() {
         id='1'
       >
         <div id='2' className='flex h-3/4 w-full'></div>
-        <div id='3' className='grid grid-cols-3 grid-rows-2 gap-2 w-screen h-1/4 '>
+        <div id='3' className='grid grid-cols-3 grid-rows-3 gap-2 w-screen h-1/4 '>
           <Link href='/portfolio/motion'>
             <div className='col-start-3 row-start-2 h-32 w-full flex justify-center items-center '>
               <motion.div className='flex' layoutId='rightline'>
