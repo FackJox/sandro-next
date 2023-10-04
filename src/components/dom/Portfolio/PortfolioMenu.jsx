@@ -45,13 +45,13 @@ export default function PortfolioMenu() {
       <div className='grid h-full grid-cols-1 align-middle md:grid-cols-2'>
         <Link href='/portfolio/motion' className='flex items-center justify-center align-middle'>
           <div
-            className={` h-screen w-full flex items-center justify-center align-middle ${
+            className={` md:h-screen w-full flex items-center justify-center align-middle md:${
               isHovering.motion ? 'hover-class-left' : ' text-icewhite'
             }`}
           >
             <motion.p
               layoutId='motion'
-              className={`flex h-28 w-[360px] items-center justify-center text-center align-middle text-7xl lg:w-[420px] ${
+              className={`flex h-28 w-[360px] items-center justify-center text-center align-middle text-5xl md:text-7xl lg:w-[420px] text-icewhite md:${
                 isHovering.motion ? 'box' : ''
               } `}
               onMouseOver={() => handleMouseOver('motion')}
@@ -63,13 +63,13 @@ export default function PortfolioMenu() {
         </Link>
         <Link href='/portfolio/stills' className='flex items-center justify-center align-middle'>
           <div
-            className={` h-screen w-full flex items-center justify-center align-middle ${
+            className={` md:h-screen w-full flex items-center justify-center align-middle md:${
               isHovering.stills ? 'hover-class-right' : ' text-icewhite'
             }`}
           >
             <motion.p
               layoutId='stills'
-              className={`flex h-28 w-[360px] items-center justify-center text-center align-middle text-7xl lg:w-[420px] ${
+              className={`flex h-28 w-[360px] items-center justify-center text-center align-middle text-6xl md:text-7xl lg:w-[420px] text-icewhite md:${
                 isHovering.stills ? 'box' : ''
               }`}
               onMouseOver={() => handleMouseOver('stills')}
