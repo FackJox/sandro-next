@@ -10,8 +10,8 @@ export function Contact() {
         <div className='flex items-center col-span-2 row-start-2'>
           <p className='w-[860px]  text-center text-5xl md:text-6xl font-bold text-syellow'>CONNECT</p>
         </div>
-        <div className='flex items-center col-span-2 row-start-3'>
-          <p className='w-screen md:w-[827px] text-center text-xl md:text-4xl text-syellow px-4'>
+        <div className='flex items-center col-span-2 row-start-3 pt-8 md:pt-0'>
+          <p className='w-screen md:w-[827px]  text-center text-xl md:text-4xl text-syellow px-4'>
             If your story involves mountains or people, I&apos;d love to help tell it.
           </p>
         </div>
