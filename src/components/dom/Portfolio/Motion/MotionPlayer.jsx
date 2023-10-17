@@ -28,6 +28,8 @@ export default function MotionPlayer(props) {
     videos,
   } = props
 
+   let title = currentVideo.snippet.title.replace(/&AMP;/gi, '&')
+   title = title.replace(/&#39;/gi, "'") 
 
   return (
     <div className='grid w-screen h-screen grid-cols-4 grid-rows-6 gap-4 '>
@@ -43,7 +45,7 @@ export default function MotionPlayer(props) {
         </div>
       </div>
 
-      <div className='col-start-2 row-start-6 md:col-start-1 md:row-start-3 cursor-pointer md:p-20'>
+      <div className='col-start-2 row-start-6 md:col-start-1 md:row-start-3 cursor-pointer -mb-20 md:p-20'>
         <Image
           src={prevVideo.snippet.thumbnails.medium.url}
           alt={prevVideo.snippet.title}
@@ -68,7 +70,7 @@ export default function MotionPlayer(props) {
           </p>
         </div>
       </div>
-      <div className='col-start-3 row-start-6 md:col-start-4 md:row-start-3 cursor-pointer md:p-20'>
+      <div className='col-start-3 row-start-6 md:col-start-4 md:row-start-3 cursor-pointer -mb-20 md:p-20'>
         <Image
           src={nextVideo.snippet.thumbnails.medium.url}
           alt={nextVideo.snippet.title}
@@ -93,12 +95,10 @@ export default function MotionPlayer(props) {
         </div>
       </div>
 
-      <div className='h-10 col-span-2 col-start-2 sm:row-start-5 row-start-4 pt-10'>
+      <div className='h-10 col-span-2 col-start-2 sm:row-start-5 row-start-4 pt-10 -m-8'>
         {' '}
-        <p className='relative flex text-2xl font-bold text-left uppercase text-syellow'>
-          {currentVideo.snippet.title}
-        </p>
-        <p className='relative flex text-xl text-left text-icewhite '>{currentVideo.snippet.description}</p>
+        <p className='relative flex text-xl md:text-2xl font-bold text-left uppercase text-syellow'>{title}</p>
+        <p className='relative flex text-lg md:text-xl text-left text-icewhite '>{currentVideo.snippet.description}</p>
       </div>
     </div>
   )

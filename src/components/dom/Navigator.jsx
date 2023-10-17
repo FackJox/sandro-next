@@ -54,7 +54,7 @@ export default function Navigator() {
           <div>
             <div onClick={() => router.back()} className='cursor-pointer'>
               <div className='inline-flex font-BrandonReg font-normal leading-[normal] text-icewhite'>
-                <p className='absolute md:left-36 left-20 bottom-12 md:bottom-16 h-7 w-[122px] text-xl md:text-2xl tracking-wide md:tracking-[3.68px]'>
+                <p className='absolute md:left-36 left-0 ml-2 text-right bottom-12 md:bottom-16 h-7 w-[122px] text-xl md:text-2xl tracking-wide md:tracking-[3.68px]'>
                   BACK
                 </p>
               </div>

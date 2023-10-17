@@ -12,9 +12,9 @@ export function AboutFirst() {
   }
 
   return (
-    <div className='flex items-end h-screen w-screen'>
+    <div className='flex justify-end items-end h-screen w-screen'>
       <motion.div
-        className='grid h-auto grid-cols-3 align-end grid-rows-8 pb-20 p-4'
+        className='grid auto-rows-auto md:h-auto h-full grid-cols-3 grid-rows-6 md:align-end md:grid-rows-8 md:pb-20 p-4 -mb-20'
         initial='initial'
         animate='animate'
         exit='exit'
@@ -23,30 +23,12 @@ export function AboutFirst() {
         <div className='flex items-center justify-center col-span-3 row-start-2 col-start-1 text-2xl md:text-5xl text-syellow'>
           HIGH ALTITUDES
         </div>
-        <div className='flex items-center col-span-2 col-start-2 row-start-5 md:pl-40'>
-          <p className='h-[108px] w-[530px] text-left font-Poppins text-xl md:text-2xl text-icewhite'>
-            I love people, cameras and mountains and have spent the last decade bringing those passions together.
-          </p>
-        </div>
-        <div className='flex items-center justify-center col-start-2 row-start-3'>
-          <svg
-            width={4}
-            height={49}
-            viewBox='0 0 4 49'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            className=''
-            preserveAspectRatio='none'
-          >
-            <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
-          </svg>
-        </div>
         <div className='flex items-end justify-end col-span-2 col-start-1 row-start-3 md:pr-40 '>
-          <p className='flex h-[108px] w-[530px] items-end justify-end text-left font-Poppins text-xl md:text-2xl text-icewhite'>
+          <p className='flex md:h-[108px] md:w-[530px] items-end justify-end text-left font-Poppins text-xl md:text-2xl text-icewhite'>
             My name is Sandro, I&apos;m a freelance film maker, photographer and part time ski bum.
           </p>
         </div>
-        <div className='flex items-center justify-center col-start-2 row-start-5'>
+        <div className='flex items-center justify-center col-start-2 row-start-4 md:row-start-5'>
           <svg
             width={4}
             height={49}
@@ -59,20 +41,38 @@ export function AboutFirst() {
             <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
           </svg>
         </div>
-        <div className='flex items-center justify-center col-start-2 row-start-7'>
+        <div className='flex items-center col-span-2 col-start-2 md:row-start-5 md:pl-40'>
+          <p className='h-[108px] w-[530px] text-left font-Poppins text-xl md:text-2xl text-icewhite'>
+            I love people, cameras and mountains and have spent the last decade bringing those passions together.
+          </p>
+        </div>
+        <div className='flex items-center justify-center col-start-2 row-start-6 md:row-start-3'>
           <svg
             width={4}
             height={49}
             viewBox='0 0 4 49'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
-            className='flex  pt-[-64px] '
+            className='flex'
             preserveAspectRatio='none'
           >
             <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
           </svg>
         </div>
-        <div className='col-start-2 md:row-span-3 md:row-start-1 mt-[70px] ml-[-125px]'>
+        <div className='flex items-center justify-center col-start-2 row-start-7 invisible md:visible'>
+          <svg
+            width={4}
+            height={49}
+            viewBox='0 0 4 49'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+            className='flex md:pt-[-64px] '
+            preserveAspectRatio='none'
+          >
+            <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
+          </svg>
+        </div>
+        <div className='col-start-2 row-start-1 items-center justify-center md:row-span-3 m-20 md:mt-[70px] md:ml-[-125px]'>
           <Image
             alt='sandro portrait'
             src='/img/about/portrait.jpg'
