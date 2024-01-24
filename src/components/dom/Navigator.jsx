@@ -7,16 +7,11 @@ import useNavigation from '@/helpers/hooks/useNavigation'
 import { useRouter } from 'next/navigation'
 import { useStore } from '@/helpers/store'
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ad03071 (about styling)
 export default function Navigator() {
   const { pageInView } = useStore()
   const ref = useRef()
   usePlayAnimations(1)
   useNavigation(ref, '/portfolio')
-<<<<<<< HEAD
     const router = useRouter()
 
     useEffect(() => {
@@ -44,30 +39,6 @@ export default function Navigator() {
             
 
 
-=======
-  const router = useRouter()
-
-  useEffect(() => {
-    console.log('🚀 ~ file: Navigator.jsx:20 ~ fwdRoute ~ pageInView:', pageInView)
-  }, [pageInView])
-
-  function fwdRoute(pageInView) {
-    switch (pageInView) {
-      case 'home':
-        return '/portfolio'
-      case 'portfolio':
-        return '/about/1'
-      case 'aboutfirst':
-        return '/about/2'
-      case 'aboutsecond':
-        return '/contact'
-      case 'contact':
-        return '/portfolio'
-      default:
-        return ''
-    }
-  }
->>>>>>> ad03071 (about styling)
 
   return (
     <AnimatePresence>
@@ -95,11 +66,7 @@ export default function Navigator() {
                 <p className='absolute md:right-20 right-1 bottom-12 md:bottom-16 h-7 w-[122px] text-xl md:text-2xl tracking-wide md:tracking-[3.68px]'>
                   FWD
                 </p>
-<<<<<<< HEAD
-              </div>  
-=======
               </div>
->>>>>>> ad03071 (about styling)
             </Link>
             <motion.div className='inline-flex' layoutId='rightline'>
               <div className='absolute right-0 bottom-16 md:bottom-20 h-[0] w-[66px] md:w-[132px] origin-top-left outline outline-1 outline-[rgba(255,255,255,1)] [rotate:0]' />

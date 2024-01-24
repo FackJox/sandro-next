@@ -41,21 +41,12 @@ export function CameraRig({ finalPosition, finalRotation, camera }) {
 
   return (
     <CameraShake
-<<<<<<< HEAD
-      maxYaw={0.01}
-      maxPitch={0.01}
-      maxRoll={0.01}
-      yawFrequency={0.5}
-      pitchFrequency={0.5}
-      rollFrequency={0.4}
-=======
       maxYaw={0.005}
       maxPitch={0.005}
       maxRoll={0.005}
       yawFrequency={0.2}
       pitchFrequency={0.2}
       rollFrequency={0.2}
->>>>>>> ad03071 (about styling)
     />
   )
 }
