@@ -12,23 +12,47 @@ export function AboutFirst() {
   }
 
   return (
-    <div className='flex justify-end items-end h-screen w-screen'>
+   
       <motion.div
-        className='grid auto-rows-auto md:h-auto h-full grid-cols-3 grid-rows-6 md:align-end md:grid-rows-8 md:pb-20 p-4 -mb-20'
+        className='flex flex-col items-center justify-end h-full w-screen '
         initial='initial'
         animate='animate'
         exit='exit'
         variants={gridVariants}
-      >
-        <div className='flex items-center justify-center col-span-3 row-start-2 col-start-1 text-2xl md:text-5xl text-syellow'>
+        >
+      <div className='flex justify-start h-1/4 sm:h-1/3 w-screen mb-8 sm:mb-8 md:mb-16 lg:mb-32 ml-8 sm:ml-16 md:ml-32 lg:ml-64'>
+        <Image
+          alt='sandro portrait'
+          src='/img/about/portrait.jpg'
+          width={300}
+          height={300}
+          className='rounded-[536px] object-cover '
+
+          />
+      </div>
+       
+        <div className='text-3xl font-bold sm:text-4xl md:text-5xl text-syellow px-4 sm:px-8 md:px-16 text-center mb-4 sm:mb-8'>
           HIGH ALTITUDES
         </div>
-        <div className='flex items-end justify-end col-span-2 col-start-1 row-start-3 md:pr-40 '>
-          <p className='flex md:h-[108px] md:w-[530px] items-end justify-end text-left font-Poppins text-xl md:text-2xl text-icewhite'>
+        <div className='flex items-center justify-center mb-4 sm:mb-8'>
+          <svg
+            width={4}
+            height={49}
+            viewBox='0 0 4 49'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+            className='flex'
+            preserveAspectRatio='none'
+          >
+            <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
+          </svg>
+        </div>
+        <div className='flex items-center mb-4 sm:mb-8'>
+          <p className='text-left font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
             My name is Sandro, I&apos;m a freelance film maker, photographer and part time ski bum.
           </p>
         </div>
-        <div className='flex items-center justify-center col-start-2 row-start-4 md:row-start-5'>
+        <div className='flex items-center justify-center mb-4 sm:mb-8'>
           <svg
             width={4}
             height={49}
@@ -41,25 +65,13 @@ export function AboutFirst() {
             <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
           </svg>
         </div>
-        <div className='flex items-center col-span-2 col-start-2 md:row-start-5 md:pl-40'>
-          <p className='h-[108px] w-[530px] text-left font-Poppins text-xl md:text-2xl text-icewhite'>
+        <div className='flex items-center mb-4 sm:mb-8'>
+          <p className='text-left font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
             I love people, cameras and mountains and have spent the last decade bringing those passions together.
           </p>
         </div>
-        <div className='flex items-center justify-center col-start-2 row-start-6 md:row-start-3'>
-          <svg
-            width={4}
-            height={49}
-            viewBox='0 0 4 49'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            className='flex'
-            preserveAspectRatio='none'
-          >
-            <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
-          </svg>
-        </div>
-        <div className='flex items-center justify-center col-start-2 row-start-7 invisible md:visible'>
+        
+        <div className='mb-8 sm:mb-16'>
           <svg
             width={4}
             height={49}
@@ -72,16 +84,6 @@ export function AboutFirst() {
             <line x1={2} y1='48.0052' x2={2} y2='0.00524902' stroke='#FCC600' strokeWidth={4} strokeDasharray='6 6' />
           </svg>
         </div>
-        <div className='col-start-2 row-start-1 items-center justify-center md:row-span-3 m-20 md:mt-[70px] md:ml-[-125px]'>
-          <Image
-            alt='sandro portrait'
-            src='/img/about/portrait.jpg'
-            width={200}
-            height={246}
-            className=' rounded-[536px] object-cover'
-          />
-        </div>
       </motion.div>
-    </div>
   )
 }
