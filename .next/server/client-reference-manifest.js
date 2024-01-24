@@ -230,64 +230,12 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./app/page.jsx": {
-      "*": {
-        "id": "(sc_client)/./app/page.jsx",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./app/page.jsx",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./app/page.jsx",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./node_modules/next/dist/client/image.js": {
-      "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "*",
-        "chunks": [
-          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "",
-        "chunks": [
-          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "default",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./node_modules/next/dist/client/link.js": {
       "*": {
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [
-          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+          "app/portfolio/page:static/chunks/app/portfolio/page.js"
         ],
         "async": false
       },
@@ -295,7 +243,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "",
         "chunks": [
-          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+          "app/portfolio/page:static/chunks/app/portfolio/page.js"
         ],
         "async": false
       },
@@ -303,41 +251,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "default",
         "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./node_modules/next/dist/shared/lib/head.js": {
-      "*": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "*",
-        "chunks": [
-          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "",
-        "chunks": [
-          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "default",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      },
-      "defaultHead": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "defaultHead",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+          "app/portfolio/page:static/chunks/app/portfolio/page.js"
         ],
         "async": false
       }
@@ -347,7 +261,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "*",
         "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
@@ -355,7 +269,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "",
         "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
@@ -363,7 +277,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "suspense",
         "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
@@ -371,7 +285,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "NoSSR",
         "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       }
@@ -480,132 +394,140 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./app/contact/page.jsx": {
+    "(app-client)/./node_modules/next/dist/client/image.js": {
       "*": {
-        "id": "(sc_client)/./app/contact/page.jsx",
+        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
         "name": "*",
         "chunks": [
-          "app/contact/page:static/chunks/app/contact/page.js"
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
       "": {
-        "id": "(sc_client)/./app/contact/page.jsx",
+        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
         "name": "",
         "chunks": [
-          "app/contact/page:static/chunks/app/contact/page.js"
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
       "default": {
-        "id": "(sc_client)/./app/contact/page.jsx",
+        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
         "name": "default",
         "chunks": [
-          "app/contact/page:static/chunks/app/contact/page.js"
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       }
     },
-    "(app-client)/./app/about/layout.jsx": {
+    "(app-client)/./node_modules/next/dist/shared/lib/head.js": {
       "*": {
-        "id": "(sc_client)/./app/about/layout.jsx",
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
         "name": "*",
         "chunks": [
-          "app/about/layout:static/chunks/app/about/layout.js"
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
       "": {
-        "id": "(sc_client)/./app/about/layout.jsx",
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
         "name": "",
         "chunks": [
-          "app/about/layout:static/chunks/app/about/layout.js"
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
       "default": {
-        "id": "(sc_client)/./app/about/layout.jsx",
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
         "name": "default",
         "chunks": [
-          "app/about/layout:static/chunks/app/about/layout.js"
+          "app/page:static/chunks/app/page.js"
+        ],
+        "async": false
+      },
+      "defaultHead": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
+        "name": "defaultHead",
+        "chunks": [
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       }
     },
-    "(app-client)/./src/components/dom/About/AboutFirst.jsx": {
+    "(app-client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx": {
       "*": {
-        "id": "(sc_client)/./src/components/dom/About/AboutFirst.jsx",
+        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
         "name": "*",
         "chunks": [
-          "app/about/1/page:static/chunks/app/about/1/page.js"
+          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
         ],
         "async": false
       },
       "": {
-        "id": "(sc_client)/./src/components/dom/About/AboutFirst.jsx",
+        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
         "name": "",
         "chunks": [
-          "app/about/1/page:static/chunks/app/about/1/page.js"
-        ],
-        "async": false
-      },
-      "AboutFirst": {
-        "id": "(sc_client)/./src/components/dom/About/AboutFirst.jsx",
-        "name": "AboutFirst",
-        "chunks": [
-          "app/about/1/page:static/chunks/app/about/1/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/dom/About/AboutSecond.jsx": {
-      "*": {
-        "id": "(sc_client)/./src/components/dom/About/AboutSecond.jsx",
-        "name": "*",
-        "chunks": [
-          "app/about/layout:static/chunks/app/about/layout.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/dom/About/AboutSecond.jsx",
-        "name": "",
-        "chunks": [
-          "app/about/layout:static/chunks/app/about/layout.js"
-        ],
-        "async": false
-      },
-      "AboutSecond": {
-        "id": "(sc_client)/./src/components/dom/About/AboutSecond.jsx",
-        "name": "AboutSecond",
-        "chunks": [
-          "app/about/layout:static/chunks/app/about/layout.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./app/about/1/page.jsx": {
-      "*": {
-        "id": "(sc_client)/./app/about/1/page.jsx",
-        "name": "*",
-        "chunks": [
-          "app/about/1/page:static/chunks/app/about/1/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./app/about/1/page.jsx",
-        "name": "",
-        "chunks": [
-          "app/about/1/page:static/chunks/app/about/1/page.js"
+          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
         ],
         "async": false
       },
       "default": {
-        "id": "(sc_client)/./app/about/1/page.jsx",
+        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
         "name": "default",
         "chunks": [
-          "app/about/1/page:static/chunks/app/about/1/page.js"
+          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
+        "name": "*",
+        "chunks": [
+          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
+        "name": "",
+        "chunks": [
+          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+        ],
+        "async": false
+      },
+      "StillsWrapper": {
+        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
+        "name": "StillsWrapper",
+        "chunks": [
+          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./app/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./app/page.jsx",
+        "name": "*",
+        "chunks": [
+          "app/page:static/chunks/app/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./app/page.jsx",
+        "name": "",
+        "chunks": [
+          "app/page:static/chunks/app/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/page.jsx",
+        "name": "default",
+        "chunks": [
+          "app/page:static/chunks/app/page.js"
         ],
         "async": false
       }
@@ -635,84 +557,6 @@ self.__RSC_MANIFEST={
         ],
         "async": false
       }
-    },
-    "(app-client)/./src/components/dom/Portfolio/Motion/MotionGallery.jsx": {
-      "*": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Motion/MotionGallery.jsx",
-        "name": "*",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Motion/MotionGallery.jsx",
-        "name": "",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Motion/MotionGallery.jsx",
-        "name": "default",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/dom/Portfolio/Motion/MotionPlayer.jsx": {
-      "*": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Motion/MotionPlayer.jsx",
-        "name": "*",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Motion/MotionPlayer.jsx",
-        "name": "",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Motion/MotionPlayer.jsx",
-        "name": "default",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/dom/Portfolio/Motion/MotionWrapper.jsx": {
-      "*": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Motion/MotionWrapper.jsx",
-        "name": "*",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Motion/MotionWrapper.jsx",
-        "name": "",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      },
-      "MotionWrapper": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Motion/MotionWrapper.jsx",
-        "name": "MotionWrapper",
-        "chunks": [
-          "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-        ],
-        "async": false
-      }
     }
   },
   "edgeSSRModuleMapping": {},
@@ -720,8 +564,8 @@ self.__RSC_MANIFEST={
     "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/layout": [
       "static/css/app/layout.css"
     ],
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/portfolio/motion/page": [
-      "static/css/app/portfolio/motion/page.css"
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/portfolio/stills/page": [
+      "static/css/app/portfolio/stills/page.css"
     ]
   },
   "clientModules": {
@@ -1397,83 +1241,18 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/page.jsx": {
-      "id": "(app-client)/./app/page.jsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/page.jsx#": {
-      "id": "(app-client)/./app/page.jsx",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/page.jsx#default": {
-      "id": "(app-client)/./app/page.jsx",
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/global.css#": {
+      "id": "null",
       "name": "default",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/image.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "*",
-      "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/image.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "*",
-      "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/image.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "",
-      "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/image.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "",
-      "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/image.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "default",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/image.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "default",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
+        "static/css/app/layout.css"
+      ]
     },
     "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/link.js": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+        "app/portfolio/page:static/chunks/app/portfolio/page.js"
       ],
       "async": false
     },
@@ -1481,7 +1260,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+        "app/portfolio/page:static/chunks/app/portfolio/page.js"
       ],
       "async": false
     },
@@ -1489,7 +1268,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+        "app/portfolio/page:static/chunks/app/portfolio/page.js"
       ],
       "async": false
     },
@@ -1497,7 +1276,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+        "app/portfolio/page:static/chunks/app/portfolio/page.js"
       ],
       "async": false
     },
@@ -1505,7 +1284,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/portfolio/page:static/chunks/app/portfolio/page.js"
       ],
       "async": false
     },
@@ -1513,71 +1292,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "*",
-      "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "*",
-      "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js#": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "",
-      "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js#": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "",
-      "chunks": [
-        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "default",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "default",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js#defaultHead": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "defaultHead",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js#defaultHead": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "defaultHead",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/portfolio/page:static/chunks/app/portfolio/page.js"
       ],
       "async": false
     },
@@ -1585,7 +1300,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -1593,7 +1308,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -1601,7 +1316,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -1609,7 +1324,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -1617,7 +1332,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "suspense",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -1625,7 +1340,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "suspense",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -1633,7 +1348,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "NoSSR",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -1641,16 +1356,9 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "NoSSR",
       "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/global.css#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
     },
     "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Layout.jsx": {
       "id": "(app-client)/./src/components/dom/Layout.jsx",
@@ -1748,123 +1456,201 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/contact/page.jsx": {
-      "id": "(app-client)/./app/contact/page.jsx",
-      "name": "*",
-      "chunks": [
-        "app/contact/page:static/chunks/app/contact/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/contact/page.jsx#": {
-      "id": "(app-client)/./app/contact/page.jsx",
-      "name": "",
-      "chunks": [
-        "app/contact/page:static/chunks/app/contact/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/contact/page.jsx#default": {
-      "id": "(app-client)/./app/contact/page.jsx",
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/yet-another-react-lightbox/dist/plugins/thumbnails/thumbnails.css#": {
+      "id": "null",
       "name": "default",
       "chunks": [
-        "app/contact/page:static/chunks/app/contact/page.js"
-      ],
-      "async": false
+        "static/css/app/portfolio/stills/page.css"
+      ]
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/about/layout.jsx": {
-      "id": "(app-client)/./app/about/layout.jsx",
-      "name": "*",
-      "chunks": [
-        "app/about/layout:static/chunks/app/about/layout.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/about/layout.jsx#": {
-      "id": "(app-client)/./app/about/layout.jsx",
-      "name": "",
-      "chunks": [
-        "app/about/layout:static/chunks/app/about/layout.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/about/layout.jsx#default": {
-      "id": "(app-client)/./app/about/layout.jsx",
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/yet-another-react-lightbox/dist/styles.css#": {
+      "id": "null",
       "name": "default",
       "chunks": [
-        "app/about/layout:static/chunks/app/about/layout.js"
-      ],
-      "async": false
+        "static/css/app/portfolio/stills/page.css"
+      ]
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/About/AboutFirst.jsx": {
-      "id": "(app-client)/./src/components/dom/About/AboutFirst.jsx",
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/image.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/about/1/page:static/chunks/app/about/1/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/About/AboutFirst.jsx#": {
-      "id": "(app-client)/./src/components/dom/About/AboutFirst.jsx",
-      "name": "",
-      "chunks": [
-        "app/about/1/page:static/chunks/app/about/1/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/About/AboutFirst.jsx#AboutFirst": {
-      "id": "(app-client)/./src/components/dom/About/AboutFirst.jsx",
-      "name": "AboutFirst",
-      "chunks": [
-        "app/about/1/page:static/chunks/app/about/1/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/About/AboutSecond.jsx": {
-      "id": "(app-client)/./src/components/dom/About/AboutSecond.jsx",
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/image.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/about/layout:static/chunks/app/about/layout.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/About/AboutSecond.jsx#": {
-      "id": "(app-client)/./src/components/dom/About/AboutSecond.jsx",
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/image.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "",
       "chunks": [
-        "app/about/layout:static/chunks/app/about/layout.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/About/AboutSecond.jsx#AboutSecond": {
-      "id": "(app-client)/./src/components/dom/About/AboutSecond.jsx",
-      "name": "AboutSecond",
-      "chunks": [
-        "app/about/layout:static/chunks/app/about/layout.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/about/1/page.jsx": {
-      "id": "(app-client)/./app/about/1/page.jsx",
-      "name": "*",
-      "chunks": [
-        "app/about/1/page:static/chunks/app/about/1/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/about/1/page.jsx#": {
-      "id": "(app-client)/./app/about/1/page.jsx",
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/image.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "",
       "chunks": [
-        "app/about/1/page:static/chunks/app/about/1/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/about/1/page.jsx#default": {
-      "id": "(app-client)/./app/about/1/page.jsx",
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/image.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "default",
       "chunks": [
-        "app/about/1/page:static/chunks/app/about/1/page.js"
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/image.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "default",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js#": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js#": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "default",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "default",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js#defaultHead": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "defaultHead",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js#defaultHead": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "defaultHead",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsGallery.jsx": {
+      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
+      "name": "*",
+      "chunks": [
+        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsGallery.jsx#": {
+      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
+      "name": "",
+      "chunks": [
+        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsGallery.jsx#default": {
+      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
+      "name": "default",
+      "chunks": [
+        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsWrapper.jsx": {
+      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
+      "name": "*",
+      "chunks": [
+        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsWrapper.jsx#": {
+      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
+      "name": "",
+      "chunks": [
+        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsWrapper.jsx#StillsWrapper": {
+      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
+      "name": "StillsWrapper",
+      "chunks": [
+        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/page.jsx": {
+      "id": "(app-client)/./app/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/page.jsx#": {
+      "id": "(app-client)/./app/page.jsx",
+      "name": "",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/page.jsx#default": {
+      "id": "(app-client)/./app/page.jsx",
+      "name": "default",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -1889,92 +1675,6 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "app/portfolio/page:static/chunks/app/portfolio/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/yet-another-react-lightbox/dist/plugins/thumbnails/thumbnails.css#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/portfolio/motion/page.css"
-      ]
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/yet-another-react-lightbox/dist/styles.css#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/portfolio/motion/page.css"
-      ]
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Motion/MotionGallery.jsx": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Motion/MotionGallery.jsx",
-      "name": "*",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Motion/MotionGallery.jsx#": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Motion/MotionGallery.jsx",
-      "name": "",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Motion/MotionGallery.jsx#default": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Motion/MotionGallery.jsx",
-      "name": "default",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Motion/MotionPlayer.jsx": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Motion/MotionPlayer.jsx",
-      "name": "*",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Motion/MotionPlayer.jsx#": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Motion/MotionPlayer.jsx",
-      "name": "",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Motion/MotionPlayer.jsx#default": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Motion/MotionPlayer.jsx",
-      "name": "default",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Motion/MotionWrapper.jsx": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Motion/MotionWrapper.jsx",
-      "name": "*",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Motion/MotionWrapper.jsx#": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Motion/MotionWrapper.jsx",
-      "name": "",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Motion/MotionWrapper.jsx#MotionWrapper": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Motion/MotionWrapper.jsx",
-      "name": "MotionWrapper",
-      "chunks": [
-        "app/portfolio/motion/page:static/chunks/app/portfolio/motion/page.js"
       ],
       "async": false
     },
