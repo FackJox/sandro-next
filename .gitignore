@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # dependencies
 /node_modules
 
@@ -42,6 +41,4 @@ report.*.json
 # .vscode Debugging
 .vscode/*-debug-profile
 =======
-node_modules
 
->>>>>>> 0ef1476 (about styling)
