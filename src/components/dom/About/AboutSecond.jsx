@@ -46,7 +46,7 @@ export function AboutSecond() {
         </svg>
       </div>
       <div className='flex items-center mb-4 sm:mb-8'>
-        <p className='text-left font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
+        <p className='font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
           In between I worked on Netflix&apos;s &apos;14 Peaks&apos; as a high altitude DP and produced climbing
           content for Red Bull TV, Epic TV, Montane, Berghaus and Osprey.
         </p>
@@ -65,7 +65,7 @@ export function AboutSecond() {
         </svg>
       </div>
       <div className='flex items-center mb-4 sm:mb-8'>
-        <p className='text-left font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
+        <p className='font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
           In 2018 I filmed the first Afghan woman as she summited Noshaq, the countries highest peak. In 2022 I flew a
           drone over K2 as the first Pakistani woman reached the top.
         </p>

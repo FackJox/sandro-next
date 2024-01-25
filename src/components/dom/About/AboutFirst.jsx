@@ -48,7 +48,7 @@ export function AboutFirst() {
           </svg>
         </div>
         <div className='flex items-center mb-4 sm:mb-8'>
-          <p className='text-left font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
+          <p className=' font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
             My name is Sandro, I&apos;m a freelance film maker, photographer and part time ski bum.
           </p>
         </div>
@@ -66,7 +66,7 @@ export function AboutFirst() {
           </svg>
         </div>
         <div className='flex items-center mb-4 sm:mb-8'>
-          <p className='text-left font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
+          <p className='font-Poppins text-lg sm:text-xl md:text-2xl text-icewhite px-4 sm:px-8 md:px-16 text-center'>
             I love people, cameras and mountains and have spent the last decade bringing those passions together.
           </p>
         </div>
