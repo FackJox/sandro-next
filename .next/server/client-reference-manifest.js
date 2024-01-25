@@ -235,7 +235,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [
-          "app/portfolio/page:static/chunks/app/portfolio/page.js"
+          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
         ],
         "async": false
       },
@@ -243,7 +243,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "",
         "chunks": [
-          "app/portfolio/page:static/chunks/app/portfolio/page.js"
+          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
         ],
         "async": false
       },
@@ -251,7 +251,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "default",
         "chunks": [
-          "app/portfolio/page:static/chunks/app/portfolio/page.js"
+          "app/about/2/page:static/chunks/app/about/2/page.js"
         ],
         "async": false
       }
@@ -261,7 +261,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "*",
         "chunks": [
-          "app/page:static/chunks/app/page.js"
+          "app/contact/page:static/chunks/app/contact/page.js"
         ],
         "async": false
       },
@@ -269,7 +269,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "",
         "chunks": [
-          "app/page:static/chunks/app/page.js"
+          "app/contact/page:static/chunks/app/contact/page.js"
         ],
         "async": false
       },
@@ -277,7 +277,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "suspense",
         "chunks": [
-          "app/page:static/chunks/app/page.js"
+          "app/contact/page:static/chunks/app/contact/page.js"
         ],
         "async": false
       },
@@ -285,7 +285,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "NoSSR",
         "chunks": [
-          "app/page:static/chunks/app/page.js"
+          "app/contact/page:static/chunks/app/contact/page.js"
         ],
         "async": false
       }
@@ -394,144 +394,6 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./node_modules/next/dist/client/image.js": {
-      "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./node_modules/next/dist/shared/lib/head.js": {
-      "*": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "defaultHead": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "defaultHead",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx": {
-      "*": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
-        "name": "*",
-        "chunks": [
-          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
-        "name": "",
-        "chunks": [
-          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
-        "name": "default",
-        "chunks": [
-          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx": {
-      "*": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
-        "name": "*",
-        "chunks": [
-          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
-        "name": "",
-        "chunks": [
-          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
-        ],
-        "async": false
-      },
-      "StillsWrapper": {
-        "id": "(sc_client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
-        "name": "StillsWrapper",
-        "chunks": [
-          "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./app/page.jsx": {
-      "*": {
-        "id": "(sc_client)/./app/page.jsx",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./app/page.jsx",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./app/page.jsx",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./src/components/dom/Portfolio/PortfolioMenu.jsx": {
       "*": {
         "id": "(sc_client)/./src/components/dom/Portfolio/PortfolioMenu.jsx",
@@ -557,19 +419,232 @@ self.__RSC_MANIFEST={
         ],
         "async": false
       }
+    },
+    "(app-client)/./app/about/layout.jsx": {
+      "*": {
+        "id": "(sc_client)/./app/about/layout.jsx",
+        "name": "*",
+        "chunks": [
+          "app/about/layout:static/chunks/app/about/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./app/about/layout.jsx",
+        "name": "",
+        "chunks": [
+          "app/about/layout:static/chunks/app/about/layout.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/about/layout.jsx",
+        "name": "default",
+        "chunks": [
+          "app/about/layout:static/chunks/app/about/layout.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/image.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
+        "name": "*",
+        "chunks": [
+          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
+        "name": "",
+        "chunks": [
+          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
+        "name": "default",
+        "chunks": [
+          "app/about/2/page:static/chunks/app/about/2/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/shared/lib/head.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
+        "name": "*",
+        "chunks": [
+          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
+        "name": "",
+        "chunks": [
+          "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
+        "name": "default",
+        "chunks": [
+          "app/about/2/page:static/chunks/app/about/2/page.js"
+        ],
+        "async": false
+      },
+      "defaultHead": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
+        "name": "defaultHead",
+        "chunks": [
+          "app/about/2/page:static/chunks/app/about/2/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/dom/About/AboutFirst.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/dom/About/AboutFirst.jsx",
+        "name": "*",
+        "chunks": [
+          "app/about/1/page:static/chunks/app/about/1/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/components/dom/About/AboutFirst.jsx",
+        "name": "",
+        "chunks": [
+          "app/about/1/page:static/chunks/app/about/1/page.js"
+        ],
+        "async": false
+      },
+      "AboutFirst": {
+        "id": "(sc_client)/./src/components/dom/About/AboutFirst.jsx",
+        "name": "AboutFirst",
+        "chunks": [
+          "app/about/1/page:static/chunks/app/about/1/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/dom/About/AboutSecond.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/dom/About/AboutSecond.jsx",
+        "name": "*",
+        "chunks": [
+          "app/about/2/page:static/chunks/app/about/2/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/components/dom/About/AboutSecond.jsx",
+        "name": "",
+        "chunks": [
+          "app/about/2/page:static/chunks/app/about/2/page.js"
+        ],
+        "async": false
+      },
+      "AboutSecond": {
+        "id": "(sc_client)/./src/components/dom/About/AboutSecond.jsx",
+        "name": "AboutSecond",
+        "chunks": [
+          "app/about/2/page:static/chunks/app/about/2/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./app/about/1/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./app/about/1/page.jsx",
+        "name": "*",
+        "chunks": [
+          "app/about/1/page:static/chunks/app/about/1/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./app/about/1/page.jsx",
+        "name": "",
+        "chunks": [
+          "app/about/1/page:static/chunks/app/about/1/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/about/1/page.jsx",
+        "name": "default",
+        "chunks": [
+          "app/about/1/page:static/chunks/app/about/1/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./app/about/2/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./app/about/2/page.jsx",
+        "name": "*",
+        "chunks": [
+          "app/about/2/page:static/chunks/app/about/2/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./app/about/2/page.jsx",
+        "name": "",
+        "chunks": [
+          "app/about/2/page:static/chunks/app/about/2/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/about/2/page.jsx",
+        "name": "default",
+        "chunks": [
+          "app/about/2/page:static/chunks/app/about/2/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./app/contact/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./app/contact/page.jsx",
+        "name": "*",
+        "chunks": [
+          "app/contact/page:static/chunks/app/contact/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./app/contact/page.jsx",
+        "name": "",
+        "chunks": [
+          "app/contact/page:static/chunks/app/contact/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/contact/page.jsx",
+        "name": "default",
+        "chunks": [
+          "app/contact/page:static/chunks/app/contact/page.js"
+        ],
+        "async": false
+      }
     }
   },
   "edgeSSRModuleMapping": {},
   "cssFiles": {
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/layout": [
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/layout": [
       "static/css/app/layout.css"
-    ],
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/portfolio/stills/page": [
-      "static/css/app/portfolio/stills/page.css"
     ]
   },
   "clientModules": {
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/app-router.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -577,7 +652,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/app-router.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -585,7 +660,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/app-router.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/app-router.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "",
       "chunks": [
@@ -593,7 +668,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/app-router.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/app-router.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "",
       "chunks": [
@@ -601,7 +676,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/app-router.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/app-router.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "default",
       "chunks": [
@@ -609,7 +684,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/app-router.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/app-router.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "default",
       "chunks": [
@@ -617,15 +692,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/app-router.js#getServerActionDispatcher": {
-      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
-      "name": "getServerActionDispatcher",
-      "chunks": [
-        "webpack:static/chunks/webpack.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/app-router.js#getServerActionDispatcher": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/app-router.js#getServerActionDispatcher": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "getServerActionDispatcher",
       "chunks": [
@@ -633,7 +700,15 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/app-router.js#urlToUrlWithoutFlightMarker": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/app-router.js#getServerActionDispatcher": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
+      "name": "getServerActionDispatcher",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/app-router.js#urlToUrlWithoutFlightMarker": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "urlToUrlWithoutFlightMarker",
       "chunks": [
@@ -641,7 +716,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/app-router.js#urlToUrlWithoutFlightMarker": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/app-router.js#urlToUrlWithoutFlightMarker": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "urlToUrlWithoutFlightMarker",
       "chunks": [
@@ -649,7 +724,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/error-boundary.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -657,7 +732,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/error-boundary.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -665,7 +740,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/error-boundary.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/error-boundary.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "",
       "chunks": [
@@ -673,7 +748,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/error-boundary.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/error-boundary.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "",
       "chunks": [
@@ -681,7 +756,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/error-boundary.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/error-boundary.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "default",
       "chunks": [
@@ -689,7 +764,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/error-boundary.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/error-boundary.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "default",
       "chunks": [
@@ -697,15 +772,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/error-boundary.js#ErrorBoundaryHandler": {
-      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
-      "name": "ErrorBoundaryHandler",
-      "chunks": [
-        "webpack:static/chunks/webpack.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/error-boundary.js#ErrorBoundaryHandler": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/error-boundary.js#ErrorBoundaryHandler": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "ErrorBoundaryHandler",
       "chunks": [
@@ -713,7 +780,15 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/error-boundary.js#ErrorBoundary": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/error-boundary.js#ErrorBoundaryHandler": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "ErrorBoundaryHandler",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/error-boundary.js#ErrorBoundary": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "ErrorBoundary",
       "chunks": [
@@ -721,7 +796,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/error-boundary.js#ErrorBoundary": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/error-boundary.js#ErrorBoundary": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "ErrorBoundary",
       "chunks": [
@@ -729,7 +804,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/redirect-boundary.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/redirect-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "*",
       "chunks": [
@@ -737,7 +812,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/redirect-boundary.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/redirect-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "*",
       "chunks": [
@@ -745,7 +820,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/redirect-boundary.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/redirect-boundary.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "",
       "chunks": [
@@ -753,7 +828,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/redirect-boundary.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/redirect-boundary.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "",
       "chunks": [
@@ -761,7 +836,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/redirect-boundary.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/redirect-boundary.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "default",
       "chunks": [
@@ -769,7 +844,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/redirect-boundary.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/redirect-boundary.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "default",
       "chunks": [
@@ -777,15 +852,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/redirect-boundary.js#RedirectErrorBoundary": {
-      "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
-      "name": "RedirectErrorBoundary",
-      "chunks": [
-        "webpack:static/chunks/webpack.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/redirect-boundary.js#RedirectErrorBoundary": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/redirect-boundary.js#RedirectErrorBoundary": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "RedirectErrorBoundary",
       "chunks": [
@@ -793,7 +860,15 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/redirect-boundary.js#RedirectBoundary": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/redirect-boundary.js#RedirectErrorBoundary": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
+      "name": "RedirectErrorBoundary",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/redirect-boundary.js#RedirectBoundary": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "RedirectBoundary",
       "chunks": [
@@ -801,7 +876,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/redirect-boundary.js#RedirectBoundary": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/redirect-boundary.js#RedirectBoundary": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "RedirectBoundary",
       "chunks": [
@@ -809,7 +884,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
       "name": "*",
       "chunks": [
@@ -817,7 +892,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
       "name": "*",
       "chunks": [
@@ -825,7 +900,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
       "name": "",
       "chunks": [
@@ -833,7 +908,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
       "name": "",
       "chunks": [
@@ -841,7 +916,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
       "name": "default",
       "chunks": [
@@ -849,7 +924,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
       "name": "default",
       "chunks": [
@@ -857,7 +932,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/app-router-context.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/app-router-context.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "*",
       "chunks": [
@@ -865,7 +940,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/app-router-context.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/app-router-context.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "*",
       "chunks": [
@@ -873,7 +948,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/app-router-context.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/app-router-context.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "",
       "chunks": [
@@ -881,7 +956,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/app-router-context.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/app-router-context.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "",
       "chunks": [
@@ -889,7 +964,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/app-router-context.js#CacheStates": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/app-router-context.js#CacheStates": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "CacheStates",
       "chunks": [
@@ -897,7 +972,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/app-router-context.js#CacheStates": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/app-router-context.js#CacheStates": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "CacheStates",
       "chunks": [
@@ -905,7 +980,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/app-router-context.js#AppRouterContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/app-router-context.js#AppRouterContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "AppRouterContext",
       "chunks": [
@@ -913,7 +988,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/app-router-context.js#AppRouterContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/app-router-context.js#AppRouterContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "AppRouterContext",
       "chunks": [
@@ -921,7 +996,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/app-router-context.js#LayoutRouterContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/app-router-context.js#LayoutRouterContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "LayoutRouterContext",
       "chunks": [
@@ -929,7 +1004,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/app-router-context.js#LayoutRouterContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/app-router-context.js#LayoutRouterContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "LayoutRouterContext",
       "chunks": [
@@ -937,7 +1012,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/app-router-context.js#GlobalLayoutRouterContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/app-router-context.js#GlobalLayoutRouterContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "GlobalLayoutRouterContext",
       "chunks": [
@@ -945,7 +1020,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/app-router-context.js#GlobalLayoutRouterContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/app-router-context.js#GlobalLayoutRouterContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "GlobalLayoutRouterContext",
       "chunks": [
@@ -953,7 +1028,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/app-router-context.js#TemplateContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/app-router-context.js#TemplateContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "TemplateContext",
       "chunks": [
@@ -961,7 +1036,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/app-router-context.js#TemplateContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/app-router-context.js#TemplateContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "TemplateContext",
       "chunks": [
@@ -969,7 +1044,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/hooks-client-context.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/hooks-client-context.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
       "name": "*",
       "chunks": [
@@ -977,7 +1052,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/hooks-client-context.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/hooks-client-context.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
       "name": "*",
       "chunks": [
@@ -985,7 +1060,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/hooks-client-context.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/hooks-client-context.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
       "name": "",
       "chunks": [
@@ -993,7 +1068,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/hooks-client-context.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/hooks-client-context.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
       "name": "",
       "chunks": [
@@ -1001,15 +1076,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/hooks-client-context.js#SearchParamsContext": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
-      "name": "SearchParamsContext",
-      "chunks": [
-        "webpack:static/chunks/webpack.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/hooks-client-context.js#SearchParamsContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/hooks-client-context.js#SearchParamsContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
       "name": "SearchParamsContext",
       "chunks": [
@@ -1017,7 +1084,15 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/hooks-client-context.js#PathnameContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/hooks-client-context.js#SearchParamsContext": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
+      "name": "SearchParamsContext",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/hooks-client-context.js#PathnameContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
       "name": "PathnameContext",
       "chunks": [
@@ -1025,7 +1100,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/hooks-client-context.js#PathnameContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/hooks-client-context.js#PathnameContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
       "name": "PathnameContext",
       "chunks": [
@@ -1033,7 +1108,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/server-inserted-html.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/server-inserted-html.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
       "name": "*",
       "chunks": [
@@ -1041,7 +1116,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/server-inserted-html.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/server-inserted-html.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
       "name": "*",
       "chunks": [
@@ -1049,7 +1124,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/server-inserted-html.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/server-inserted-html.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
       "name": "",
       "chunks": [
@@ -1057,7 +1132,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/server-inserted-html.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/server-inserted-html.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
       "name": "",
       "chunks": [
@@ -1065,15 +1140,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/server-inserted-html.js#ServerInsertedHTMLContext": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
-      "name": "ServerInsertedHTMLContext",
-      "chunks": [
-        "webpack:static/chunks/webpack.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/server-inserted-html.js#ServerInsertedHTMLContext": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/server-inserted-html.js#ServerInsertedHTMLContext": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
       "name": "ServerInsertedHTMLContext",
       "chunks": [
@@ -1081,7 +1148,15 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/server-inserted-html.js#useServerInsertedHTML": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/server-inserted-html.js#ServerInsertedHTMLContext": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
+      "name": "ServerInsertedHTMLContext",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/server-inserted-html.js#useServerInsertedHTML": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
       "name": "useServerInsertedHTML",
       "chunks": [
@@ -1089,7 +1164,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/server-inserted-html.js#useServerInsertedHTML": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/server-inserted-html.js#useServerInsertedHTML": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
       "name": "useServerInsertedHTML",
       "chunks": [
@@ -1097,7 +1172,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/layout-router.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -1105,7 +1180,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/layout-router.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -1113,7 +1188,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/layout-router.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/layout-router.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "",
       "chunks": [
@@ -1121,7 +1196,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/layout-router.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/layout-router.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "",
       "chunks": [
@@ -1129,7 +1204,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/layout-router.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/layout-router.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "default",
       "chunks": [
@@ -1137,7 +1212,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/layout-router.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/layout-router.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "default",
       "chunks": [
@@ -1145,7 +1220,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/render-from-template-context.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -1153,7 +1228,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -1161,7 +1236,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/render-from-template-context.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/render-from-template-context.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "",
       "chunks": [
@@ -1169,7 +1244,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/render-from-template-context.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/render-from-template-context.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "",
       "chunks": [
@@ -1177,7 +1252,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/render-from-template-context.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/render-from-template-context.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "default",
       "chunks": [
@@ -1185,7 +1260,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/render-from-template-context.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/render-from-template-context.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "default",
       "chunks": [
@@ -1193,7 +1268,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -1201,7 +1276,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -1209,7 +1284,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "",
       "chunks": [
@@ -1217,7 +1292,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "",
       "chunks": [
@@ -1225,7 +1300,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "default",
       "chunks": [
@@ -1233,7 +1308,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "default",
       "chunks": [
@@ -1241,126 +1316,126 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/global.css#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/global.css#": {
       "id": "null",
       "name": "default",
       "chunks": [
         "static/css/app/layout.css"
       ]
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/link.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/link.js": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/link.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/link.js": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/link.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/link.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/link.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/link.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/link.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/link.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/link.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/link.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js#suspense": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js#suspense": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "suspense",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js#suspense": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js#suspense": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "suspense",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js#NoSSR": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js#NoSSR": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "NoSSR",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js#NoSSR": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js#NoSSR": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "NoSSR",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Layout.jsx": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Layout.jsx": {
       "id": "(app-client)/./src/components/dom/Layout.jsx",
       "name": "*",
       "chunks": [
@@ -1368,7 +1443,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Layout.jsx#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Layout.jsx#": {
       "id": "(app-client)/./src/components/dom/Layout.jsx",
       "name": "",
       "chunks": [
@@ -1376,7 +1451,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Layout.jsx#Layout": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Layout.jsx#Layout": {
       "id": "(app-client)/./src/components/dom/Layout.jsx",
       "name": "Layout",
       "chunks": [
@@ -1384,7 +1459,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Menu.jsx": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Menu.jsx": {
       "id": "(app-client)/./src/components/dom/Menu.jsx",
       "name": "*",
       "chunks": [
@@ -1392,7 +1467,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Menu.jsx#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Menu.jsx#": {
       "id": "(app-client)/./src/components/dom/Menu.jsx",
       "name": "",
       "chunks": [
@@ -1400,7 +1475,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Menu.jsx#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Menu.jsx#default": {
       "id": "(app-client)/./src/components/dom/Menu.jsx",
       "name": "default",
       "chunks": [
@@ -1408,7 +1483,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Navbar.jsx": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Navbar.jsx": {
       "id": "(app-client)/./src/components/dom/Navbar.jsx",
       "name": "*",
       "chunks": [
@@ -1416,7 +1491,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Navbar.jsx#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Navbar.jsx#": {
       "id": "(app-client)/./src/components/dom/Navbar.jsx",
       "name": "",
       "chunks": [
@@ -1424,7 +1499,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Navbar.jsx#Navbar": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Navbar.jsx#Navbar": {
       "id": "(app-client)/./src/components/dom/Navbar.jsx",
       "name": "Navbar",
       "chunks": [
@@ -1432,7 +1507,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Navigator.jsx": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Navigator.jsx": {
       "id": "(app-client)/./src/components/dom/Navigator.jsx",
       "name": "*",
       "chunks": [
@@ -1440,7 +1515,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Navigator.jsx#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Navigator.jsx#": {
       "id": "(app-client)/./src/components/dom/Navigator.jsx",
       "name": "",
       "chunks": [
@@ -1448,7 +1523,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Navigator.jsx#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Navigator.jsx#default": {
       "id": "(app-client)/./src/components/dom/Navigator.jsx",
       "name": "default",
       "chunks": [
@@ -1456,229 +1531,287 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/yet-another-react-lightbox/dist/plugins/thumbnails/thumbnails.css#": {
-      "id": "null",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Portfolio/PortfolioMenu.jsx": {
+      "id": "(app-client)/./src/components/dom/Portfolio/PortfolioMenu.jsx",
+      "name": "*",
+      "chunks": [
+        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Portfolio/PortfolioMenu.jsx#": {
+      "id": "(app-client)/./src/components/dom/Portfolio/PortfolioMenu.jsx",
+      "name": "",
+      "chunks": [
+        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/Portfolio/PortfolioMenu.jsx#default": {
+      "id": "(app-client)/./src/components/dom/Portfolio/PortfolioMenu.jsx",
       "name": "default",
       "chunks": [
-        "static/css/app/portfolio/stills/page.css"
-      ]
+        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+      ],
+      "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/yet-another-react-lightbox/dist/styles.css#": {
-      "id": "null",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/about/layout.jsx": {
+      "id": "(app-client)/./app/about/layout.jsx",
+      "name": "*",
+      "chunks": [
+        "app/about/layout:static/chunks/app/about/layout.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/about/layout.jsx#": {
+      "id": "(app-client)/./app/about/layout.jsx",
+      "name": "",
+      "chunks": [
+        "app/about/layout:static/chunks/app/about/layout.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/about/layout.jsx#default": {
+      "id": "(app-client)/./app/about/layout.jsx",
       "name": "default",
       "chunks": [
-        "static/css/app/portfolio/stills/page.css"
-      ]
+        "app/about/layout:static/chunks/app/about/layout.js"
+      ],
+      "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/image.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/image.js": {
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/image.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/image.js": {
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/image.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/image.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/image.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/image.js#": {
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/client/image.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/client/image.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "default",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/client/image.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/client/image.js#default": {
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "default",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/head.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/head.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/head.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/head.js#": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "_app-client_src_components_dom_Contact_jsx:static/chunks/_app-client_src_components_dom_Contact_jsx.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/head.js#default": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "default",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/head.js#default": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "default",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/shared/lib/head.js#defaultHead": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/shared/lib/head.js#defaultHead": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "defaultHead",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/node_modules/next/dist/esm/shared/lib/head.js#defaultHead": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/node_modules/next/dist/esm/shared/lib/head.js#defaultHead": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "defaultHead",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsGallery.jsx": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/About/AboutFirst.jsx": {
+      "id": "(app-client)/./src/components/dom/About/AboutFirst.jsx",
       "name": "*",
       "chunks": [
-        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+        "app/about/1/page:static/chunks/app/about/1/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsGallery.jsx#": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/About/AboutFirst.jsx#": {
+      "id": "(app-client)/./src/components/dom/About/AboutFirst.jsx",
       "name": "",
       "chunks": [
-        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+        "app/about/1/page:static/chunks/app/about/1/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsGallery.jsx#default": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsGallery.jsx",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/About/AboutFirst.jsx#AboutFirst": {
+      "id": "(app-client)/./src/components/dom/About/AboutFirst.jsx",
+      "name": "AboutFirst",
+      "chunks": [
+        "app/about/1/page:static/chunks/app/about/1/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/About/AboutSecond.jsx": {
+      "id": "(app-client)/./src/components/dom/About/AboutSecond.jsx",
+      "name": "*",
+      "chunks": [
+        "app/about/2/page:static/chunks/app/about/2/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/About/AboutSecond.jsx#": {
+      "id": "(app-client)/./src/components/dom/About/AboutSecond.jsx",
+      "name": "",
+      "chunks": [
+        "app/about/2/page:static/chunks/app/about/2/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/dom/About/AboutSecond.jsx#AboutSecond": {
+      "id": "(app-client)/./src/components/dom/About/AboutSecond.jsx",
+      "name": "AboutSecond",
+      "chunks": [
+        "app/about/2/page:static/chunks/app/about/2/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/about/1/page.jsx": {
+      "id": "(app-client)/./app/about/1/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/about/1/page:static/chunks/app/about/1/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/about/1/page.jsx#": {
+      "id": "(app-client)/./app/about/1/page.jsx",
+      "name": "",
+      "chunks": [
+        "app/about/1/page:static/chunks/app/about/1/page.js"
+      ],
+      "async": false
+    },
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/about/1/page.jsx#default": {
+      "id": "(app-client)/./app/about/1/page.jsx",
       "name": "default",
       "chunks": [
-        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+        "app/about/1/page:static/chunks/app/about/1/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsWrapper.jsx": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/about/2/page.jsx": {
+      "id": "(app-client)/./app/about/2/page.jsx",
       "name": "*",
       "chunks": [
-        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsWrapper.jsx#": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/about/2/page.jsx#": {
+      "id": "(app-client)/./app/about/2/page.jsx",
       "name": "",
       "chunks": [
-        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/Stills/StillsWrapper.jsx#StillsWrapper": {
-      "id": "(app-client)/./src/components/dom/Portfolio/Stills/StillsWrapper.jsx",
-      "name": "StillsWrapper",
-      "chunks": [
-        "app/portfolio/stills/page:static/chunks/app/portfolio/stills/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/page.jsx": {
-      "id": "(app-client)/./app/page.jsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/page.jsx#": {
-      "id": "(app-client)/./app/page.jsx",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/page.jsx#default": {
-      "id": "(app-client)/./app/page.jsx",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/about/2/page.jsx#default": {
+      "id": "(app-client)/./app/about/2/page.jsx",
       "name": "default",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/about/2/page:static/chunks/app/about/2/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/PortfolioMenu.jsx": {
-      "id": "(app-client)/./src/components/dom/Portfolio/PortfolioMenu.jsx",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/contact/page.jsx": {
+      "id": "(app-client)/./app/contact/page.jsx",
       "name": "*",
       "chunks": [
-        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/PortfolioMenu.jsx#": {
-      "id": "(app-client)/./src/components/dom/Portfolio/PortfolioMenu.jsx",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/contact/page.jsx#": {
+      "id": "(app-client)/./app/contact/page.jsx",
       "name": "",
       "chunks": [
-        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/dom/Portfolio/PortfolioMenu.jsx#default": {
-      "id": "(app-client)/./src/components/dom/Portfolio/PortfolioMenu.jsx",
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/contact/page.jsx#default": {
+      "id": "(app-client)/./app/contact/page.jsx",
       "name": "default",
       "chunks": [
-        "app/portfolio/page:static/chunks/app/portfolio/page.js"
+        "app/contact/page:static/chunks/app/contact/page.js"
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/canvas/Scene.jsx": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/canvas/Scene.jsx": {
       "id": "(app-client)/./src/components/canvas/Scene.jsx",
       "name": "*",
       "chunks": [
@@ -1686,7 +1819,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/canvas/Scene.jsx#": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/canvas/Scene.jsx#": {
       "id": "(app-client)/./src/components/canvas/Scene.jsx",
       "name": "",
       "chunks": [
@@ -1694,7 +1827,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/src/components/canvas/Scene.jsx#default": {
+    "/run/media/jack/401B6F37347316A7/Projects/dev/sandro/src/components/canvas/Scene.jsx#default": {
       "id": "(app-client)/./src/components/canvas/Scene.jsx",
       "name": "default",
       "chunks": [

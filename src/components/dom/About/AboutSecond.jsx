@@ -19,11 +19,11 @@ export function AboutSecond() {
       exit='exit'
       variants={gridVariants}
     >
-      <div className='flex justify-start h-1/4 sm:h-1/3 w-screen mb-8 sm:mb-8 md:mb-16 lg:mb-32 ml-8 sm:ml-16 md:ml-32 lg:ml-64'>
+      <div className='flex justify-center md:justify-start h-1/4 sm:h-1/3 w-screen mb-8 mt-32 md:ml-32 lg:ml-64'>
           <Image
             alt='sandro flying a drone'
             src='/img/about/drone.jpg'
-            width={300}
+            width={200}
             height={300}
             className='rounded-[536px] object-cover '
           />

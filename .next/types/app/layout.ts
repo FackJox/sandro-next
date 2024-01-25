@@ -1,4 +1,4 @@
-// File: /run/media/jack/401B6F37347316A7/Nextcloud/Projects/Sandro/sandro-next/app/layout.jsx
+// File: /run/media/jack/401B6F37347316A7/Projects/dev/sandro/app/layout.jsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
